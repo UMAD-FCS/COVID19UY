@@ -8,3 +8,4 @@ navbar:
       href: about.html
     - text: "page 2"
       href: page2.html
+output_dir: "docs"
