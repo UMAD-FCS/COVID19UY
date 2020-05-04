@@ -1,11 +1,13 @@
 name: "my-website"
 navbar:
-  title: "My Website"
+  title: "UMAD-COVID19UY"
   left:
     - text: "Inicio"
       href: index.html
     - text: "UMAD"
       href: about.html
-    - text: "page 2"
-      href: page2.html
+    - text: "Pagina 1"
+      href: pagina1.html
+    - text: "Pagina 2"
+      href: pagina2.html
 output_dir: "docs"

@@ -1,5 +1,5 @@
 ---
-title: "page2"
+title: "Pagina 1"
 output:
   html_document:
     toc: true
