@@ -1,0 +1,10 @@
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Inicio"
+      href: index.html
+    - text: "UMAD"
+      href: about.html
+    - text: "page 2"
+      href: page2.html

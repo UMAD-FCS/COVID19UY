@@ -1,0 +1,10 @@
+---
+title: "Acerca de"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    theme: simplex
+---
+
+mas sanata
