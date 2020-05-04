@@ -5,9 +5,21 @@ navbar:
     - text: "Inicio"
       href: index.html
     - text: "UMAD"
+      icon: fa-user
       href: about.html
     - text: "Pagina 1"
       href: pagina1.html
     - text: "Pagina 2"
       href: pagina2.html
+  right:
+    - icon: fa-envelope-o
+      href: mailto:bancodedatos@cienciassociales.edu.uy
+    - icon: fa-github
+      href: https://github.com/UMAD-FCS     
+    - icon: fa-twitter
+      href: https://twitter.com/nicosch14
+output:
+  html_document:
+    theme: cerulean 
+    highlight: textmate
 output_dir: "docs"

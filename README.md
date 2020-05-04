@@ -1,3 +1,3 @@
 # COVID19UY
 
-umad
+umad.
