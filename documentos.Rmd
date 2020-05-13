@@ -9,7 +9,7 @@ html_document:
 
 ---
 
-En esta sección encontrarán una serie de documentos sobre de distintnas instituciones sobre:
+En esta sección encontrarán una serie de documentos de distintas instituciones sobre:
 
 
 1. Propuestas de políticas públicas e impactos sociales y económicos en relación a la pandemia COVID19.
@@ -85,7 +85,7 @@ COVID-19 No 12 Víctor Martín Barroso [aquí](https://drive.google.com/file/d/1
 <br />
     
 
-#### **Recomendaciones sobre elabración de estadíticas oficiales**  
+#### **Recomendaciones sobre elaboración de estadísticas oficiales**  
 
 - _Recomendaciones para la publicación de estadíticas oficiales a partir de encuestas de hogares frente a la coyuntura de la enfermedad por coronavirus (COVID-19)_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1VXlNt_0GUNhF-E5btJF-k_UYcR5ANIKH/view?usp=sharing)
 
