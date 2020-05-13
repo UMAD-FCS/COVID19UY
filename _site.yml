@@ -1,23 +1,29 @@
 name: "my-website"
 navbar:
-  title: "UMAD-COVID19UY"
+  title: ""
   left:
     - text: "Inicio"
       href: index.html
     - text: "UMAD"
-      icon: fa-user
       href: about.html
-    - text: "Pagina 1"
-      href: pagina1.html
-    - text: "Pagina 2"
-      href: pagina2.html
+    - text: "Observatorio COVID19"
+      href: observatorio_covid.html
+    - text: "Observatorio social"
+      href: observatorio_social.html
+    - text: "Documentos"
+      href: documentos.html
+    - text: "Links"
+      href: linkoteca.html
+    - text: "Datos"
+      href: datos.html
+      
   right:
     - icon: fa-envelope-o
-      href: mailto:bancodedatos@cienciassociales.edu.uy
+      href: mailto:umad@cienciassociales.edu.uy
     - icon: fa-github
       href: https://github.com/UMAD-FCS     
     - icon: fa-twitter
-      href: https://twitter.com/nicosch14
+      href: https://twitter.com/umad_fcs
 output:
   html_document:
     theme: cerulean 

@@ -1,0 +1,81 @@
+---
+title: "Linkoteca"
+output:
+  html_document:
+    toc: false
+ 
+
+---
+
+En esta sección encontraran una serie de links a sitios que ofrecen distintos tipos de información, datos e indicadores en relación a la pandemia COVID-19. 
+
+<br />
+    <br />
+    
+    
+- __IMF, Policy tracker. Covid responses por gobiernos. FMI__ [aquí](https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19)
+
+Página del Fondo Monetario Internacional donde se resumen las medidas económicas más importantes que los gobiernos estan tomando para limitar el impacto humano y económico de la pandemia CIVID-19. El monitor de políticas incluye información sobre 193 economías. 
+
+- __Banco Mundial__ [aquí](https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19)
+
+Página del Banco Mundial donde se puede acceder a información en timepo real, indicadores y otros tipos de datos en relación la pandemia. También ofrece información sobre las medidas de ayuda económica que el Banco esta implementando en los países en desarrollo. 
+
+- __Cepal__ [aquí](https://www.cepal.org/es/temas/covid-19)
+
+La CEPAL ha desarrollado un  Observatorio que recopila datos sobre las políticas públicas que los 33 países de la región latinoamericana y caribeña están tomando para limitar el impacto de la pandemia de COVID-19. También se pueden encontrar documentos de análisis de los impactos económicos y sociales que éstas van a tener a nivel nacional y sectorial.
+
+- __Worldometer__ [aquí](https://www.worldometers.info/coronavirus/)
+
+Base de datos amplia donde se puede encontrar información sobre la evolución de casoso confirmados, muertes y recuperados por país y a nivel mundial. También se ofrece información sobre epidemiológica sobre el COVID-19. 
+
+- __John Hopkins University__ [aquí](https://coronavirus.jhu.edu/)
+
+Bases de datos en tiempo real sobre casos confirmados, muertes y personas recuperadas de COVID-19 por países y a nivel mundial. También se pueden encontrar informes y análisis que ayudan a entender la evolución de la pandemia. 
+
+- __Our World in Data COVID19 (general y solo para testing)__ [aquí](https://ourworldindata.org/coronavirus)
+
+Bases de datos sobre tests, casos confirmados, muertes y personas recuperadas de COVID-19 por país y a nivel mundial. Se encuentran información sobre indicadores de la fatalidad de la pandemia, las repsuestas de los gobiernos y una cantidad de gráficos interactivos asociados a bases de datos disponibilizadas para la descarga de los usuarios.  
+
+- __EUROMOMO__ [aquí](https://www.euromomo.eu)
+
+Monitor Europeo de mortalidad que busca detectar y medir exceso de muertes en relación a enfermedades estacionales como la influenza, las pandemias y otros amenazas a la salud. Presenta datos de moratliad semanales para 24 países europeos. 
+
+- __Google Mobility Report COVID19__ [aquí](https://www.google.com/covid19/mobility/)
+
+Base de datos de Google sobre movilidad comunitaria basada en información anonimizada de la evolución de los movimientos de personas por país, por día y geolocalizada entre diferentes categorías como lugares de trabajo, venta minorista y recreación, trasnporte público, etc. La base de datos se presenta por país y en aquellos casos con suficiente flujo de datos también por estados, provincias o ciudades. 
+
+- __Oxford Response Tracker__ [aquí](https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker)
+
+El Oxford Response Tracker es una herramienta que permite comparar las medidas que los gobiernos han venido tomando en relación a la pandemia. Se presenta un índice de la rigurosidad de las medidas (Stringency Index) del los gobiernos que se compone de 17 indicadores, 8 de políticas de confinamiento social, 4 de medidas económicas y 5 de políticas sanitarias. También se presentan datos de evaluación de estas políticas. 
+
+- __BID Tablero de Control Coronavirus__ [aquí](https://www.iadb.org/es/coronavirus)
+
+Página del Banco Interamericano de Desarrollo, presenta datos de evolución de la pandemia sobre muertes, recuperados y casos confirmados utiliando como fuente la base de datos John Hopkins University. Presenta también datos de congestión de tráfico basado en datos del Programa Waze para ciudades, datos de movilidad de transporte público de Moovit Public Transit Index, datos de movilidad de las personas basados en datos de Veraset y datos de calidad del aire con datos de satélite Copernicus Sentinel-5P. 
+
+- __WHO/OAS Coronavirus__ [aquí](https://www.who.int/emergencies/diseases/novel-coronavirus-2019)
+
+Página de la Organización Mundial de la Salud. Presenta datos sobre nuevos casos y muertes pore países y regiones en mapas interactivos. También documentos de análisis, guías, y pronunciamientos de la organización sobre la evolución de la pandemia.
+
+- __Pasteur Uruguay, Monitor COVID19__ [aquí](http://pasteur.uy/monitor-covid-19/)
+
+El Monitor de COVID-19 en Uruguay fue desarrollado por el Laboratorio de Genómica Microbiana del Institut Pasteur de Montevideo. Su único objetivo es brindar información de fácil interpretación, certera y actualizada sobre la situación epidemiológica de COVID-19 en Uruguay. Esta información es generada, revisada y/o curada por un grupo interdisciplinario de científicos del Institut Pasteur de Montevideo. Presenta los casos desagregados por edad, departamentos, por sexo, por área metropolitana, por barios de Montevideo. También presenta datos sobre número de tests y porcentaje de casos positivos. También escenarios de simulación para la pandemia en el país y sobre la evolución genómica de SARS-CoV-2 en el mundo.
+
+- __UNFPA Coronavirus__ [aquí](https://www.unfpa.org/es/COVID19)
+
+Página del Fondo de Población de Naciones Unidas que presenta una serie de documentos técnicos sobre el impacto de la pandemia en térmimos de género, adolecencia y juventud, derechos sexuales reproductivos, salud materna y neonatal. 
+
+- __OIT COVID and the world of work__ [aquí](https://www.ilo.org/global/topics/coronavirus/lang--en/index.htm)
+
+Página de la Organización Mundial del Trabajo, presenta informes por país de las respuestas de ls gobiernos clasificadas en estímulos a la economía y el trabajo, apoyo a emprendimeintos, empleo e ingreso, protección de trabajadores en los lugares de la trabajo ny utilización del diálogo social para l búsqueda de soluciones.
+
+
+
+
+
+
+
+
+
+
+

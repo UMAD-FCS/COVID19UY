@@ -1,0 +1,299 @@
+---
+title: ""
+output:
+  html_document:
+    toc: true
+    toc_float: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# **Introducción** 
+
+El presente reporte se estructura en torno a un conjunto de datos y gráficos que se despliegan en las siguientes pestañas agregando en varios casos textos explicativos que permiten entender la relevancia de la información desplegada. El mismo procura ofrecer a los investigadores, tomadores de decisión, formadores de opinión y público en general un panorama de la situación del país en materia de estructura social, vulnerabilidad y herramientas para abordar dichas vulnerabilidades en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID19. Este reporte es decriptivo y incorpora supuestos para estimar o modelizar el impacto de la disrupción económica y social sobre los niveles de bienestar de la población. En un contexto marcado por las incertidumbres se elige esta modaldad como insumo para otorgar parámetros para dichos ejercicios.  Para navegar sobre los diversos tópicos basta con hacer click en cada una de las pestañas o en los vínculos que se detallan a continuación. Adicionalmente los usuarios pueden descargar un conjunto de planillas en formato excel que integran y abundan sobre la selección de datos presentada en este índice inicial.  
+
+<br />
+
+
+1. **Que avances y fortalezas del pasado permiten enfrentar la crisis COVID19 y mitigar los efectos sociales de la estrategia epidemiológica**
+    a. La evolución de la  pobreza
+    b. Habitabilidad y condiciones de las viviendas
+    c. La evolución del empleo y de los ingresos
+    d. La cobertura de la seguridad social y de sus programas
+    e. Las coberturas no contributivas de apoyo a la población vulnerable
+    f. El deficit general y el de la seguridad social  
+    
+<br />
+
+2. **Cuales eran las vulnerabilidades de nuestra sociedad al completarse el año  2019**
+    a. La población pobre y vulnerable
+    b. El ingreso percápita de la población pobre y vulnerable
+    c. El empleo y las fuentes de ingreso de la población pobre y vulnerable
+    d. Transferencias contributivas y no contributivas de la población pobre y vulnerable
+    e. Los arreglos familiares de la población pobre y vulnerable
+    d. La situación de tenencia de vivienda de la situación pobre y vulnerable
+    e. Los sectores medios y su vulnerabilidad en materia de empleo e ingresos  
+    
+<br />
+
+3. **Impactos, contexto y herramientas para hacer frente a la crisis social**
+    a. El crecimiento del desempleo y la caída de los ingresos
+    b. La caída en las tasas de crecimiento y las proyecciones del déficit
+    c. La caída en la movilidad como proxy del impacto sobre la actividad económica
+    d. La evolución de los costos básicos en la pandemia: inflación y tarífas públicas
+    e. El impacto del cierre de las escuelas: población afectada por estratos y edades
+    f. Estabilizadores automáticos y acciones adicionales
+
+<br />
+
+```{r, echo = F}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(plotly))
+source('data-raw/observatorio_social.R')
+```
+
+
+
+# **La mejora de los indicadores socioeconómicos** 
+
+### _Evolución del porcentaje de hogares y personas en situación de pobreza en Uruguay 2006-2019_
+
+```{r}
+
+g1 <- 
+    grafico1 %>% mutate(Anio = as.factor(Anio)) %>% 
+    ggplot(aes(x = Anio, y = Porcentaje)) +
+    geom_line(aes(group = 2, color = Nivel), size = 1.5) +
+    geom_point(aes(color = Nivel), size = 2.5) +
+    scale_color_manual(
+        values = c("#eb7070", "#a1dd70"),
+        labels = c("Hogares", "Personas")
+    ) +
+    ylim(0, 40) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g1)
+
+```
+
+### _Evolución del Salario Real_
+
+```{r}
+g2 <- grafico2 %>% 
+    mutate(Fecha = as.Date(Fecha)) %>% 
+    pivot_longer(cols = 2:4, names_to = 'Tipo', values_to = 'Salario') %>% 
+    ggplot(aes(x = Fecha, y = Salario)) +
+    geom_line(aes(group = 3, color = Tipo), size = 1.2) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g2)
+    
+```
+
+### _Porcentaje de hogares con Necesidades básicas insatisfechas (NBI)_
+
+
+```{r}
+g3 <-
+    grafico3 %>% 
+    ggplot(aes(x = Anio, y = Porcentaje)) +
+    geom_line(color = "#496FF7", size = 1.5) +
+    geom_point(color = "#496FF7", size = 2.5) +
+    ylim(0, 20) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g3)
+```
+
+### _Porcentaje de hogares con situación de hacinamiento por quintiles de ingreso (quintiles 1, 2, y 3)_
+
+
+```{r}
+g4 <-
+    grafico4 %>% 
+    ggplot(aes(x = Anio, y = Valor)) +
+    geom_line(aes(group = 3, color = Quintil), size = 1.2) +
+    geom_point(aes(color = Quintil), size = 2.5) +
+    ylim(0, 70) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g4)
+```
+
+
+
+
+
+# **La ampliación de la protección social** 
+
+
+### _Porcentaje de población ocupada no afiliada a la seguridad social_
+
+
+```{r}
+g5 <-
+    grafico5 %>% 
+    ggplot(aes(x = Anio, y = Porcentaje)) +
+    geom_line(aes(group = 3, color = Quintil), size = 1.2) +
+    geom_point(aes(color = Quintil), size = 2.5) +
+    ylim(0, 80) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g5)
+```
+
+### _Porcentaje de población ocupada no afiliada a la seguridad social_
+
+```{r}
+g6 <-
+    grafico6 %>% 
+    ggplot(aes(x = Anio, y = Cantidad)) +
+    geom_line(color = "#82EA5E", size = 1.2) +
+    geom_point(color = "#82EA5E", size = 2.5) +
+    ylim(0, 1700000) +
+    theme_minimal() +
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g6)
+```
+
+### _Distribucíon mensual de prestaciones de  Asignaciones Familiares (AFAM) 2008 - 2018_
+
+```{r}
+g7 <- 
+    grafico7_1 %>% 
+    mutate(Anio = as.factor(Anio)) %>% 
+    ggplot(aes(x = Anio, y = Asignaciones)) +
+    geom_boxplot(aes(group = Anio, fill = Anio)) +
+    theme_minimal() +
+    theme(legend.position = "none") +
+    #ylim(200000, 500000) +  
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+ggplotly(g7)
+```
+
+# **La vulnerabilidad de la estructura social a las puertas del COVID19**
+
+
+### _Población por estratos socioeconómicos como múltiplos de la linea de pobreza Uruguay 2019_
+
+```{r}
+g8 <- 
+    grafico8 %>% 
+    ggplot(aes(x = Estrato, y = LP_ine)) +
+    geom_col(col = "black", fill = "#00A08A", width = .7) +
+    coord_flip() +
+    theme_minimal() +
+    #ylim(200000, 500000) +  
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g8)
+```
+
+### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
+
+```{r}
+g9 <- 
+    grafico9 %>% 
+    mutate(Proporcion = round(Proporcion * 100)) %>% 
+    ggplot(aes(x = Categoria.de.ingreso, y = Proporcion)) +
+    geom_col(col = "black", fill = "#00A01A", width = .7) +
+    coord_flip() +
+    theme_minimal() +
+    #ylim(200000, 500000) +  
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g9)
+```
+
+
+### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
+
+```{r}
+g10 <- 
+    grafico10 %>% 
+    ggplot(aes(x = concepto, y = Bajo)) +
+    geom_col(col = "black", fill = "#00A05A", width = .7) +
+    coord_flip() +
+    theme_minimal() +
+    #ylim(200000, 500000) +  
+    labs(
+        color = "",
+        title = "",
+        caption = "Unidad de Métodos y Acceso a Datos (UMAD)",
+        x = "",
+        y = ""
+    )
+
+ggplotly(g10)
+```
+
+
+
+
+
+
+
+

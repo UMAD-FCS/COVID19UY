@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Linkoteca</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Inicio</a>
+</li>
+<li>
+  <a href="about.html">UMAD</a>
+</li>
+<li>
+  <a href="observatorio_covid.html">Observatorio COVID19</a>
+</li>
+<li>
+  <a href="observatorio_social.html">Observatorio social</a>
+</li>
+<li>
+  <a href="documentos.html">Documentos</a>
+</li>
+<li>
+  <a href="linkoteca.html">Links</a>
+</li>
+<li>
+  <a href="datos.html">Datos</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:umad@cienciassociales.edu.uy">
+    <span class="fa fa-envelope-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/UMAD-FCS">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/umad_fcs">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Linkoteca</h1>
+
+</div>
+
+
+<p>En esta sección encontraran una serie de links a sitios que ofrecen distintos tipos de información, datos e indicadores en relación a la pandemia COVID-19.</p>
+<p><br /> <br /></p>
+<ul>
+<li><strong>IMF, Policy tracker. Covid responses por gobiernos. FMI</strong> <a href="https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19">aquí</a></li>
+</ul>
+<p>Página del Fondo Monetario Internacional donde se resumen las medidas económicas más importantes que los gobiernos estan tomando para limitar el impacto humano y económico de la pandemia CIVID-19. El monitor de políticas incluye información sobre 193 economías.</p>
+<ul>
+<li><strong>Banco Mundial</strong> <a href="https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19">aquí</a></li>
+</ul>
+<p>Página del Banco Mundial donde se puede acceder a información en timepo real, indicadores y otros tipos de datos en relación la pandemia. También ofrece información sobre las medidas de ayuda económica que el Banco esta implementando en los países en desarrollo.</p>
+<ul>
+<li><strong>Cepal</strong> <a href="https://www.cepal.org/es/temas/covid-19">aquí</a></li>
+</ul>
+<p>La CEPAL ha desarrollado un Observatorio que recopila datos sobre las políticas públicas que los 33 países de la región latinoamericana y caribeña están tomando para limitar el impacto de la pandemia de COVID-19. También se pueden encontrar documentos de análisis de los impactos económicos y sociales que éstas van a tener a nivel nacional y sectorial.</p>
+<ul>
+<li><strong>Worldometer</strong> <a href="https://www.worldometers.info/coronavirus/">aquí</a></li>
+</ul>
+<p>Base de datos amplia donde se puede encontrar información sobre la evolución de casoso confirmados, muertes y recuperados por país y a nivel mundial. También se ofrece información sobre epidemiológica sobre el COVID-19.</p>
+<ul>
+<li><strong>John Hopkins University</strong> <a href="https://coronavirus.jhu.edu/">aquí</a></li>
+</ul>
+<p>Bases de datos en tiempo real sobre casos confirmados, muertes y personas recuperadas de COVID-19 por países y a nivel mundial. También se pueden encontrar informes y análisis que ayudan a entender la evolución de la pandemia.</p>
+<ul>
+<li><strong>Our World in Data COVID19 (general y solo para testing)</strong> <a href="https://ourworldindata.org/coronavirus">aquí</a></li>
+</ul>
+<p>Bases de datos sobre tests, casos confirmados, muertes y personas recuperadas de COVID-19 por país y a nivel mundial. Se encuentran información sobre indicadores de la fatalidad de la pandemia, las repsuestas de los gobiernos y una cantidad de gráficos interactivos asociados a bases de datos disponibilizadas para la descarga de los usuarios.</p>
+<ul>
+<li><strong>EUROMOMO</strong> <a href="https://www.euromomo.eu">aquí</a></li>
+</ul>
+<p>Monitor Europeo de mortalidad que busca detectar y medir exceso de muertes en relación a enfermedades estacionales como la influenza, las pandemias y otros amenazas a la salud. Presenta datos de moratliad semanales para 24 países europeos.</p>
+<ul>
+<li><strong>Google Mobility Report COVID19</strong> <a href="https://www.google.com/covid19/mobility/">aquí</a></li>
+</ul>
+<p>Base de datos de Google sobre movilidad comunitaria basada en información anonimizada de la evolución de los movimientos de personas por país, por día y geolocalizada entre diferentes categorías como lugares de trabajo, venta minorista y recreación, trasnporte público, etc. La base de datos se presenta por país y en aquellos casos con suficiente flujo de datos también por estados, provincias o ciudades.</p>
+<ul>
+<li><strong>Oxford Response Tracker</strong> <a href="https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker">aquí</a></li>
+</ul>
+<p>El Oxford Response Tracker es una herramienta que permite comparar las medidas que los gobiernos han venido tomando en relación a la pandemia. Se presenta un índice de la rigurosidad de las medidas (Stringency Index) del los gobiernos que se compone de 17 indicadores, 8 de políticas de confinamiento social, 4 de medidas económicas y 5 de políticas sanitarias. También se presentan datos de evaluación de estas políticas.</p>
+<ul>
+<li><strong>BID Tablero de Control Coronavirus</strong> <a href="https://www.iadb.org/es/coronavirus">aquí</a></li>
+</ul>
+<p>Página del Banco Interamericano de Desarrollo, presenta datos de evolución de la pandemia sobre muertes, recuperados y casos confirmados utiliando como fuente la base de datos John Hopkins University. Presenta también datos de congestión de tráfico basado en datos del Programa Waze para ciudades, datos de movilidad de transporte público de Moovit Public Transit Index, datos de movilidad de las personas basados en datos de Veraset y datos de calidad del aire con datos de satélite Copernicus Sentinel-5P.</p>
+<ul>
+<li><strong>WHO/OAS Coronavirus</strong> <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">aquí</a></li>
+</ul>
+<p>Página de la Organización Mundial de la Salud. Presenta datos sobre nuevos casos y muertes pore países y regiones en mapas interactivos. También documentos de análisis, guías, y pronunciamientos de la organización sobre la evolución de la pandemia.</p>
+<ul>
+<li><strong>Pasteur Uruguay, Monitor COVID19</strong> <a href="http://pasteur.uy/monitor-covid-19/">aquí</a></li>
+</ul>
+<p>El Monitor de COVID-19 en Uruguay fue desarrollado por el Laboratorio de Genómica Microbiana del Institut Pasteur de Montevideo. Su único objetivo es brindar información de fácil interpretación, certera y actualizada sobre la situación epidemiológica de COVID-19 en Uruguay. Esta información es generada, revisada y/o curada por un grupo interdisciplinario de científicos del Institut Pasteur de Montevideo. Presenta los casos desagregados por edad, departamentos, por sexo, por área metropolitana, por barios de Montevideo. También presenta datos sobre número de tests y porcentaje de casos positivos. También escenarios de simulación para la pandemia en el país y sobre la evolución genómica de SARS-CoV-2 en el mundo.</p>
+<ul>
+<li><strong>UNFPA Coronavirus</strong> <a href="https://www.unfpa.org/es/COVID19">aquí</a></li>
+</ul>
+<p>Página del Fondo de Población de Naciones Unidas que presenta una serie de documentos técnicos sobre el impacto de la pandemia en térmimos de género, adolecencia y juventud, derechos sexuales reproductivos, salud materna y neonatal.</p>
+<ul>
+<li><strong>OIT COVID and the world of work</strong> <a href="https://www.ilo.org/global/topics/coronavirus/lang--en/index.htm">aquí</a></li>
+</ul>
+<p>Página de la Organización Mundial del Trabajo, presenta informes por país de las respuestas de ls gobiernos clasificadas en estímulos a la economía y el trabajo, apoyo a emprendimeintos, empleo e ingreso, protección de trabajadores en los lugares de la trabajo ny utilización del diálogo social para l búsqueda de soluciones.</p>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

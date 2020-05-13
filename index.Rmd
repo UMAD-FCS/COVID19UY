@@ -1,11 +1,84 @@
 ---
-title: "UMAD"
+title: " "
 output:
   html_document:
     toc: false
     toc_float: false
 ---
 
+<br />
+
+<img src='img/init.png' align="left" height="120"/>        
+   
+<br />
+    <br />
+        <br />
+            <br />
+                <br />
+                    <br />
+                        <br />
+
+La unidad de métodos y acceso a datos busca aportar a la difusión del conocimiento e información respecto al coronavirus y al COVID19. Para ello nos desplegamos cuatro acciones simultaneas que esperamos sean de utilidad para las comunidades académicas, los tomadores de decisión y los formadores de opinión, así como el público en general. El propósito de este sitio es consolidar en un único espacio un conjunto de recursos globales, regionales y nacionales, así como un conjunto de análisis, visualizaciones e indicadores seleccionados en materia estadística y registral del COVID19, en aspectos claves sociales para nuestro país y en materia de las medidas de confinamiento y su impacto en el comportamiento real de las personas que surgen de estas bases y que desde la UMAD hemos procesado y ordenado para un lectura rápida y abarcativa de la evidencia. Este sitio nos ofrece asimismo la posibilidad de ingresar en otros espacios de producción y visualización de datos que han sido desarrollados por la comunidad académica internacional, regional y nacional.
 
 
-UMAD....
+<br />
+    <br />
+        <br />
+
+  
+[<img src="img/c4.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/linkoteca.html)
+[<img src="img/c3.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/documentos.html)
+[<img src="img/c2.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/observatorio_social.html)
+[<img src="img/c1.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/observatorio_covid.html)  
+
+
+
+<br />
+    <br />
+        <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+```{r, echo = F}
+source("R/utils.R")
+```
+
+```{r, echo = FALSE, fig.height = 3, fig.width = 9.5}
+ggplotly(g) %>% config(displayModeBar = FALSE)
+```
+
+```{r, echo = FALSE, fig.height = 6, fig.width = 9.5,}
+datos <- google_uy(datos = busca_data("^Global"))
+colores_uy <- c("Parques"  = "#5277F8", 
+                "Trabajo"  = "#F5615F")
+f <- 
+  datos %>% filter(Movilidad %in% c('Parques', 'Trabajo')) %>% 
+  ggplot(aes(x = Fecha, y = Valor)) + 
+  geom_line(aes(color = Movilidad)) +
+  facet_wrap(~departamento) +
+  scale_colour_manual(values = colores_uy) +
+  theme_minimal() +
+  geom_hline(yintercept = 0, color = "gray") +
+  labs(x = "", 
+       y = "", 
+       title = "Movilidad en <span style='color:#5277F8'>parques</span> y <span style='color:#F5615F'>lugares de trabajo</span> seg\u00fan Google (Uruguay y los 19 departamentos)"
+       ) +
+  theme(
+        plot.title = element_markdown(lineheight = 1.1),
+        legend.text = element_markdown(size = 11),
+        legend.position = "none"
+    )
+
+ggplotly(f) %>% config(displayModeBar = FALSE)
+
+```
+
+
+

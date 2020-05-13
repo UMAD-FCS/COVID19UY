@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Documentos</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Inicio</a>
+</li>
+<li>
+  <a href="about.html">UMAD</a>
+</li>
+<li>
+  <a href="observatorio_covid.html">Observatorio COVID19</a>
+</li>
+<li>
+  <a href="observatorio_social.html">Observatorio social</a>
+</li>
+<li>
+  <a href="documentos.html">Documentos</a>
+</li>
+<li>
+  <a href="linkoteca.html">Links</a>
+</li>
+<li>
+  <a href="datos.html">Datos</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:umad@cienciassociales.edu.uy">
+    <span class="fa fa-envelope-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/UMAD-FCS">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/umad_fcs">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Documentos</h1>
+
+</div>
+
+
+<p>En esta sección encontrarán una serie de documentos sobre de distintnas institucione sobre:</p>
+<ol style="list-style-type: decimal">
+<li><p>Propuestas de políticas públicas e impactos sociales y económicos en relación a la pandemia COVID19.</p></li>
+<li><p>Discusiones metodológicas sobre diferente diseños para la detección de casos, principales indicadores y esenarios de evolución de la penademia.</p></li>
+<li><p>Recomendaciones para las instituciones estadísticas sobre la recolección de datos en el contexto de pandemia.</p></li>
+</ol>
+<p><br /></p>
+<div id="impactos-socioeconómicos-y-políticas-públicas" class="section level4">
+<h4><strong>Impactos socioeconómicos y políticas públicas</strong></h4>
+<ul>
+<li><p><em>COVID-19 and Latin America: Social Impact, Policies and Fiscal Case for an Emergency Social Prtotecion Floor</em> CIPPEC20 Merike Blofield &amp; Fernando Filgueira <a href="https://drive.google.com/file/d/1yS7vJb2ob88WUTiQHf2nXLAtaVtX1DO3/view?usp=sharing">aquí</a></p></li>
+<li><p><em>The COVID-19 pandemic is exacerbating the care crisis in Latin America and the Caribbean</em> ECLAC United Nations <a href="https://drive.google.com/file/d/1qzNdeUHGofEc5V2HAbEiyBHYZfGYAB_O/view?usp=sharing">aquí</a></p></li>
+<li><p><em>COVID y disparidades de género en cuidados en la primera infancia</em> FCEA IECON UdelaR Luciana Méndez &amp; Guillermo Sánchez <a href="https://drive.google.com/file/d/1sZppVkxGMCVgeSItH2Lk3XL_-uLszeDJ/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Estimación del efecto de corto plazo de la covid-19 en la pobreza en Uruguay</em> FCEA IECON UdelaR Matías Brum &amp; Mauricio De Rosa <a href="https://drive.google.com/file/d/1puRKQh2ClF_efmMcXx0tzzXCfTQ5XBdp/view?usp=sharing">aquí</a></p></li>
+<li><p><em>O direito à renda básica no Brasil em tempos de Covid-19</em> GT de Bioética do Observatório Covid-19 - Informação para ação Pablo Dias Fortes, Fermin Schramm, Sergio Rego, Luciana Brito e Luciana Narciso <a href="https://drive.google.com/file/d/1_t7IrPwI_7fWnR9tB2qaA1O8cor5RANz/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Estimates of the impact of COVID-19 on global poverty</em> WIDER Working Paper 2020/43 Andy Sumner, Chris Hoy &amp; Eduardo Ortiz-Juarez <a href="https://drive.google.com/file/d/1Y3kFsiQW4uIVT_-q7QZ1mPVM6_tiW5Bv/view?usp=sharing">aquí</a></p></li>
+<li><p><em>El Proyecto de Impuesto Emergencia Sanitaria COVID-19 y la distribución del ingreso: elementos para el debate</em> FCEA IECON UdelaR Mauricio De Rosa, Andrea Vigorito &amp; Joan Vilá <a href="https://drive.google.com/file/d/1obR1hKnFV5s74ktvvtUGtnV1NvqVFajP/view?usp=sharing">aquí</a></p></li>
+<li><p>Salarios públicos y COVID19 <a href="https://blogs.worldbank.org/governance/should-public-sector-wages-be-cut-finance-coronavirus-response">aquí</a></p></li>
+<li><p>Cecklist de sostenibilidad <a href="https://blogs.worldbank.org/climatechange/planning-economic-recovery-covid-19-coronavirus-sustainability-checklist-policymakers">aquí</a></p></li>
+<li><p><em>COVID-19: Embracing digital government during the pandemic and beyond</em> – UN/DESA Policy Brief #61 <a href="https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-61-covid-19-embracing-digital-government-during-the-pandemic-and-beyond/">aquí</a></p></li>
+<li><p><em>Commodity exporters face mounting economic challenges as pandemic spreads</em> – UN/DESA Policy Brief #60 <a href="https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-60-commodity-exporters-face-mounting-economic-challenges-as-pandemic-spreads/">aquí</a></p></li>
+<li><p><em>Corona crisis causes turmoil in financial markets</em> – UN/DESA Policy Brief #59 <a href="https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-59-corona-crisis-causes-turmoil-in-financial-markets/">aquí</a></p></li>
+<li><p><em>COVID-19: Addressing the social crisis through fiscal stimulus plans</em> – UN/DESA Policy Brief #58 <a href="https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-59-corona-crisis-causes-turmoil-in-financial-markets/">aquí</a></p></li>
+<li><p><em>COVID-19: Disrupting lives, economies and societies – World Economic Situation And Prospects</em> April 2020 Briefing, No. 136 <a href="https://www.un.org/development/desa/dpad/publication/world-economic-situation-and-prospects-april-2020-briefing-no-136/">aquí</a></p></li>
+<li><p><em>América Latina y el Caribe ante la pandemia del COVID-19. Efectos económicos y sociales</em> Informe Especial COVID-19 No. 1 CEPAL <a href="https://drive.google.com/file/d/1-U_fhX0gEKH2csPDzWLSPSueDnwrfIFY/view?usp=sharing">aquí</a></p></li>
+<li><p><em>A Conceptual Framework for Analyzing the Economic Impact of COVID-19 and its Policy Implications</em> UNDP LAC C19 PDS No. 1 Constantino Hevia &amp; Andy Neumeyer <a href="https://drive.google.com/file/d/1GrqI_MwTvnKaMxv4mo6am6L5PS_1skiD/view?usp=sharing">aquí</a></p></li>
+</ul>
+<p><br /></p>
+</div>
+<div id="discusiones-metodológicas-sobre-diseños-para-la-detección-de-casos-indicadores-y-escenarios-de-evolución" class="section level4">
+<h4><strong>Discusiones metodológicas sobre diseños para la detección de casos, indicadores y escenarios de evolución</strong></h4>
+<ul>
+<li><p><em>Group testing against Covid-19</em> Covid Economics Issue 2/8 CPR PRESS Christian Gollier &amp; Olivier Gossner <a href="https://drive.google.com/file/d/1fgZH5gMM8zxTxF8C1-u2pFk_w9CnsaOx/view?usp=sharing">aquí</a></p></li>
+<li><p><em>How will country-based mitigation measures influence the course of the COVID-19 epidemic?</em> The Lancet Vol 395 Roy M Anderson, Hans Heesterbeek, Don Klinkenberg &amp; T Déirdre Hollingsworth <a href="https://drive.google.com/file/d/1LJqrZRCLB9CfckOgAQbEmSSMB-7SUgAn/view?usp=sharing">aquí</a></p></li>
+<li><p><em>How Deadly is COVID-19? Understanding the Difficulties with Estimation of its Fatality Rate</em> NBER Working Paper 26965 Andrew Atkeson <a href="https://drive.google.com/file/d/1YO1wa_UxK2qXMnBqD4Mh3_kSpXmg789R/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Total COVID-19 Mortality in Italy: Excess Mortality and Age Dependence through Time-Series Analysis</em> medRxiv Chirag Modi, Vanessa Bohm, Simone Ferraro, George Stein &amp; Uros Seljak <a href="https://drive.google.com/file/d/1CPT8uZu7l8vAOtm_uW0KdVxuYzs5ab1I/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Una breve introducción al modelo SIR aplicado al caso del Covid-19</em> ICEI Papers COVID-19 No 12 Víctor Martín Barroso <a href="https://drive.google.com/file/d/1QOOxXtNMnUjYqF_1uiKT7Zl3wdx4n67d/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Ciencia y Datos para el análisis de la epidemia de COVID-19</em> Matías Arim, Daniel Herrera, Ignacio Sanguinetti, Javier Pintos, Alicia Alemán, Héctor Romero, María Inés Fariello &amp; Horacio Botti GUIAD-Covid19 <a href="https://drive.google.com/file/d/1fqzNGtiX26W2JtykslC0rL1tXTmrGQxP/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Estimación del porcentaje de reporte de casos de COVID-19 en Uruguay</em> GUIAD-Covid19 Daniel Herrera, Paola Bermolen &amp; María Inés Fariello <a href="https://drive.google.com/file/d/1qpr9RGtr7qrIbt8iS8b3HXjnty0F_fuk/view?usp=sharing">aquí</a></p></li>
+<li><p><em>Estimating the Prevalence of COVID-19 in the United States:Three Complementary Approaches</em> medRxiv Fred S. Lu, Andre T. Nguyen, Nick Link &amp; Mauricio Santillana <a href="https://drive.google.com/file/d/10Hb8MZAs56KTlX3W3267e7crrtKGxOFa/view?usp=sharing">aquí</a></p></li>
+</ul>
+<p><br /></p>
+</div>
+<div id="recomendaciones-sobre-recolección-de-datos" class="section level4">
+<h4><strong>Recomendaciones sobre recolección de datos</strong></h4>
+<ul>
+<li><p><em>Recomendaciones para la publaición de estadíticas oficiales a partir de encuestas de hogares frente a la coyuntura de la enfermedad por coronavirus (COVID-19)</em> Informes COVID-19 CEPAL <a href="https://drive.google.com/file/d/1VXlNt_0GUNhF-E5btJF-k_UYcR5ANIKH/view?usp=sharing">aquí</a></p></li>
+<li><p><em>La elaboración del índice de precios al consumidor (IPC) ante la emegerncia del COVID-19 en América Latina y el Caribe</em> Informes COVID-19 CEPAL <a href="https://drive.google.com/file/d/1SQjGyhm3gfUZ3oTCpTTgd3G37fh0O6gs/view?usp=sharing">aquí</a></p></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

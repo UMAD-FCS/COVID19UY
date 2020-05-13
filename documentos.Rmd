@@ -1,0 +1,118 @@
+
+
+---
+title: "Documentos"
+html_document:
+    toc: true
+    toc_float: true
+ 
+
+---
+
+En esta sección encontrarán una serie de documentos sobre de distintnas institucione sobre:
+
+
+1. Propuestas de políticas públicas e impactos sociales y económicos en relación a la pandemia COVID19.
+
+2. Discusiones metodológicas sobre diferente diseños para la detección de casos, principales indicadores y esenarios de evolución de la penademia. 
+
+3. Recomendaciones para las instituciones estadísticas sobre la recolección de datos en el contexto de pandemia.  
+
+<br />
+
+    
+#### **Impactos socioeconómicos y políticas públicas**
+
+
+- _COVID-19 and Latin America: Social Impact, Policies and Fiscal Case for an Emergency Social Prtotecion Floor_ CIPPEC20 
+Merike Blofield & Fernando Filgueira 
+[aquí](https://drive.google.com/file/d/1yS7vJb2ob88WUTiQHf2nXLAtaVtX1DO3/view?usp=sharing)
+
+- _The COVID-19 pandemic is exacerbating the care crisis in Latin America and the Caribbean_ ECLAC United Nations
+[aquí](https://drive.google.com/file/d/1qzNdeUHGofEc5V2HAbEiyBHYZfGYAB_O/view?usp=sharing)
+
+- _COVID y disparidades de género en cuidados en la primera infancia_ FCEA IECON UdelaR Luciana Méndez & Guillermo Sánchez [aquí](https://drive.google.com/file/d/1sZppVkxGMCVgeSItH2Lk3XL_-uLszeDJ/view?usp=sharing)
+
+- _Estimación del efecto de corto plazo de la covid-19 en la pobreza en Uruguay_ FCEA IECON UdelaR Matías Brum & Mauricio De Rosa [aquí](https://drive.google.com/file/d/1puRKQh2ClF_efmMcXx0tzzXCfTQ5XBdp/view?usp=sharing)
+
+- _O direito à renda básica no Brasil em tempos de Covid-19_  GT de Bioética do Observatório Covid-19 - Informação para ação Pablo Dias Fortes, Fermin Schramm, Sergio Rego, Luciana Brito e Luciana Narciso [aquí](https://drive.google.com/file/d/1_t7IrPwI_7fWnR9tB2qaA1O8cor5RANz/view?usp=sharing)
+
+- _Estimates of the impact of COVID-19 on global poverty_ WIDER Working Paper 2020/43 Andy Sumner, Chris Hoy & Eduardo Ortiz-Juarez [aquí](https://drive.google.com/file/d/1Y3kFsiQW4uIVT_-q7QZ1mPVM6_tiW5Bv/view?usp=sharing)
+
+- _El Proyecto de Impuesto Emergencia Sanitaria COVID-19 y la distribución del ingreso: elementos para el debate_ FCEA IECON UdelaR Mauricio De Rosa, Andrea Vigorito & Joan Vilá [aquí](https://drive.google.com/file/d/1obR1hKnFV5s74ktvvtUGtnV1NvqVFajP/view?usp=sharing)
+
+- Salarios públicos y COVID19 [aquí](https://blogs.worldbank.org/governance/should-public-sector-wages-be-cut-finance-coronavirus-response)
+
+- Cecklist de sostenibilidad [aquí](https://blogs.worldbank.org/climatechange/planning-economic-recovery-covid-19-coronavirus-sustainability-checklist-policymakers)
+
+- _COVID-19: Embracing digital government during the pandemic and beyond_ – UN/DESA Policy Brief #61 [aquí](https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-61-covid-19-embracing-digital-government-during-the-pandemic-and-beyond/)
+
+- _Commodity exporters face mounting economic challenges as pandemic spreads_ – UN/DESA Policy Brief #60 [aquí](https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-60-commodity-exporters-face-mounting-economic-challenges-as-pandemic-spreads/)
+
+- _Corona crisis causes turmoil in financial markets_ – UN/DESA Policy Brief #59 [aquí](https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-59-corona-crisis-causes-turmoil-in-financial-markets/)
+
+- _COVID-19: Addressing the social crisis through fiscal stimulus plans_ – UN/DESA Policy Brief #58 [aquí](https://www.un.org/development/desa/dpad/publication/un-desa-policy-brief-59-corona-crisis-causes-turmoil-in-financial-markets/)
+
+- _COVID-19: Disrupting lives, economies and societies – World Economic Situation And Prospects_ April 2020 Briefing, No. 136 [aquí](https://www.un.org/development/desa/dpad/publication/world-economic-situation-and-prospects-april-2020-briefing-no-136/)
+
+- _América Latina y el Caribe ante la pandemia del COVID-19. Efectos económicos y sociales_ Informe Especial COVID-19 No. 1 CEPAL [aquí](https://drive.google.com/file/d/1-U_fhX0gEKH2csPDzWLSPSueDnwrfIFY/view?usp=sharing)
+
+- _A Conceptual Framework for Analyzing the Economic Impact of COVID-19 and its Policy Implications_ UNDP LAC C19 PDS No. 1 Constantino Hevia & Andy Neumeyer [aquí](https://drive.google.com/file/d/1GrqI_MwTvnKaMxv4mo6am6L5PS_1skiD/view?usp=sharing)
+
+<br />
+    
+#### **Discusiones metodológicas sobre diseños para la detección de casos, indicadores y escenarios de evolución**
+
+- _Group testing against Covid-19_ Covid Economics Issue 2/8 CPR PRESS 
+Christian Gollier & Olivier Gossner 
+[aquí](https://drive.google.com/file/d/1fgZH5gMM8zxTxF8C1-u2pFk_w9CnsaOx/view?usp=sharing)
+
+- _How will country-based mitigation measures influence the course of the COVID-19 epidemic?_ The Lancet Vol 395 Roy M Anderson, Hans Heesterbeek, Don Klinkenberg & T Déirdre Hollingsworth [aquí](https://drive.google.com/file/d/1LJqrZRCLB9CfckOgAQbEmSSMB-7SUgAn/view?usp=sharing)
+
+- _How Deadly is COVID-19? Understanding the Difficulties with Estimation of its Fatality Rate_ NBER Working Paper 26965 Andrew Atkeson [aquí](https://drive.google.com/file/d/1YO1wa_UxK2qXMnBqD4Mh3_kSpXmg789R/view?usp=sharing)
+
+- _Total COVID-19 Mortality in Italy: Excess Mortality and Age Dependence through Time-Series Analysis_ medRxiv Chirag Modi, Vanessa Bohm, Simone Ferraro, George Stein & Uros Seljak [aquí](https://drive.google.com/file/d/1CPT8uZu7l8vAOtm_uW0KdVxuYzs5ab1I/view?usp=sharing)
+
+- _Una breve introducción al modelo SIR aplicado al caso del Covid-19_ ICEI Papers
+COVID-19 No 12 Víctor Martín Barroso [aquí](https://drive.google.com/file/d/1QOOxXtNMnUjYqF_1uiKT7Zl3wdx4n67d/view?usp=sharing)
+
+- _Ciencia y Datos para el análisis de la epidemia de COVID-19_ Matías Arim, Daniel Herrera, Ignacio Sanguinetti, Javier Pintos, Alicia Alemán, Héctor Romero, María Inés Fariello & Horacio Botti GUIAD-Covid19 [aquí](https://drive.google.com/file/d/1fqzNGtiX26W2JtykslC0rL1tXTmrGQxP/view?usp=sharing)
+
+- _Estimación del porcentaje de reporte de casos de COVID-19 en Uruguay_ GUIAD-Covid19 Daniel Herrera, Paola Bermolen & María Inés Fariello [aquí](https://drive.google.com/file/d/1qpr9RGtr7qrIbt8iS8b3HXjnty0F_fuk/view?usp=sharing)
+
+- _Estimating the Prevalence of COVID-19 in the United States:Three Complementary Approaches_  medRxiv Fred S. Lu, Andre T. Nguyen, Nick Link & Mauricio Santillana [aquí](https://drive.google.com/file/d/10Hb8MZAs56KTlX3W3267e7crrtKGxOFa/view?usp=sharing)
+
+<br />
+    
+
+#### **Recomendaciones sobre recolección de datos**  
+
+- _Recomendaciones para la publaición de estadíticas oficiales a partir de encuestas de hogares frente a la coyuntura de la enfermedad por coronavirus (COVID-19)_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1VXlNt_0GUNhF-E5btJF-k_UYcR5ANIKH/view?usp=sharing)
+
+- _La elaboración del índice de precios al consumidor (IPC) ante la emegerncia del COVID-19 en América Latina y el Caribe_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1SQjGyhm3gfUZ3oTCpTTgd3G37fh0O6gs/view?usp=sharing)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
