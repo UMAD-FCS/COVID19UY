@@ -29,25 +29,7 @@ Las bases de datos y visualizaciones contenidas en el sitio son actualizadas de 
     <br />
         <br />
 
-  
-[<img src="img/c4.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/linkoteca.html)
-[<img src="img/c3.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/documentos.html)
-[<img src="img/c2.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/observatorio_social.html)
-[<img src="img/c1.png" style="margin-center:30px;margin-bottom:5px;" align="right" height="180"></a>](https://umad-fcs.github.io/COVID19UY/observatorio_covid.html)  
 
-
-
-<br />
-    <br />
-        <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
 
 
 ```{r, echo = F}
