@@ -42,5 +42,5 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
          subtitle  =  "10 países con mayor número de casos",
          caption  = "Unidad de Métodos y Acceso a Datos (UMAD)")
 
-animate(anima_confirmed, nframes = 300, duration=60,  width = 670, height = 600) 
+animate(anima_confirmed, nframes = 300, duration=20,  width = 670, height = 600) 
 anim_save(here::here('animations','bar_race.gif'))
