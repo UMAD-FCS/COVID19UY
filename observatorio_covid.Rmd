@@ -972,7 +972,7 @@ ggplotly(g) %>%
 
 Los informes de movilidad de Google captan los movimientos a partir de la ubicación de las personas y presentan el cambio porcentual de visitas a ciertos lugares como parques, lugares de trabajo, supermercados y zonas residenciales.
 
-Cuando la visulización llega al final, el orden de los países indica la posición efectiva de caída o aumento de la movilidad a la última fecha disponible. 
+Cuando la visualización llega al final, el orden de los países indica la posición efectiva de caída o aumento de la movilidad a la última fecha disponible. 
 
 Para profundizar en el cálculo de estos valores recomendamos ver el sitio de [google](https://www.google.com/covid19/mobility/data_documentation.html?hl=en#about-this-data)
 
