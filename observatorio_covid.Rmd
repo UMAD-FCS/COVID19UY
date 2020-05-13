@@ -748,7 +748,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Casos confirmados por millón de habitantes"
+       title =""
        ) +
   theme_minimal()  
 
