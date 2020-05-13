@@ -19,7 +19,7 @@ Página del Fondo Monetario Internacional donde se resumen las medidas económic
 
 - __Banco Mundial__ [aquí](https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19)
 
-Página del Banco Mundial donde se puede acceder a información en timepo real, indicadores y otros tipos de datos en relación la pandemia. También ofrece información sobre las medidas de ayuda económica que el Banco esta implementando en los países en desarrollo. 
+Página del Banco Mundial donde se puede acceder a información en tiempo real, indicadores y otros tipos de datos en relación la pandemia. También ofrece información sobre las medidas de ayuda económica que el Banco esta implementando en los países en desarrollo. 
 
 - __Cepal__ [aquí](https://www.cepal.org/es/temas/covid-19)
 
