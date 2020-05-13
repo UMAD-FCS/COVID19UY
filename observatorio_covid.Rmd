@@ -154,7 +154,7 @@ data_pasteur%>%
 
 ### _Personas infectadas por día_
 
-En rigor este gráfico mide el número de personas que recibieron un resultado positivo en cada día. Debido a que existe una demora entre la realización del test y los resultados de entre 1 y 3 días, los casos diarios miden los resultados positivos cada día y no el número de infectados cada día. Aún con estas salvedades la serie permite un seguimiento adecuados de los casos detectados por día.
+En rigor este gráfico mide el número de personas que recibieron un resultado positivo en cada día. Debido a que existe una demora entre la realización del test y los resultados de entre 1 y 3 días, los casos diarios miden los resultados positivos cada día y no el número de infectados cada día. Aún con estas salvedades la serie permite un seguimiento adecuado de los casos detectados por día.
 
 ```{r, warning=F, message=F, comment=FALSE}
 #5. Casos nuevos por dia línea de tiempo
@@ -198,7 +198,7 @@ ggplot(aes(x = fecha, y = cantFallecidos)) +
 
 ### _Personas en Cuidados Intensivos por COVID19_
 
-El siguiente gráfico muestra para cada día la cantidad de personas que se encuentran en unidades de cuidados intensivos debido a complicaciones con el curso de la enfermedad.  Nuevamente, si bien estos son casos confirmados en CTI, a diferencia que con el número de casos confirmados en general, este indicador (asumiendo una tasa de complicaciones estable) provee no solo un indicador relevante para el cálculo de capacidades hospitalarias y su programación, sino también sobre la prevalencia estimada de la enfermedad en la población.
+El siguiente gráfico muestra para cada día la cantidad de personas que se encuentran en unidades de cuidados intensivos debido a complicaciones con el curso de la enfermedad.  Nuevamente, si bien estos son casos confirmados en CTI, a diferencia del número de casos confirmados en general, este indicador (asumiendo una tasa de complicaciones estable) provee no solo un indicador relevante para el cálculo de capacidades hospitalarias y su programación, sino también sobre la prevalencia estimada de la enfermedad en la población.
 
 
 ```{r, warning=F, message=F, comment=FALSE}
@@ -241,7 +241,7 @@ data_pasteur %>%
 
 ### _Personas recuperadas y muertes_
 
-Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de casos (Case Fatality Rate, o CFR por sus siglas en inglés) surge de esta combinación. Se suman ambos indicadores y se divide el acumulado de fallecidos cada día por el acumulado de casos totales cada día o como se acostumbra hacer con un delay de siete a diez días dado lo que se conoce como el curso problemático de la enfermedad, o CFR corregida). Nuevamente, se espera una curva ascendente dominante de los casos recuperados sobre las fatalidades que amplia en su progresión la brecha entre casos recuperados y fallecimientos. De producirse un aumento sistemático de la brecha positiva a favor de los casos recuperados sobre los fallecidos, ello estaría indicando una caída en la letalidad de casos o inversamente un mejoramiento en las tasas de recuperación.  Estos indicadores nuevamente no deben confundirse con la tasa de letalidad verdadera, ya que en rigor se desconoce el denominador real, ni con la tasa de letalidad poblacional, que sí surge del total de fallecidos sobre parámetros poblacionales generales. 
+Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de casos (Case Fatality Rate, o CFR por sus siglas en inglés) surge de esta combinación. Se suman ambos indicadores y se divide el acumulado de fallecidos cada día por el acumulado de casos totales cada día o como se acostumbra hacer con un delay de siete a diez días dado lo que se conoce como el curso problemático de la enfermedad (o CFR corregida). Nuevamente, se espera una curva ascendente dominante de los casos recuperados sobre las fatalidades que amplia en su progresión la brecha entre casos recuperados y fallecimientos. De producirse un aumento sistemático de la brecha positiva a favor de los casos recuperados sobre los fallecidos, ello estaría indicando una caída en la letalidad de casos o inversamente un mejoramiento en las tasas de recuperación.  Estos indicadores nuevamente no deben confundirse con la tasa de letalidad verdadera, ya que en rigor se desconoce el denominador real, ni con la tasa de letalidad poblacional, que sí surge del total de fallecidos sobre parámetros poblacionales generales. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #9. Muertes vs Recuperados acumulativos línea de tiempo
@@ -260,7 +260,7 @@ data_pasteur%>%
 
 ### _Tests realizados por día_
 
-En rigor son tests procesados y con resultados por día ya que entre el hisopado y el resultados del test puede existir una demora de entre 24 hs y cuatro días en la mayor parte de los países. Por ello los resultados de dichos tests no están indicado la cantidad de infecciones de cada día, sino la de un período anterior. Conisiderando la evolución clínica de la enfermedad y la demora entre hisopados y resultados, esta fotografía que observamos en el día puede representar la realidad de entre 5 y 9 días previos. Nuevamente, es importante no confundir las fechas en que las mediciones arrojan datos, con las fechas de las realidades que reflejan. Idealmente los tests realizads por día debieran presentar una curva asendente ya que tanto para una mejor captación de la prevalencia, como para la definción de las estretgias epiedmiológicas de mitigación y control una adecuada capacidad de testeo es fundamental. La cantidad de tests por día reflejan tato los criterios que se definen en los protocolos médicos para habilitar la realización de los tests como la capacidad de infaestructra y logística de los países. La realización de tests aleatorios o tests masivos a ciertas poblaciones de riesgo son estrategias utilizadas crecientemente en varios países que requieren de capacidades muy altas de testeo a nivel nacional. 
+En rigor son tests procesados y con resultados por día ya que entre el hisopado y el resultados del test puede existir una demora de entre 24 hs y cuatro días en la mayor parte de los países. Por ello los resultados de dichos tests no están indicando la cantidad de infecciones de cada día, sino la de un período anterior. Considerando la evolución clínica de la enfermedad y la demora entre hisopados y resultados, esta fotografía que observamos en el día puede representar la realidad de entre 5 y 9 días previos. Nuevamente, es importante no confundir las fechas en que las mediciones arrojan datos, con las fechas de las realidades que reflejan. Idealmente los tests realizads por día debieran presentar una curva ascendente ya que tanto para una mejor captación de la prevalencia, como para la definción de las estrategias epidemiológicas de mitigación y control una adecuada capacidad de testeo es fundamental. La cantidad de tests por día reflejan tanto los criterios que se definen en los protocolos médicos para habilitar la realización de los tests como la capacidad de infaestructra y logística de los países. La realización de tests aleatorios o tests masivos a ciertas poblaciones de riesgo son estrategias utilizadas crecientemente en varios países que requieren de capacidades muy altas de testeo a nivel nacional. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #10. Tests por día línea de tiempo
@@ -272,14 +272,14 @@ data_pasteur%>%
   scale_y_continuous() +
   labs(x = "",
        y = "Cantidad de Test",
-       title = "Tests realizados por día",
+       title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
 
 ```
 
 
-### _Test acumulados por día_
+### _Tests acumulados por día_
 
 La curva refleja simplemente el total de tests que se han realizado en el país. 
 
@@ -302,7 +302,7 @@ data_pasteur%>%
 
 ### _Tasa de crecimiento de casos totales_
 
-Surge de considerar la variación día a día de los casos totales. Un valor del 5% indica simplemente que respecto a 100 casos en t0 se identificaron 5 casos adicionales y por tanto 105 casos en t1. Cuanto menor y más decreciente sea la tasa de crecimiento más esperable es que el total de casos activos tienda a cero si las tasas de recuperación se mantienen estables. 
+Surge de considerar la variación día a día de los casos totales. Un valor del 5% indica simplemente que respecto a 100 casos en *t0* se identificaron 5 casos adicionales y por tanto 105 casos en *t1*. Cuanto menor y más decreciente sea la tasa de crecimiento más esperable es que el total de casos activos tienda a cero si las tasas de recuperación se mantienen estables. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #12. Tasa de crecimiento de casos totales
@@ -345,7 +345,7 @@ data_pasteur%>%
 
 ### _Tasa de variación de casos recuperados acumulados y casos acumulados_
 
-Esta tasa surge de restar los casos acumulados a los casos recuperados acumulados y dividirlo por el total diaría de casos acumulados. Por ello el valor es negativo y los será siempre. El comportamiento deseable de esta tasa es su aproximación al valor cero. En su forma extrema ello ocurriría cuando los casos recuperados acumulados igualaran a los casos acumulados. Para ello se requeriría que los casos acumulados dejen de crecer y que no existan fallecimientos. Como ello no es posible (ya que existen ya casos de fallecimiento) el valor que surgiría de una tendencia hacia cero crecimiento de casos acumulados y progresión de casos recuperados arrojaría finalmente algo aproximado a la tasa de fatalidad de casos identificados. 
+Esta tasa surge de restar los casos acumulados a los casos recuperados acumulados y dividirlo por el total diaría de casos acumulados. Por ello el valor es negativo y lo será siempre. El comportamiento deseable de esta tasa es su aproximación al valor cero. En su forma extrema ello ocurriría cuando los casos recuperados acumulados igualaran a los casos acumulados. Para ello se requeriría que los casos acumulados dejen de crecer y que no existan fallecimientos. Como ello no es posible (ya que existen ya casos de fallecimiento) el valor que surgiría de una tendencia hacia cero crecimiento de casos acumulados y progresión de casos recuperados arrojaría finalmente algo aproximado a la tasa de fatalidad de casos identificados. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #14. Tasa de VARIACION de recuperados cada dia sobre casos cada día
@@ -363,7 +363,7 @@ data_pasteur%>%
   theme_minimal()
 ```
 
-### _Tasa de variación de test realizados_
+### _Tasa de variación de tests realizados_
 
 Muestra la variación día a día de los tests acumulados realizados. Es normal que las tasa de variación de de tests acumulados por dia decrezca en el tiempo ya que en la medida en que aumentan los tests acumulados la necesaria variación absoluta para mantener una tasa relativa uniforme de crecimiento aumenta. 
 
@@ -392,7 +392,7 @@ data_pasteur%>%
 
 ### _Acumulado de casos positivos detectados_
 
-Identifica simplemente la curvas de casos acumulados confirmados. La comparación en este caso no tiene mayor sentido en lo que hace a las cantifades abolutas, aunque si permite ver formas diferentes en las pendientes de las curvas ascendentes. 
+Identifica simplemente la curvas de casos acumulados confirmados. La comparación en este caso no tiene mayor sentido en lo que hace a las cantidades absolutas, aunque si permite ver formas diferentes en las pendientes de las curvas ascendentes. 
 
 ```{r}
 g <- 
@@ -404,7 +404,7 @@ g <-
   labs(x = "",
        color = "", 
        y = "Cantidad de personas",
-       title = "Acumulado de casos positivos detectados") +
+       title = "") +
   theme_minimal() 
 
 
@@ -426,7 +426,7 @@ ggplotly(g)%>% config(displayModeBar = F)%>%
 
 ### _Casos acumulados confirmados por millón de habitantes_
 
-Estas son las mismas curvas pero parametrizadas por la población de cada país y expresadas como casos por millón de habitantes. En este caso sí es pertinente la comparación tanto de los niveles o valores como de las pendientes y las curvas. La preferencia absoluta es por curvas que se aplanan y luego dejan de crecer. Ello no sucede por ahora en la región. Sin embargo, es importante distinguir entre países que muestran curvas exponenciales de aquellos que muestral curvas de progresión lineal y cuyas pendientes pueden ser más o menos acentuadas. Es importante también considerar la trayectoria considerando el tiempo transcurrido entre la detección de los primeros casos y la progresión a la fecha. Esto puede realizarse colocando el cursor sobre cualquier punto de la curva lo que nos arrojará el dato del valor de dicha curva y la fecha de dicho valor. 
+Estas son las mismas curvas pero parametrizadas por la población de cada país y expresadas como casos por millón de habitantes. En este caso sí es pertinente la comparación tanto de los niveles o valores como de las pendientes y las curvas. La preferencia absoluta es por curvas que se aplanan y luego dejan de crecer. Ello no sucede por ahora en la región. Sin embargo, es importante distinguir entre países que muestran curvas exponenciales de aquellos que muestran curvas de progresión lineal y cuyas pendientes pueden ser más o menos acentuadas. Es importante también considerar la trayectoria considerando el tiempo transcurrido entre la detección de los primeros casos y la progresión a la fecha. Esto puede realizarse colocando el cursor sobre cualquier punto de la curva lo que nos arrojará el dato del valor de dicha curva y la fecha de dicho valor. 
 
 
 ```{r}
@@ -563,7 +563,7 @@ p
 
 ### _Muertes sobre casos totales_
 
-En rigor este indicador mediría la tasa de fatalidad de casos (CFR) aunque sin reconocer el rezasgo entre casos registrados y ocurrencia de fallecimiento. En cualquier caso muestra una pauta esperable, con niveles altos en el inicio y en la medida que aumentan los casos un aplanamiento o incluso disminución de la curva. Ello responde a que la capacidad ampliada de testeo y de identificación de casos menos graves opera generando un denominador mayor y un numerador menor. El pico extremo de Argentina al inicio surge posiblemente de inconsistencias de registros y casos en el inicio de la pandemia en ese país. 
+En rigor este indicador mediría la tasa de fatalidad de casos (CFR) aunque sin reconocer el rezago entre casos registrados y ocurrencia de fallecimiento. En cualquier caso muestra una pauta esperable, con niveles altos en el inicio y en la medida que aumentan los casos un aplanamiento o incluso disminución de la curva. Ello responde a que la capacidad ampliada de testeo y de identificación de casos menos graves opera generando un denominador mayor y un numerador menor. El pico extremo de Argentina al inicio surge posiblemente de inconsistencias de registros y casos en el inicio de la pandemia en ese país. 
 
 
 ```{r, warning=F, message=F, comment=FALSE}
@@ -582,7 +582,7 @@ g<-covid_m%>%
   labs(x = "",
         color = "",
        y = "Muertes/casos totales",
-       title = "Muertes sobre casos totales")+
+       title = "")+
   theme_minimal()
 
 
@@ -611,7 +611,7 @@ p
 
 ### _Número de casos confirmados sobre número de test_
 
-Ofrece un indicador que dados los criterios de activación de hisopados y tests sugiere una tasa de prevalencia de casos **sospechosos**  por contactos o por sintomatología. Nuevamente al no aplicarse como una muestra aleatoria no puede interpretarse este indicador como uno de prevalecía poblacional, pero sí –con suma cautela- de prevalencia en población considerada en riesgo de contagio de acuerdos a los criterios de cada país.
+Ofrece un indicador que dados los criterios de activación de hisopados y tests sugiere una tasa de prevalencia de casos *sospechosos*  por contactos o por sintomatología. Nuevamente al no aplicarse como una muestra aleatoria no puede interpretarse este indicador como uno de prevanlecia poblacional, pero sí –con suma cautela- de prevalencia en población considerada en riesgo de contagio de acuerdos a los criterios de cada país.
 
 
 
@@ -657,7 +657,7 @@ ggplotly(g) %>%
 ### _Número de tests sobre casos confirmados_
 
 
-Es el inverso del indicador anterior y se presenta a pesar de ser redundante ya que muestra la otra interpretación posible: si los país es están testeando por debajo o por encima dada la prevalencia del virus en la población considerada en riesgo de contagio. Un valor muy alto indica una testeo amplio que captura población con baja probabilidad de contagio, un valor muy bajo indica lo contrario. La evolución en el tiempo de ambos indicadores –este y el anterior- ofrece pistas tanto sobre la prevalencia de la población en riesgo de contagio de acuerdo a los criterios manejados por los gobiernos para el testeo cómo sobre si la capacidad y estrategia de testeo guarda relación con la prevalencia “real” de dicha población.
+Es el inverso del indicador anterior y se presenta a pesar de ser redundante ya que muestra la otra interpretación posible: si los países están testeando por debajo o por encima dada la prevalencia del virus en la población considerada en riesgo de contagio. Un valor muy alto indica una testeo amplio que captura población con baja probabilidad de contagio, un valor muy bajo indica lo contrario. La evolución en el tiempo de ambos indicadores –este y el anterior- ofrece pistas tanto sobre la prevalencia de la población en riesgo de contagio de acuerdo a los criterios manejados por los gobiernos para el testeo, como sobre si la capacidad y estrategia de testeo guarda relación con la prevalencia “real” en dicha población.
 
 
 ```{r}
@@ -699,7 +699,7 @@ ggplotly(g) %>%
 ```
 
 
-
+### *Casos confirmados por millón de habitantes*
 
 ```{r}
 #24. Casos por 1 millon de habitantes (Argentina, Chile, Uruguay, Brasil comparado)
@@ -716,7 +716,7 @@ g <-
   labs(x = "",
        color = "",
        y = "Cantidad de casos",
-       title ="Casos confirmados por millón de habitantes"
+       title =""
        ) +
   theme_minimal() 
 
@@ -733,7 +733,7 @@ ggplotly(g) %>%
 
 
 
-
+### *Casos confirmados por millón de habitantes*
 
 ```{r}
 #24b. Casos por 1 millon de habitantes (comparación continentes)
@@ -765,7 +765,7 @@ ggplotly(g) %>%
 ```
 
 
-
+### *Muertes por millón de habitantes*
 ```{r}
 #25. Muertes por 1 millon de habitantes ((Argentina, Chile, Uruguay, Brasil, comparado) 
 
@@ -781,7 +781,7 @@ g <-
   labs(x = "",
        color = "",
        y = "Cantidad de casos",
-       title ="Muertes por millón de habitantes"
+       title =""
        ) +
   theme_minimal() 
 
@@ -798,7 +798,7 @@ ggplotly(g) %>%
 ```
 
 
-
+### *Muertes por millón de habitantes*
 ```{r}
 #25b. Muertes por 1 millon de habitantes (continentes)
 
@@ -813,7 +813,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Muertes por millón de habitantes"
+       title =""
        ) +
   theme_minimal()  
 
@@ -830,7 +830,7 @@ ggplotly(g) %>%
 
 
 
-
+### *Personas recuperadas sobre total de casos confirmados*
 ```{r}
 #28. Recuperados por casos totales.
 
@@ -846,7 +846,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Personas recuperadas sobre total de casos confirmados"
+       title =""
        ) +
   theme_minimal() 
 
@@ -864,7 +864,7 @@ ggplotly(g) %>%
 
 
 
-
+### *Personas recuperadas sobre total de casos confirmados*
 ```{r}
 
 #28b. Recuperados por casos totales.
@@ -880,7 +880,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Personas recuperadas sobre total de casos confirmados"
+       title =""
        ) +
   theme_minimal()  
 
@@ -898,7 +898,7 @@ ggplotly(g) %>%
 
 
 
-
+### *Personas fallecidas sobre total de casos confirmados*
 ```{r}
 #29. Muertes por casos totales
 
@@ -914,7 +914,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Personas fallecidas sobre total de casos confirmados"
+       title =""
        ) +
   theme_minimal() 
 
@@ -931,7 +931,7 @@ ggplotly(g) %>%
 ```
 
 
-
+### *Personas fallecidas sobre total de casos confirmados*
 
 ```{r}
 
@@ -947,7 +947,7 @@ g <-
   labs(x = "",
         color = "",
        y = "Cantidad de casos",
-       title ="Personas fallecidas sobre total de casos confirmados"
+       title =""
        ) +
   theme_minimal()  
 
@@ -968,12 +968,13 @@ ggplotly(g) %>%
 
 
 
-
 # **Google Mobility** 
 
-Los informes de movilidad de Google captan los movimientos a partir de la ubicaacion de las personas y presentan el cambio porcentual de visitas a cieros lugares como parques, lugares de trabajo, supermercados zonas residenciales.
+Los informes de movilidad de Google captan los movimientos a partir de la ubicación de las personas y presentan el cambio porcentual de visitas a ciertos lugares como parques, lugares de trabajo, supermercados y zonas residenciales.
 
-Para profundizar en el calculo de estos valores recomendamos ver el sitio de [google](https://www.google.com/covid19/mobility/data_documentation.html?hl=en#about-this-data)
+Cuando la visulización llega al final, el orden de los países indica la posición efectiva de caída o aumento de la movilidad a la última fecha disponible. 
+
+Para profundizar en el cálculo de estos valores recomendamos ver el sitio de [google](https://www.google.com/covid19/mobility/data_documentation.html?hl=en#about-this-data)
 
 ### Lugares de trabajo
 
@@ -990,7 +991,7 @@ Tendencias de movilidad para lugares como restaurantes, cafeterías, centros com
 
 ### Tienda de comestibles y farmacia
 
-Tendencias de movilidad para lugares como supermercados, almacenes de alimentos, mercados de granjeros, tiendas especializadas de alimentos, farmacias y farmacias.
+Tendencias de movilidad para lugares como supermercados, almacenes de alimentos, mercados de granjeros, tiendas especializadas de alimentos y farmacias.
 
 
 <img src="animations/grocery_pharmacy.gif" style="margin-center:30px;margin-bottom:5px;" align="center"></a>
