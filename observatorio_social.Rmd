@@ -254,7 +254,8 @@ ggplotly(g8)
 ```{r}
 g9 <- 
     grafico9 %>% 
-    mutate(Proporcion = round(Proporcion * 100)) %>% 
+    mutate(Proporcion = round(Proporcion * 100), 
+           Categoria.de.ingreso = fct_reorder(Categoria.de.ingreso, Proporcion, min)) %>% 
     ggplot(aes(x = Categoria.de.ingreso, y = Proporcion)) +
     geom_col(col = "black", fill = "#00A01A", width = .7) +
     coord_flip() +
@@ -277,6 +278,7 @@ ggplotly(g9)
 ```{r}
 g10 <- 
     grafico10 %>% 
+    mutate(concepto = fct_reorder(concepto, Bajo, min)) %>% 
     ggplot(aes(x = concepto, y = Bajo)) +
     geom_col(col = "black", fill = "#00A05A", width = .7) +
     coord_flip() +

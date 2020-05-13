@@ -632,8 +632,10 @@ grafico8 <- # Población por estratos socioeconómicos como múltiplos de la lin
                   "Medio-altos",    5.21,
                          "Alto",    1.19
         )
+grafico8$Estrato <- factor(grafico8$Estrato)
+grafico8$Estrato <-factor(grafico8$Estrato, levels = levels(grafico8$Estrato)[c(1, 5, 7, 6, 2, 4, 3)])
 
-    
+
 
 grafico9 <- # Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso
     tibble::tribble(
@@ -657,7 +659,7 @@ grafico10 <- #
              "Seguro de paro o desempleo",  2.94,
            "Becas, subsidios, donaciones",  5.64,
                               "Pensiones", 15.15,
-                             "Jubilación",  16.2,
+                        "Jubilaci\u00f3n",  16.2,
                  "Tarjeta Uruguay Social", 17.35,
          "Asignaciones familiares (AFAM)", 36.81,
                 "Asignaciones familiares", 45.86
