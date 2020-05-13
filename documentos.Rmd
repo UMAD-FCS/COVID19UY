@@ -9,14 +9,14 @@ html_document:
 
 ---
 
-En esta sección encontrarán una serie de documentos sobre de distintnas institucione sobre:
+En esta sección encontrarán una serie de documentos sobre de distintnas instituciones sobre:
 
 
 1. Propuestas de políticas públicas e impactos sociales y económicos en relación a la pandemia COVID19.
 
-2. Discusiones metodológicas sobre diferente diseños para la detección de casos, principales indicadores y esenarios de evolución de la penademia. 
+2. Discusiones metodológicas sobre diferentes diseños para la detección de casos, principales indicadores y escenarios de evolución de la penademia. 
 
-3. Recomendaciones para las instituciones estadísticas sobre la recolección de datos en el contexto de pandemia.  
+3. Recomendaciones para las instituciones sobre la elaboración de estadísticas oficiales en el contexto de pandemia.  
 
 <br />
 
@@ -85,9 +85,9 @@ COVID-19 No 12 Víctor Martín Barroso [aquí](https://drive.google.com/file/d/1
 <br />
     
 
-#### **Recomendaciones sobre recolección de datos**  
+#### **Recomendaciones sobre elabración de estadíticas oficiales**  
 
-- _Recomendaciones para la publaición de estadíticas oficiales a partir de encuestas de hogares frente a la coyuntura de la enfermedad por coronavirus (COVID-19)_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1VXlNt_0GUNhF-E5btJF-k_UYcR5ANIKH/view?usp=sharing)
+- _Recomendaciones para la publicación de estadíticas oficiales a partir de encuestas de hogares frente a la coyuntura de la enfermedad por coronavirus (COVID-19)_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1VXlNt_0GUNhF-E5btJF-k_UYcR5ANIKH/view?usp=sharing)
 
 - _La elaboración del índice de precios al consumidor (IPC) ante la emegerncia del COVID-19 en América Latina y el Caribe_ Informes COVID-19 CEPAL [aquí](https://drive.google.com/file/d/1SQjGyhm3gfUZ3oTCpTTgd3G37fh0O6gs/view?usp=sharing)
 
