@@ -67,7 +67,7 @@ data_pasteur<-data_pasteur %>%
 
 # **Introducción** 
 
-Esta sección permite al usuario acceder a un conjunto de gráficos nacionales y comparados relativos a la evolución de la pandemia COVID19, a links nacionales e internacionales que presentan esta y otra información y a la base de datos integrada que desde la UMAD se ha consolidado combinando bases globales ya estructuradas con los datos de Uruguay presentes en los reportes oficiales y en el monitor del Instituto Pasteur. Los datos incluyen además de los casos, casos críticos, fallecimientos, recuperados y tests realizados, datos relativos a las medidas que el gobierno uruguayo ha tomado para la contención primero y mitigación luego de la pandemia, así como estos mismo datos para `país`es y regiones seleccionadas. Finalmente se presentan datos sobre la movilidad real de las personas a diferentes ámbitos (recreación, parques, trabajo, transportes, etc) con base en los reportes desarrollados desde la plataforma de “google mobility”. El propósito de este espacio es disponibilizar a los usuarios un conjunto de recursos para informar y permitir el acceso a fuentes para el análisis nacional y comparado. 
+Esta sección permite al usuario acceder a un conjunto de gráficos nacionales y comparados relativos a la evolución de la pandemia COVID19, a links nacionales e internacionales que presentan esta y otra información y a la base de datos integrada que desde la UMAD se ha consolidado combinando bases globales ya estructuradas con los datos de Uruguay presentes en los reportes oficiales y en el monitor del Instituto Pasteur. Los datos incluyen además de los casos, casos críticos, fallecimientos, recuperados y tests realizados, datos relativos a las medidas que el gobierno uruguayo ha tomado para la contención primero y mitigación luego de la pandemia, así como datos para países y regiones seleccionadas. Finalmente, se presentan datos sobre la movilidad real de las personas a diferentes ámbitos (recreación, parques, trabajo, transportes, etc) con base en los reportes desarrollados desde la plataforma de “google mobility”. El propósito de este espacio es disponibilizar a los usuarios un conjunto de recursos para informar y permitir el acceso a fuentes para el análisis nacional y comparado. 
 
 
 
@@ -75,7 +75,7 @@ Esta sección permite al usuario acceder a un conjunto de gráficos nacionales y
 
 ### _Acumulado de casos confirmados_
 
-Presenta desde la segunda semana de abril el acumulado de todos los casos confirmados a nivel nacional. No se presentan datos previos ya que hasta la primera semana de abril los registros eran inconsistentes, marcando en algunos casos los test positivos y en otros días los casos positivos. La evolución de los casos aquí presentados no representa la cantidad real de casos en el `país`. Tal cifra no se conoce, aunque para quienes tengan interés en ahondar en la misma les sugerimos abordar los documentos en la sección sobre recursos metodológicos en donde se han procurado realizar estimaciones de las tasas de prevalencias reales en el `país` y en otros `país`es del mundo a partir de diversos modelos y fuentes de datos 
+Presenta el acumulado de todos los casos confirmados a nivel nacional desde la segunda semana de abril. No se presentan datos previos ya que hasta la primera semana de abril los registros eran inconsistentes, marcando en algunos casos los test positivos y en otros días los casos positivos. La evolución de los casos aquí presentados no representa la cantidad real de casos en el país. Esa cifra no se conoce, aunque para quienes tengan interés en profundizar en la misma les sugerimos abordar los [documentos](https://umad-fcs.github.io/COVID19UY/documentos.html) en la sección sobre recursos metodológicos en donde se han procurado realizar estimaciones de las tasas de prevalencias reales en el país y en otros países del mundo a partir de diversos modelos y fuentes de datos 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #1. Casos de Uruguay acumulativo línea de tiempo
@@ -94,7 +94,7 @@ data_pasteur%>%
 
 ### _Acumulado de personas fallecidas_
 
-Los datos reflejan las muertes confirmadas como derivadas del COVID19. Los criterios para asignar un fallecimiento a la enfermedad pueden variar entre `país`es. Por otra parte pueden darse situaciones en donde un fallecimiento –especialmente si es fuera del ámbito hospitalario- debido a COVID19 no es registrado como tal. Para quienes quieran ahondar en metodologías que procuran estimar las muertes por COVID19 recomendamos el link sobre EuroMomo en donde se trabaja con estadísticas sobre “excess mortality”. Lamentablemente en Uruguay no hemos podido acceder a los registros de muertes semanales o mensuales de los años 2019 y 2018 lo que ofrecería un parámetro para evaluar los excesos de muerte (o no) desde marzo 13 a la fecha en comparación a años anteriores en el mismo período. 
+Los datos reflejan las muertes confirmadas como derivadas del COVID19. Los criterios para asignar un fallecimiento a la enfermedad pueden variar entre países. Por otra parte, pueden darse situaciones en donde un fallecimiento –especialmente si es fuera del ámbito hospitalario- debido a COVID19 no es registrado como tal. Para quienes quieran ahondar en metodologías que procuran estimar las muertes por COVID19 recomendamos visitar [EuroMomo](https://www.euromomo.eu) en donde se trabaja con estadísticas sobre “excess mortality”. Lamentablemente en Uruguay no hemos podido acceder a los registros de muertes semanales o mensuales de los años 2019 y 2018 lo que ofrecería un parámetro para evaluar los excesos de muerte (o no) desde el 13 de marzo a la fecha en comparación a años anteriores en el mismo período. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #2. Muertes en Uruguay acumulativo linea de tiempo
@@ -115,7 +115,7 @@ data_pasteur %>%
 
 ### _Acumulado de personas con infecciones activas_
 
-Este dato surge de restar el acumulado de nuevos casos menos el acumulado de pacientes recuperados (dados de alta) y fallecidos. Nuevamente teniendo en cuenta las limitaciones registrales este dato es de suma importancia para evaluar la presencia del virus en la sociedad. La apuesta clave de los gobiernos es que la tasa de variación de el acumulado de personas con infecciones activas sea, luego de la primera etapa de expansión, negativa, liderada por el aumento de casos recuperados y la merma o estabilidad de nuevos casos y se sostenga con tal signo en el tiempo. 
+Este dato surge de restar el acumulado de nuevos casos menos el acumulado de pacientes recuperados (dados de alta) y fallecidos. Nuevamente, teniendo en cuenta las limitaciones registrales este dato es de suma importancia para evaluar la presencia del virus en la sociedad. La apuesta clave de los gobiernos es que la tasa de variación de el acumulado de personas con infecciones activas sea, luego de la primera etapa de expansión, negativa, liderada por el aumento de casos recuperados y la merma o estabilidad de nuevos casos y se sostenga con tal signo en el tiempo. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #3. Casos Activos en Uruguay acumulativo línea de tiempo
@@ -134,7 +134,7 @@ data_pasteur%>%
 
 ### _Acumulado de casos recuperados_
 
-Este dato surge de considerar todos los casos confirmados que han cursado la enfermedad y han sido dados de alta. Para nuestro `país` el criterio utilizado para dar de alta a un paciente COVID19 es 14 día continuos con ausencia de sintomatología. Si bien el modo ideal de determinar el alta es la realización de un test de detección por razones de prioridad ello sucede solamente en algunos casos. Otros `país`es solo determinan el alta con dichos tests realizados. 
+Este dato surge de considerar todos los casos confirmados que han cursado la enfermedad y han sido dados de alta. Para nuestro país el criterio utilizado para dar de alta a un paciente COVID19 es 14 días continuos con ausencia de sintomatología. Si bien el modo ideal de determinar el alta es la realización de un test de detección, por razones de prioridad ello sucede solamente en algunos casos. Otros países solo determinan el alta con dichos tests realizados. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #4. Recuperados en Uruguay cumulativo línea de tiempo
@@ -154,7 +154,7 @@ data_pasteur%>%
 
 ### _Personas infectadas por día_
 
-En rigor este gráfico mide el número de personas que recibieron un resultado positivo en cada día. Debido a que existe una demora entre la realización del test y los resultados de entre 1 y 3 días, los casos diarios miden los resultados positivos cada día y no el número de infectados cada día. Aún con estas salvedades la serie permite un seguimiento adecuados de los casos detectados por día
+En rigor este gráfico mide el número de personas que recibieron un resultado positivo en cada día. Debido a que existe una demora entre la realización del test y los resultados de entre 1 y 3 días, los casos diarios miden los resultados positivos cada día y no el número de infectados cada día. Aún con estas salvedades la serie permite un seguimiento adecuados de los casos detectados por día.
 
 ```{r, warning=F, message=F, comment=FALSE}
 #5. Casos nuevos por dia línea de tiempo
@@ -176,7 +176,7 @@ data_pasteur%>%
 
 ### _Cronograma de número de fallecidos_
 
-La presente ilustración identifica para cada día la existencia o no de fallecimientos y la cantidad de fallecidos. No es una figura acumulativa, sino simplemente los registros de fallecimientos o no para cada día de la cronología. 
+La presente ilustración identifica para cada día la existencia o no de fallecimientos y la cantidad de fallecidos. No es una figura acumulativa, sino simplemente los registros de fallecimientos para cada día de la cronología. 
 
 ```{r, warning=F, message=F, comment=FALSE, fig.height=7}
 #6. Muertes nuevas por día línea de tiempo (horrible)
@@ -241,7 +241,7 @@ data_pasteur %>%
 
 ### _Personas recuperadas y muertes_
 
-Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de casos (Case Fatality Rate, o CFR por sus siglas en inglés) surge de esta combinación. Se suman ambos indicadores y se divide el acumulado de fallecidos cada día por el acumulado de casos totales cada día o como se acostumbra hacer con un delay de siete a diez días dado lo que se conoce como el curso problemático de la enfermedad, o CFR corregida). Nuevamente se espera una curva ascendente dominante de los casos recuperados sobre las fatalidades que amplia en su progresión la brecha entre casos recuperados y fallecimientos. De producirse un aumento sistemático de la brecha positiva a favor de los casos recuperados sobre los fallecidos, ello estaría indicando una caída en la letalidad de casos o inversamente un mejoramiento en las tasas de recuperación.  Estos indicadores nuevamente no deben confundirse con la tasa de letalidad verdadera, ya que en rigo se desconoce el denominador real, ni con la tasa de letalidad poblacional, que si surge del total de fallecidos sobre parámetros poblacionales generales. 
+Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de casos (Case Fatality Rate, o CFR por sus siglas en inglés) surge de esta combinación. Se suman ambos indicadores y se divide el acumulado de fallecidos cada día por el acumulado de casos totales cada día o como se acostumbra hacer con un delay de siete a diez días dado lo que se conoce como el curso problemático de la enfermedad, o CFR corregida). Nuevamente, se espera una curva ascendente dominante de los casos recuperados sobre las fatalidades que amplia en su progresión la brecha entre casos recuperados y fallecimientos. De producirse un aumento sistemático de la brecha positiva a favor de los casos recuperados sobre los fallecidos, ello estaría indicando una caída en la letalidad de casos o inversamente un mejoramiento en las tasas de recuperación.  Estos indicadores nuevamente no deben confundirse con la tasa de letalidad verdadera, ya que en rigor se desconoce el denominador real, ni con la tasa de letalidad poblacional, que sí surge del total de fallecidos sobre parámetros poblacionales generales. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #9. Muertes vs Recuperados acumulativos línea de tiempo
@@ -260,7 +260,7 @@ data_pasteur%>%
 
 ### _Tests realizados por día_
 
-En rigor son tests procesados y con resultados por día ya que entre el hisopado y el resultados del test puede existir una demora de entre 24 hs y cuatro días en la mayor parte de los `país`es. Por ello los resultados de dichos tests no están indicado la cantidad de infecciones de cada día, sino la de un período anterior. Conisiderando la evolución clínica de la enfermedad y la demora entre hisopados y resultados, esta fotografía que observamos en el día puede representar la realidad de entre 5 días y 9 días previos. Nuevamente es importante no confundir las fechas en que las mediciones arrojan datos, con las fechas de las realidades que reflejan. Idealmente los tests realizads por día debieran presentar una curva asendente ya que tanto para una mejor captación de la prevalencia, como para la definción de las estretgias epiedmiológicas de mitigación y control una adecuada capacidad de testeo es fundamental. La cantidad de tests por día reflejan tato los criterios que se definen en los protocolos médicos para habilitar la realización de los tests como la capacidad de infaestructra y logística de los `país`es. La realización de tests aleatorios o tests masivos a ciertas poblaciones de riesgo son estrategias utilizadas crecientemente en varios `país`es que requieren de capacidades muy altas de testeo a nivel nacional. 
+En rigor son tests procesados y con resultados por día ya que entre el hisopado y el resultados del test puede existir una demora de entre 24 hs y cuatro días en la mayor parte de los países. Por ello los resultados de dichos tests no están indicado la cantidad de infecciones de cada día, sino la de un período anterior. Conisiderando la evolución clínica de la enfermedad y la demora entre hisopados y resultados, esta fotografía que observamos en el día puede representar la realidad de entre 5 y 9 días previos. Nuevamente, es importante no confundir las fechas en que las mediciones arrojan datos, con las fechas de las realidades que reflejan. Idealmente los tests realizads por día debieran presentar una curva asendente ya que tanto para una mejor captación de la prevalencia, como para la definción de las estretgias epiedmiológicas de mitigación y control una adecuada capacidad de testeo es fundamental. La cantidad de tests por día reflejan tato los criterios que se definen en los protocolos médicos para habilitar la realización de los tests como la capacidad de infaestructra y logística de los países. La realización de tests aleatorios o tests masivos a ciertas poblaciones de riesgo son estrategias utilizadas crecientemente en varios países que requieren de capacidades muy altas de testeo a nivel nacional. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #10. Tests por día línea de tiempo
@@ -281,7 +281,7 @@ data_pasteur%>%
 
 ### _Test acumulados por día_
 
-La curva en cuestión refleja simplemente el total de tests que se han realizado en el `país`. 
+La curva refleja simplemente el total de tests que se han realizado en el país. 
 
 
 ```{r,warning=F, message=F, comment=FALSE}
@@ -426,7 +426,7 @@ ggplotly(g)%>% config(displayModeBar = F)%>%
 
 ### _Casos acumulados confirmados por millón de habitantes_
 
-Estas son las mismas curvas pero parametrizadas por la población de cada `país` y expresadas como casos por millón de habitantes. En este caso si es pertinente la comparación tanto de los niveles o valores como de las pendientes y las curvas. La preferencia absoluta es por curvas que se aplanan y luego dejan de crecer. Ello no sucede por en cuanto en la región. Sin embargo es importante distinguir entre `país`es que muestran curvas exponenciales de aquellos que muestral curvas de progresión lineal y cuyas pendientes pueden ser más o menos acentuadas. Es importante también considerar la tareyectoria considerando el tiempo transcurrido entre la detección de los primeros casos y la progresión a la fecha. Esto puede realizarse colocando el cursos sobre cualquier punto de la curva lo que nos arrojará el dato del valor de dicha curva y la fecha de dicho valor. 
+Estas son las mismas curvas pero parametrizadas por la población de cada país y expresadas como casos por millón de habitantes. En este caso sí es pertinente la comparación tanto de los niveles o valores como de las pendientes y las curvas. La preferencia absoluta es por curvas que se aplanan y luego dejan de crecer. Ello no sucede por ahora en la región. Sin embargo, es importante distinguir entre países que muestran curvas exponenciales de aquellos que muestral curvas de progresión lineal y cuyas pendientes pueden ser más o menos acentuadas. Es importante también considerar la trayectoria considerando el tiempo transcurrido entre la detección de los primeros casos y la progresión a la fecha. Esto puede realizarse colocando el cursor sobre cualquier punto de la curva lo que nos arrojará el dato del valor de dicha curva y la fecha de dicho valor. 
 
 
 ```{r}
@@ -468,7 +468,7 @@ p
 
 ### _Muertes por millón de habitantes_
 
-Muestra la evolución de los fallecidos parametrizados por la población de los `país`es. Nuevamente tanto los valores de cada caso como las pendientes son en este caso comparables, aunque nuevamente es importante considerar las fechas o tiempos acaecidos entre la aparición de los primeros casos y su progresión. Como se puede observar los `país`es que presentan más casos por millón de habitantes no son necesariamente los que presentan más muertes por millón de habitantes. Existen muchas potenciales razones para ello, pero una a considerar siempre es la amplitud del testeo en los diferentes `país`es. En general `país`es con alta capacidad de testeo presentan mayor capacidad de captación de casos  y viceversa. Ello puede llevar que `país`es con muchos casos detectados por millón de habitantes presenten menos muertes por millón de habitantes que `país`es con menos casos detectados. La razón en este caso sería es que los primeros están más cerca del verdadero denominador que los segundos. 
+Muestra la evolución de los fallecidos parametrizados por la población de los países. Nuevamente tanto los valores de cada caso como las pendientes son en este caso comparables, aunque nuevamente es importante considerar las fechas o tiempos acaecidos entre la aparición de los primeros casos y su progresión. Como se puede observar los países que presentan más casos por millón de habitantes no son necesariamente los que presentan más muertes por millón de habitantes. Existen muchas potenciales razones para ello, pero una a considerar siempre es la amplitud del testeo en los diferentes países. En general países con alta capacidad de testeo presentan mayor capacidad de captación de casos  y viceversa. Ello puede llevar que países con muchos casos detectados por millón de habitantes presenten menos muertes por millón de habitantes que países con menos casos detectados. La razón en este caso sería que los primeros están más cerca del verdadero denominador que los segundos. 
 
 
 ```{r}
@@ -512,7 +512,7 @@ p
 
 ### _Recuperados por millón de habitantes_
 
-Si bien presentamos estas curvas las diferencias en como los `país`es y con que periodicidad definen quienes se han recuperado y quienes no hacen compleja una interpretación clara. Aún, las curvas muestran pautas similares a las de casos por millón de habitantes sugiriendo tasas de recuperación similares aunque no iguales. 
+Si bien presentamos estas curvas las diferencias en como los países y con que periodicidad definen recuperados y no recuperados hacen compleja una interpretación clara. Igualmente, las curvas muestran pautas similares a las de casos por millón de habitantes sugiriendo tasas de recuperación similares aunque no iguales. 
 
 
 ```{r}
@@ -563,7 +563,7 @@ p
 
 ### _Muertes sobre casos totales_
 
-En rigor esto mediría la tasa de fatalidad de casos (CFR) aunque sin reconocer el delay entre casos registrados y ocurrencia de fallecimiento. En cualquier caso muestra una pauta esperable, con niveles altos en el inicio y en la medida que aumentan los casos un aplanamiento o incluso disminución de la curva. Ello responde a que la capacidad ampliada de testeo y de identificación de casos menos graves opera generando un denominador mayor y un numerador menor. El pico extremo de Argentina al inicio surge posiblemente de inconsistencias de registros y casos en el inicio de la pandemia en ese `país`. 
+En rigor este indicador mediría la tasa de fatalidad de casos (CFR) aunque sin reconocer el rezasgo entre casos registrados y ocurrencia de fallecimiento. En cualquier caso muestra una pauta esperable, con niveles altos en el inicio y en la medida que aumentan los casos un aplanamiento o incluso disminución de la curva. Ello responde a que la capacidad ampliada de testeo y de identificación de casos menos graves opera generando un denominador mayor y un numerador menor. El pico extremo de Argentina al inicio surge posiblemente de inconsistencias de registros y casos en el inicio de la pandemia en ese país. 
 
 
 ```{r, warning=F, message=F, comment=FALSE}
