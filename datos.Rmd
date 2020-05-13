@@ -7,30 +7,30 @@ output:
 
 ---
 
-Los datos con los que se elaboraron los distintos modulos de este sito provienen de distintas fuentes. La UMAD elaboró, a partir de distintas bases de datos una base de datos que tiene un conjunto las principales variables que hasta el dia de hoy hay disponible sobre el estado de la pandemia de COVID19.  
+Los datos con los que se elaboraron los distintos módulos de este sito provienen de distintas fuentes. La UMAD elaboró, a partir de distintas bases de datos una base de datos que tiene un conjunto las principales variables que hasta el día de hoy hay disponible sobre el estado de la pandemia de COVID19.    
 
 <br />
 
 
-+ __Observagtorio COVID19__: la base correpondiente al módulo COVID19 provienen de las siguientes fuentes:
++ __Observatorio COVID19__: la base correspondiente al módulo COVID19 provienen de las siguientes fuentes:
 
     * La base estructural es la del paquete de R [{tidycovid19}](https://github.com/joachim-gassen/tidycovid19) que provee un merge de datos de las siguientes fuentes (JHU, Google, Apple, wbank, OWD). Esta base tiene una estructura de día-país.
     
     * Adicionalmente a esta base se cargaron datos [Our World in Data COVID19](https://ourworldindata.org/coronavirus) (cantidad de test, personas mayores de 65 y 75 años, pib y pobreza)
     
-    * Para el caso de Uruguay en la base de tidycovid19 encontramos algunas incinsistencias. Para las principales variables (cantidad de casos, muertes y recuperados) los cargamos desde la base de datos del [Grupo Uruguayo Interdisciplinario de Análisis de Datos de COVID‑19](https://guiad-covid.github.io/).
-
+    * Para el caso de Uruguay en la base de tidycovid19 encontramos algunas inconsistencias. Para las principales variables (cantidad de casos, muertes y recuperados) los cargamos desde la base de datos del [Grupo Uruguayo Interdisciplinario de Análisis de Datos de COVID‑19](https://guiad-covid.github.io/).
 <br />
 
 Puede descargar la base en este [__link__](). Esta base de datos y los gráficos del módulo __Observatorio COVID19__ se actualizan a medianoche diariamente.
 
 <br />    
 
-+ __Observagtorio de vulnerabilidad social__: la base correpondiente al módulo de vulnerabilidad social provienen de las siguientes fuentes:
++ __Observatorio de vulnerabilidad social__: la base correspondiente al módulo de vulnerabilidad social provienen de las siguientes fuentes:
 
     * Encuesta Continua de Hogares
-    * Observatorio Social del Mideo
-    * Banco de Prevision Social
+    * Observatorio Social del Mides
+    * Banco de Previsión Social
+
 
 
 <br />
