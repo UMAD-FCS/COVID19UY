@@ -147,7 +147,7 @@ g <-
     facet_wrap(~continent, nrow = 1) +
     scale_colour_manual(values = colores) +
     labs(
-        title = "<span style='color:#5277F8'>Test</span>, <span style='color:#30C253'>casos positos</span> y <span style='color:#F5615F'>muertes</span> por mill\u00f3n de habitantes",
+        title = "<span style='color:#5277F8'>Test</span>, <span style='color:#30C253'>casos positivos</span> y <span style='color:#F5615F'>muertes</span> por mill\u00f3n de habitantes",
         x = "", y = ""
     ) +
     theme_minimal() +
