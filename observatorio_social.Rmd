@@ -85,7 +85,15 @@ g1 <-
         y = ""
     )
 
-ggplotly(g1)
+ggplotly(g1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 
 ```
 
@@ -106,7 +114,15 @@ g2 <- grafico2 %>%
         y = ""
     )
 
-ggplotly(g2)
+ggplotly(g2) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
     
 ```
 
@@ -129,7 +145,15 @@ g3 <-
         y = ""
     )
 
-ggplotly(g3)
+ggplotly(g3) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 ### _Porcentaje de hogares con situación de hacinamiento por quintiles de ingreso (quintiles 1, 2, y 3)_
@@ -151,7 +175,15 @@ g4 <-
         y = ""
     )
 
-ggplotly(g4)
+ggplotly(g4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 
@@ -180,7 +212,15 @@ g5 <-
         y = ""
     )
 
-ggplotly(g5)
+ggplotly(g5) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 ### _Porcentaje de población ocupada no afiliada a la seguridad social_
@@ -201,7 +241,15 @@ g6 <-
         y = ""
     )
 
-ggplotly(g6)
+ggplotly(g6) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 ### _Distribución mensual de prestaciones de  Asignaciones Familiares (AFAM) 2008 - 2018_
@@ -222,7 +270,15 @@ g7 <-
         x = "",
         y = ""
     )
-ggplotly(g7)
+ggplotly(g7) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 # **La vulnerabilidad de la estructura social a las puertas del COVID19**
@@ -246,7 +302,15 @@ g8 <-
         y = ""
     )
 
-ggplotly(g8)
+ggplotly(g8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 ### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
@@ -269,7 +333,15 @@ g9 <-
         y = ""
     )
 
-ggplotly(g9)
+ggplotly(g9) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 
@@ -292,7 +364,15 @@ g10 <-
         y = ""
     )
 
-ggplotly(g10)
+ggplotly(g10) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.22, 
+                    showarrow = FALSE,
+                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
 
 
