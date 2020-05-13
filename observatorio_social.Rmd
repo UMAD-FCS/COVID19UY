@@ -13,10 +13,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # **Introducción** 
 
-El presente reporte se estructura en torno a un conjunto de datos y gráficos agregando en varios casos textos explicativos que permiten entender la relevancia de la información desplegada. Es posible bajar el reporte completo en formato Excel [aquí]().
+El presente reporte se estructura en torno a un conjunto de datos y gráficos agregando en varios casos textos explicativos que permiten entender la relevancia de la información desplegada. Es posible bajar el reporte completo en formato Excel [aquí](https://drive.google.com/file/d/1KVXk4Yc-DxpQxVhOAcxv2I4xPhTNfjrp/view?usp=sharing).
 En la primer pestaña del archivo encontrará el mismo índice que se describe más abajo con hipervínculos a cada tópico. 
 
-Este reporte procura ofrecer a los investigadores, tomadores de decisión, formadores de opinión y público en general un panorama de la situación del país en materia de estructura social, vulnerabilidad y herramientas para abordar dichas vulnerabilidades en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID19. Este reporte es descriptivo e incorpora supuestos para estimar o modelizar el impacto de la disrupción económica y social sobre los niveles de bienestar de la población. En un contexto marcado por las incertidumbres se elige esta modalidad como insumo para otorgar parámetros para dichos ejercicios. Adicionalmente los usuarios pueden descargar otro archivo [aquí]() que presenta un conjunto más amplio de tabulaciones generadas a partir de la Encuesta Contínua de Hogares del 2019. 
+Este reporte procura ofrecer a los investigadores, tomadores de decisión, formadores de opinión y público en general un panorama de la situación del país en materia de estructura social, vulnerabilidad y herramientas para abordar dichas vulnerabilidades en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID19. Este reporte es descriptivo e incorpora supuestos para estimar o modelizar el impacto de la disrupción económica y social sobre los niveles de bienestar de la población. En un contexto marcado por las incertidumbres se elige esta modalidad como insumo para otorgar parámetros para dichos ejercicios. Adicionalmente los usuarios pueden descargar [aquí](https://drive.google.com/file/d/1wSt3v7ia1dyHwT3Zf-un0co57Aeo11Ob/view?usp=sharing) otro archivo que presenta un conjunto más amplio de tabulaciones generadas a partir de la Encuesta Contínua de Hogares del 2019. 
 
 <br />
 
