@@ -14,7 +14,7 @@ La Unidad de Métodos y Acceso a Datos de la Facultad de Ciencias Sociales se co
 
 En esta iniciativa sobre el COVID19 la UMAD busca aportar a la difusión del conocimiento e información respecto al coronavirus y al COVID19 en Uruguay y el mundo. Ofrece el observatorio COVID19, el panorama de la vulnerablidad social frente a la epidemia, la oferta de documentos sociales, económicos y metodológicos compilados desde la UMAD en torno a COVID19 y un sistema de vínculos a recursos nacionales e internacionales en la materia.
 
-Para ingresar a la página general de la UMAD, haga click [aquí]().    
+Para ingresar a la página general de la UMAD, haga click [aquí](https://umad.cienciassociales.edu.uy/).    
 
 <br />
     <br />
