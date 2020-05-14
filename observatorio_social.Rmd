@@ -64,8 +64,7 @@ source('data-raw/observatorio_social.R')
 
 ### _Evolución del porcentaje de hogares y personas en situación de pobreza en Uruguay 2006-2019_
 
-```{r}
-
+```{r, out.width='100%'}
 g1 <- 
     grafico1 %>% mutate(Anio = as.factor(Anio)) %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -84,7 +83,6 @@ g1 <-
         x = "",
         y = ""
     )
-
 ggplotly(g1) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -94,12 +92,11 @@ ggplotly(g1) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
-
 ```
 
 ### _Evolución del Salario Real_
 
-```{r}
+```{r, out.width='100%'}
 g2 <- grafico2 %>% 
     mutate(Fecha = as.Date(Fecha)) %>% 
     pivot_longer(cols = 2:4, names_to = 'Tipo', values_to = 'Salario') %>% 
@@ -113,7 +110,6 @@ g2 <- grafico2 %>%
         x = "",
         y = ""
     )
-
 ggplotly(g2) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -129,7 +125,7 @@ ggplotly(g2) %>%
 ### _Porcentaje de hogares con Necesidades básicas insatisfechas (NBI)_
 
 
-```{r}
+```{r, out.width='100%'}
 g3 <-
     grafico3 %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -144,7 +140,6 @@ g3 <-
         x = "",
         y = ""
     )
-
 ggplotly(g3) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -159,7 +154,7 @@ ggplotly(g3) %>%
 ### _Porcentaje de hogares con situación de hacinamiento por quintiles de ingreso (quintiles 1, 2, y 3)_
 
 
-```{r}
+```{r, out.width='100%'}
 g4 <-
     grafico4 %>% 
     ggplot(aes(x = Anio, y = Valor)) +
@@ -174,7 +169,6 @@ g4 <-
         x = "",
         y = ""
     )
-
 ggplotly(g4) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -196,7 +190,7 @@ ggplotly(g4) %>%
 ### _Porcentaje de población ocupada no afiliada a la seguridad social_
 
 
-```{r}
+```{r, out.width='100%'}
 g5 <-
     grafico5 %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -211,7 +205,6 @@ g5 <-
         x = "",
         y = ""
     )
-
 ggplotly(g5) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -225,7 +218,7 @@ ggplotly(g5) %>%
 
 ### _Cantidad de cotizantes al BPS (en puestos de trabajo)_
 
-```{r}
+```{r, out.width='100%'}
 g6 <-
     grafico6 %>% 
     ggplot(aes(x = Anio, y = Cantidad)) +
@@ -240,7 +233,6 @@ g6 <-
         x = "",
         y = ""
     )
-
 ggplotly(g6) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -254,7 +246,7 @@ ggplotly(g6) %>%
 
 ### _Distribución mensual de prestaciones de  Asignaciones Familiares (AFAM) 2008 - 2018_
 
-```{r}
+```{r, out.width='100%'}
 g7 <- 
     grafico7_1 %>% 
     mutate(Anio = as.factor(Anio)) %>% 
@@ -286,7 +278,7 @@ ggplotly(g7) %>%
 
 ### _Población por estratos socioeconómicos como múltiplos de la linea de pobreza Uruguay 2019_
 
-```{r}
+```{r, out.width='100%'}
 g8 <- 
     grafico8 %>% 
     ggplot(aes(x = Estrato, y = LP_ine)) +
@@ -301,7 +293,6 @@ g8 <-
         x = "",
         y = ""
     )
-
 ggplotly(g8) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -315,7 +306,7 @@ ggplotly(g8) %>%
 
 ### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
 
-```{r}
+```{r, out.width='100%'}
 g9 <- 
     grafico9 %>% 
     mutate(Proporcion = round(Proporcion * 100), 
@@ -332,7 +323,6 @@ g9 <-
         x = "",
         y = ""
     )
-
 ggplotly(g9) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -347,7 +337,7 @@ ggplotly(g9) %>%
 
 ### _Alcance del sistema de transferencias contibutivas y no contributivas en el estrato agrupado bajo (en % de cobertura por ECH)_
 
-```{r}
+```{r, out.width='100%'}
 g10 <- 
     grafico10 %>% 
     mutate(concepto = fct_reorder(concepto, Bajo, min)) %>% 
@@ -363,7 +353,6 @@ g10 <-
         x = "",
         y = ""
     )
-
 ggplotly(g10) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%
@@ -374,10 +363,6 @@ ggplotly(g10) %>%
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
-
-
-
-
 
 
 
