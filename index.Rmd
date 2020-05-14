@@ -36,11 +36,11 @@ Las bases de datos y visualizaciones contenidas en el sitio son actualizadas de 
 source("R/utils.R")
 ```
 
-```{r, echo = FALSE, fig.height = 3, fig.width = 9.5}
+```{r, echo = FALSE, fig.height = 3, fig.width = 9.5, out.width='100%'}
 ggplotly(g) %>% config(displayModeBar = FALSE)
 ```
 
-```{r, echo = FALSE, fig.height = 6, fig.width = 9.5,}
+```{r, echo = FALSE, fig.height = 6, fig.width = 9.5, out.width='100%'}
 datos <- google_uy(datos = busca_data("^Global"))
 colores_uy <- c("Parques"  = "#5277F8", 
                 "Trabajo"  = "#F5615F")
