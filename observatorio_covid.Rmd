@@ -394,7 +394,7 @@ data_pasteur%>%
 
 Identifica simplemente la curvas de casos acumulados confirmados. La comparación en este caso no tiene mayor sentido en lo que hace a las cantidades absolutas, aunque si permite ver formas diferentes en las pendientes de las curvas ascendentes. 
 
-```{r}
+```{r, out.width='100%'}
 g <- 
   covid_m %>% 
   rename(`país` = country, fecha = date, casos = confirmed)%>%
@@ -429,7 +429,7 @@ ggplotly(g)%>% config(displayModeBar = F)%>%
 Estas son las mismas curvas pero parametrizadas por la población de cada país y expresadas como casos por millón de habitantes. En este caso sí es pertinente la comparación tanto de los niveles o valores como de las pendientes y las curvas. La preferencia absoluta es por curvas que se aplanan y luego dejan de crecer. Ello no sucede por ahora en la región. Sin embargo, es importante distinguir entre países que muestran curvas exponenciales de aquellos que muestran curvas de progresión lineal y cuyas pendientes pueden ser más o menos acentuadas. Es importante también considerar la trayectoria considerando el tiempo transcurrido entre la detección de los primeros casos y la progresión a la fecha. Esto puede realizarse colocando el cursor sobre cualquier punto de la curva lo que nos arrojará el dato del valor de dicha curva y la fecha de dicho valor. 
 
 
-```{r}
+```{r, out.width='100%'}
 #16. Casos por 1 millon de habitantes (Argentina, Chile, Uruguay, Brasil, promedio America del Sur))
 
 g<-covid_m%>%
@@ -471,7 +471,7 @@ p
 Muestra la evolución de los fallecidos parametrizados por la población de los países. Nuevamente tanto los valores de cada caso como las pendientes son en este caso comparables, aunque nuevamente es importante considerar las fechas o tiempos acaecidos entre la aparición de los primeros casos y su progresión. Como se puede observar los países que presentan más casos por millón de habitantes no son necesariamente los que presentan más muertes por millón de habitantes. Existen muchas potenciales razones para ello, pero una a considerar siempre es la amplitud del testeo en los diferentes países. En general países con alta capacidad de testeo presentan mayor capacidad de captación de casos  y viceversa. Ello puede llevar que países con muchos casos detectados por millón de habitantes presenten menos muertes por millón de habitantes que países con menos casos detectados. La razón en este caso sería que los primeros están más cerca del verdadero denominador que los segundos. 
 
 
-```{r}
+```{r, out.width='100%'}
 #17. Muertes por 1 millon de habitantes ((Argentina, Chile, Uruguay, Brasil, promedio América del Sur)
 g<-covid_m%>%
   
@@ -521,7 +521,7 @@ Si bien presentamos estas curvas las diferencias en como los países y con que p
 #20. Casos críticos por casos totales línea de tiempo
 ```
 
-```{r}
+```{r, out.width='100%'}
 #21. Recuperados por casos totales línea de tiempo.
 
 g <- 
@@ -566,7 +566,7 @@ p
 En rigor este indicador mediría la tasa de fatalidad de casos (CFR) aunque sin reconocer el rezago entre casos registrados y ocurrencia de fallecimiento. En cualquier caso muestra una pauta esperable, con niveles altos en el inicio y en la medida que aumentan los casos un aplanamiento o incluso disminución de la curva. Ello responde a que la capacidad ampliada de testeo y de identificación de casos menos graves opera generando un denominador mayor y un numerador menor. El pico extremo de Argentina al inicio surge posiblemente de inconsistencias de registros y casos en el inicio de la pandemia en ese país. 
 
 
-```{r, warning=F, message=F, comment=FALSE}
+```{r, warning=F, message=F, comment=FALSE, out.width='100%'}
 #22. Muertes por casos totales línea de tiempo
 g<-covid_m%>%
   filter(country %in% c('Argentina', 'Brazil', 'Chile', 'Uruguay')) %>%
@@ -615,7 +615,7 @@ Ofrece un indicador que dados los criterios de activación de hisopados y tests 
 
 
 
-```{r}
+```{r, out.width='100%'}
 g <-
   covid_m %>% 
   drop_na(total_tests)%>%
@@ -660,7 +660,7 @@ ggplotly(g) %>%
 Es el inverso del indicador anterior y se presenta a pesar de ser redundante ya que muestra la otra interpretación posible: si los países están testeando por debajo o por encima dada la prevalencia del virus en la población considerada en riesgo de contagio. Un valor muy alto indica una testeo amplio que captura población con baja probabilidad de contagio, un valor muy bajo indica lo contrario. La evolución en el tiempo de ambos indicadores –este y el anterior- ofrece pistas tanto sobre la prevalencia de la población en riesgo de contagio de acuerdo a los criterios manejados por los gobiernos para el testeo, como sobre si la capacidad y estrategia de testeo guarda relación con la prevalencia “real” en dicha población.
 
 
-```{r}
+```{r, out.width='100%'}
 g <- 
   covid_m %>% 
   drop_na(total_tests) %>%
@@ -701,7 +701,7 @@ ggplotly(g) %>%
 
 ### *Casos confirmados por millón de habitantes*
 
-```{r}
+```{r, out.width='100%'}
 #24. Casos por 1 millon de habitantes (Argentina, Chile, Uruguay, Brasil comparado)
 
 g <- 
@@ -735,7 +735,7 @@ ggplotly(g) %>%
 
 ### *Casos confirmados por millón de habitantes*
 
-```{r}
+```{r, out.width='100%'}
 #24b. Casos por 1 millon de habitantes (comparación continentes)
 g <- 
   covid_m %>% 
@@ -766,7 +766,7 @@ ggplotly(g) %>%
 
 
 ### *Muertes por millón de habitantes*
-```{r}
+```{r, out.width='100%'}
 #25. Muertes por 1 millon de habitantes ((Argentina, Chile, Uruguay, Brasil, comparado) 
 
 g <-
@@ -799,7 +799,7 @@ ggplotly(g) %>%
 
 
 ### *Muertes por millón de habitantes*
-```{r}
+```{r, out.width='100%'}
 #25b. Muertes por 1 millon de habitantes (continentes)
 
 g <-
@@ -831,7 +831,7 @@ ggplotly(g) %>%
 
 
 ### *Personas recuperadas sobre total de casos confirmados*
-```{r}
+```{r, out.width='100%'}
 #28. Recuperados por casos totales.
 
 g <- 
@@ -865,7 +865,7 @@ ggplotly(g) %>%
 
 
 ### *Personas recuperadas sobre total de casos confirmados*
-```{r}
+```{r, out.width='100%'}
 
 #28b. Recuperados por casos totales.
 
