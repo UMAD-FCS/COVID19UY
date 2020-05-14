@@ -15,7 +15,7 @@ En esta sección encontrarán una serie de links a sitios que ofrecen distintos 
     
 - __IMF, Policy tracker. Covid responses por gobiernos. FMI__ [aquí](https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19)
 
-Página del Fondo Monetario Internacional donde se resumen las medidas económicas más importantes que los gobiernos estan tomando para limitar el impacto humano y económico de la pandemia CIVID-19. El monitor de políticas incluye información sobre 193 economías. 
+Página del Fondo Monetario Internacional donde se resumen las medidas económicas más importantes que los gobiernos estan tomando para limitar el impacto humano y económico de la pandemia COVID-19. El monitor de políticas incluye información sobre 193 economías. 
 
 - __Banco Mundial__ [aquí](https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19)
 
@@ -39,7 +39,7 @@ Bases de datos sobre tests, casos confirmados, muertes y personas recuperadas de
 
 - __EUROMOMO__ [aquí](https://www.euromomo.eu)
 
-Monitor Europeo de mortalidad que busca detectar y medir exceso de muertes en relación a enfermedades estacionales como la influenza, las pandemias y otras amenazas a la salud. Presenta datos de moratliad semanales para 24 países europeos. 
+Monitor Europeo de mortalidad que busca detectar y medir exceso de muertes en relación a enfermedades estacionales como la influenza, las pandemias y otras amenazas a la salud. Presenta datos de mortalidad semanales para 24 países europeos. 
 
 - __Google Mobility Report COVID19__ [aquí](https://www.google.com/covid19/mobility/)
 
