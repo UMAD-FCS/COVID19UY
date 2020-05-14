@@ -23,22 +23,29 @@ La unidad de métodos y acceso a datos busca aportar a la difusión de conocimie
 
 Las bases de datos y visualizaciones contenidas en el sitio son actualizadas de forma continua para permitir un seguimiento de la evolución de la pandemia en el país en perspectiva comparada. 
 
-
+        
 
 <br />
     <br />
         <br />
 
-
-
+#### _Tests, casos positivos y muertes por millón de habitantes en los cinco continentes_
 
 ```{r, echo = F}
 source("R/utils.R")
 ```
 
 ```{r, echo = FALSE, fig.height = 3, fig.width = 9.5, out.width='100%'}
-ggplotly(g) %>% config(displayModeBar = FALSE)
+ggplotly(g) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" ))
+ggplotly(g2) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" ))
 ```
+
+
+#### _Movilidad en parques y lugares de trabajo según Google (Uruguay y los 19 departamentos)_
 
 ```{r, echo = FALSE, fig.height = 6, fig.width = 9.5, out.width='100%'}
 datos <- google_uy(datos = busca_data("^Global"))
@@ -54,15 +61,18 @@ f <-
   geom_hline(yintercept = 0, color = "gray") +
   labs(x = "", 
        y = "", 
-       title = "Movilidad en <span style='color:#5277F8'>parques</span> y <span style='color:#F5615F'>lugares de trabajo</span> seg\u00fan Google (Uruguay y los 19 departamentos)"
+       color = "",
+       title ="" #"Movilidad en <span style='color:#5277F8'>parques</span> y <span style='color:#F5615F'>lugares de trabajo</span> seg\u00fan Google (Uruguay y los 19 departamentos)"
        ) +
   theme(
         plot.title = element_markdown(lineheight = 1.1),
         legend.text = element_markdown(size = 11),
-        legend.position = "none"
+        legend.position = "bottom"
     )
 
-ggplotly(f) %>% config(displayModeBar = FALSE)
+ggplotly(f) %>% 
+  config(displayModeBar = FALSE) %>%
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" ))
 
 ```
 

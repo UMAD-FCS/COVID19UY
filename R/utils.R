@@ -127,34 +127,59 @@ prev <-
     ungroup() %>% 
     select(continent, date, poblacion, starts_with('t_')) %>% 
     mutate(
-        'Test p/millón'            = round((t_tests/poblacion)  * umbral), 
-        'Casos positivos p/millón' = round((t_cases/poblacion)  * umbral),
-        'Muertes p/millón'         = round((t_deaths/poblacion) * umbral)
+        'Tests'              = round((t_tests/poblacion)  * umbral), 
+        'Casos positivos'   = round((t_cases/poblacion)  * umbral),
+        'Muertes'           = round((t_deaths/poblacion) * umbral)
     ) %>% 
     ungroup() %>% 
-    select(continent, date,'Test p/millón', 'Casos positivos p/millón', 'Muertes p/millón' ) %>% 
+    select(continent, date,'Tests', 'Casos positivos', 'Muertes' ) %>% 
     pivot_longer(cols = 3:5, names_to = 'Indicador', values_to = 'Cantidad') %>% 
     rename(Fecha = date)
 
-colores <- c("Test p/millón"            = "#5277F8", 
-             "Casos positivos p/millón" = "#30C253", 
-             "Muertes p/millón"         = "#F5615F")
+colores <- c(#"Test p/millón"            = "#5277F8", 
+    "Casos positivos" = "#30C253", 
+    "Muertes"         = "#F5615F")
 
 
 g <-
-    ggplot(prev, aes(x = Fecha, y = Cantidad, color = Indicador)) +
+    prev %>% 
+    filter(Indicador != 'Tests') %>% 
+    ggplot(aes(x = Fecha, y = Cantidad, color = Indicador)) +
     geom_line(size = 1) +
     facet_wrap(~continent, nrow = 1) +
     scale_colour_manual(values = colores) +
     labs(
-        title = "<span style='color:#5277F8'>Test</span>, <span style='color:#30C253'>casos positivos</span> y <span style='color:#F5615F'>muertes</span> por mill\u00f3n de habitantes",
-        x = "", y = ""
+        title = "", 
+        #title = "<span style='color:#5277F8'>Test</span>, <span style='color:#30C253'>casos positivos</span> y <span style='color:#F5615F'>muertes</span> por mill\u00f3n de habitantes",
+        x = "", y = "", color = ""
     ) +
     theme_minimal() +
     theme(
-        plot.title = element_markdown(lineheight = 1.1),
-        legend.text = element_markdown(size = 11),
-        legend.position = "none"
+        #plot.title = element_markdown(lineheight = 1.1),
+        #legend.text = element_markdown(size = 11),
+        legend.position = "top", 
+        axis.text.x = element_text(angle = 90)
+    )
+
+
+g2 <- 
+    prev %>% 
+    filter(Indicador == 'Tests') %>% 
+    ggplot(aes(x = Fecha, y = Cantidad, color = Indicador)) +
+    geom_line(size = 1) +
+    facet_wrap(~continent, nrow = 1) +
+    scale_colour_manual(values = c("Tests" = "#5277F8")) +
+    labs(
+        title = "", 
+        #title = "<span style='color:#5277F8'>Test</span>, <span style='color:#30C253'>casos positivos</span> y <span style='color:#F5615F'>muertes</span> por mill\u00f3n de habitantes",
+        x = "", y = "", color = ""
+    ) +
+    theme_minimal() +
+    theme(
+        #plot.title = element_markdown(lineheight = 1.1),
+        #legend.text = element_markdown(size = 11),
+        legend.position = "top", 
+        axis.text.x = element_text(angle = 90)
     )
 
 
