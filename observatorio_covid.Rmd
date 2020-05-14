@@ -410,7 +410,7 @@ g <-
 
 
 ggplotly(g)%>% config(displayModeBar = F)%>%
-    layout(margin = list(b = 120), legend = list(x = 0.5, y = -0.1, orientation = "h",
+    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref = "paper",
                     yref = "paper",
@@ -449,12 +449,12 @@ g<-covid_m%>%
   theme_minimal()
   
 p<-ggplotly(g)%>% config(displayModeBar = F)%>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h",
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font =              list(color = "black",
           size = 12))
@@ -494,12 +494,12 @@ g<-covid_m%>%
 p <- 
   ggplotly(g) %>% 
   config(displayModeBar = FALSE) %>%
-    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h",
+    layout(margin = list(b = 120), legend = list(x = 0.5, y = -0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref = "paper",
                     yref = "paper",
                     x = 1, 
-                    y = -0.22, 
+                    y = -0.3, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black",size = 12))
 
@@ -544,7 +544,7 @@ g <-
 p <- 
   ggplotly(g) %>% 
   config(displayModeBar = FALSE)%>%
-    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1,orientation = "h",
+    layout(margin = list(b = 120), legend = list(x = 0.5, y = -0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref = "paper",
                     yref = "paper",
@@ -587,12 +587,12 @@ g<-covid_m%>%
 
 
 p<-ggplotly(g)%>% config(displayModeBar = F)%>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h",
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font =              list(color = "black",
           size = 12))
@@ -644,11 +644,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F)%>%
-    layout(margin = list(b=100))%>%
+    layout(margin = list(b=120))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1,
-                    y=-0.33,
+                    y=-0.3,
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -689,11 +689,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = FALSE) %>%
-    layout(margin = list(b = 100)) %>%
+    layout(margin = list(b = 120)) %>%
     add_annotations(xref = "paper",
                     yref = "paper",
                     x = 1,
-                    y = -0.33,
+                    y = -0.3,
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -754,12 +754,12 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F)%>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h",
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -819,11 +819,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -887,11 +887,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" ))%>%
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black",size = 12))
 ```
@@ -954,11 +954,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=100), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
+    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.22, 
+                    y=-0.3, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
