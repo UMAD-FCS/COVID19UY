@@ -899,7 +899,7 @@ ggplotly(g) %>%
 
 
 ### *Personas fallecidas sobre total de casos confirmados*
-```{r}
+```{r, out.width='100%'}
 #29. Muertes por casos totales
 
 g <-
@@ -933,7 +933,7 @@ ggplotly(g) %>%
 
 ### *Personas fallecidas sobre total de casos confirmados*
 
-```{r}
+```{r, out.width='100%'}
 
 #29b. Muertes por casos totales
 g <-
