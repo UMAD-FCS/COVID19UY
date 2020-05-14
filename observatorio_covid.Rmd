@@ -754,12 +754,12 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F)%>%
-    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h",
+    layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h",
                     xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.3, 
+                    y=-0.5, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -819,11 +819,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
+    layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.3, 
+                    y=-0.5, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
@@ -887,11 +887,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" ))%>%
+    layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" ))%>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.3, 
+                    y=-0.5, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black",size = 12))
 ```
@@ -954,11 +954,11 @@ g <-
 
 ggplotly(g) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b=120), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
+    layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref="paper",
                     yref="paper",
                     x=1, 
-                    y=-0.3, 
+                    y=-0.5, 
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 ```
