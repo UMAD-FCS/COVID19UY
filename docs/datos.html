@@ -338,7 +338,7 @@ $(document).ready(function () {
 <li><p>Para el caso de Uruguay en la base de tidycovid19 encontramos algunas inconsistencias. Para las principales variables (cantidad de casos, muertes y recuperados) los cargamos desde la base de datos del <a href="https://guiad-covid.github.io/">Grupo Uruguayo Interdisciplinario de Análisis de Datos de COVID‑19</a>. <br /></p></li>
 </ul></li>
 </ul>
-<p>Puede descargar la base en este <a href=""><strong>link</strong></a>. Esta base de datos y los gráficos del módulo <strong>Observatorio COVID19</strong> se actualizan a medianoche diariamente.</p>
+<p>Puede descargar la base en este <a href="https://github.com/UMAD-FCS/COVID19UY/tree/master/download-data"><strong>link</strong></a>. Esta base de datos y los gráficos del módulo <strong>Observatorio COVID19</strong> se actualizan a medianoche diariamente.</p>
 <p><br /></p>
 <ul>
 <li><p><strong>Observatorio de vulnerabilidad social</strong>: la base correspondiente al módulo de vulnerabilidad social provienen de las siguientes fuentes:</p>
@@ -349,8 +349,12 @@ $(document).ready(function () {
 </ul></li>
 </ul>
 <p><br /></p>
-<p>Puede descargar los datos en este <a href=""><strong>link</strong></a>.</p>
+<p>Puede descargar los datos en este <a href="https://drive.google.com/file/d/1KVXk4Yc-DxpQxVhOAcxv2I4xPhTNfjrp/view?usp=sharing"><strong>link</strong></a>.</p>
 <p><br /></p>
+<p>Si quiere bajar los datos del observatorio COVID19 para trabajar desde <strong>R</strong> puede ejecutar lo siguiente:</p>
+<pre class="r"><code>umad &lt;- read.csv(&#39;https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv&#39;)</code></pre>
+<p>Si quiere bajar los datos del observatorio COVID19 para trabajar desde <strong>STATA</strong> puede ejecutar lo siguiente:</p>
+<pre class="r"><code>import delimited https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv</code></pre>
 
 
 

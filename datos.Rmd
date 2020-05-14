@@ -21,7 +21,7 @@ Los datos con los que se elaboraron los distintos módulos de este sito proviene
     * Para el caso de Uruguay en la base de tidycovid19 encontramos algunas inconsistencias. Para las principales variables (cantidad de casos, muertes y recuperados) los cargamos desde la base de datos del [Grupo Uruguayo Interdisciplinario de Análisis de Datos de COVID‑19](https://guiad-covid.github.io/).
 <br />
 
-Puede descargar la base en este [__link__](). Esta base de datos y los gráficos del módulo __Observatorio COVID19__ se actualizan a medianoche diariamente.
+Puede descargar la base en este [__link__](https://github.com/UMAD-FCS/COVID19UY/tree/master/download-data). Esta base de datos y los gráficos del módulo __Observatorio COVID19__ se actualizan a medianoche diariamente.
 
 <br />    
 
@@ -35,9 +35,21 @@ Puede descargar la base en este [__link__](). Esta base de datos y los gráficos
 
 <br />
 
-Puede descargar los datos en este [__link__](). 
+Puede descargar los datos en este [__link__](https://drive.google.com/file/d/1KVXk4Yc-DxpQxVhOAcxv2I4xPhTNfjrp/view?usp=sharing). 
 
 <br />
+
+
+Si quiere bajar los datos del observatorio COVID19 para trabajar desde __R__ puede ejecutar lo siguiente:
+```{r, eval = FALSE}
+umad <- read.csv('https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv')
+```
+
+
+Si quiere bajar los datos del observatorio COVID19 para trabajar desde __STATA__ puede ejecutar lo siguiente:
+```{r, eval = FALSE}
+import delimited https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv
+```
 
 
 
