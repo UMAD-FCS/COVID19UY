@@ -51,6 +51,11 @@ Si quiere bajar los datos del observatorio COVID19 para trabajar desde __STATA__
 import delimited https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv
 ```
 
+Si quiere bajar los datos del observatorio COVID19 para trabajar desde __Python__ puede ejecutar lo siguiente:
+```{python, eval = FALSE}
+import pandas as pd
+umad = pd.read_csv('https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv')
+```
 
 
 
