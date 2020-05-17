@@ -57,8 +57,6 @@ import pandas as pd
 umad = pd.read_csv('https://raw.githubusercontent.com/UMAD-FCS/COVID19UY/master/download-data/merge_umad.csv')
 ```
 
-
-
 ```{r, echo = FALSE, eval = FALSE}
 library(knitr)
 library(kableExtra)
