@@ -51,7 +51,7 @@ data_pasteur <- tibble::as_tibble(
 ```{r, warning=F, message=F, error=F, comment=FALSE}
 ###cambio formato data_uy
 data_pasteur<-data_pasteur %>% 
-  mutate(Cant.casos.nuevos = as.double(Cant.casos.nuevos),
+  mutate(Cant.casos.nuevos = as.double(cantCasosNuevos),
          fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")),
          cantPersonasConInfeccionEnCurso=as.double(cantPersonasConInfeccionEnCurso),
          acumCasos = as.double(acumCasos),
@@ -228,8 +228,8 @@ Combina la evolución acumulada de personas recuperadas con el registro diario d
 #8. Recuperados, vs activos acumulativos línea de tiempo
 data_pasteur %>%
   ggplot(aes(x = fecha))+
-  geom_line(aes(y=cantPersonasConInfeccionEnCurso, color="Casos Activos")) +
-  geom_line(aes(y=acumRecuperados, color="Personas recuperadas")) +
+  geom_line(aes(y=cantPersonasConInfeccionEnCurso, color="Casos Activos"), size = 1.5) +
+  geom_line(aes(y=acumRecuperados, color="Personas recuperadas"), size = 1.5) +
   labs(x = "",
        color = "", 
        y = "Cantidad de personas ",
@@ -247,8 +247,8 @@ Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de caso
 #9. Muertes vs Recuperados acumulativos línea de tiempo
 data_pasteur%>%
   ggplot(aes(x = fecha)) +
-  geom_line(aes(y = acumFallecidos, color="Personas fallecidas")) +
-  geom_line(aes(y = acumRecuperados, color="Personas recuperadas")) +
+  geom_line(aes(y = acumFallecidos, color="Personas fallecidas"), size = 1.5) +
+  geom_line(aes(y = acumRecuperados, color="Personas recuperadas"), size = 1.5) +
   labs(x = "",
        color = "", 
        y = "Cantidad de personas",
