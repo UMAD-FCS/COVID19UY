@@ -649,6 +649,17 @@ ggplotly(g) %>%
                     y=-0.3,
                     showarrow=F,
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 
@@ -699,7 +710,7 @@ ggplotly(g) %>%
 
 ### *Casos confirmados por millón de habitantes*
 
-```{r, out.width='100%'}
+```{r, out.width='100%', warning=FALSE}
 #24. Casos por 1 millon de habitantes (Argentina, Chile, Uruguay, Brasil comparado)
 
 g <- 
@@ -727,6 +738,30 @@ ggplotly(g) %>%
                     y = -0.8, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+################################################################################
+################################################################################
+suppressPackageStartupMessages(library(highcharter))
+g <- 
+  covid_m %>% 
+  mutate(confirmedx1m = round(confirmed/population *1000000, 0)) %>% 
+  filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "US", 
+                        "Korea, South", "Spain", "Italy", "Canada", "New Zealand", 
+                        "Australia", "Sweden", "Portugal", "Norway", "China") ) %>% 
+  rename(pais = country, fecha = date, casos = confirmedx1m)
+
+  f <- hchart(g, "line", hcaes(as.Date(fecha), casos, group = pais))
+f %>% 
+    hc_tooltip(table = TRUE, valueDecimals = 0) %>% 
+    hc_yAxis(title = list(text = "")) %>% 
+    hc_xAxis(title = list(text = "")) %>% 
+    hc_tooltip(crosshairs = TRUE, backgroundColor = "#FCFFC5",
+               shared = TRUE, borderWidth = 5) %>% 
+    hc_credits(enabled = TRUE, # add credits
+               text = "Unidad de Métodos y Acceso a Datos (UMAD)",
+               href = "https://umad.cienciassociales.edu.uy/") %>% 
+    hc_exporting(enabled = TRUE)
+################################################################################
+################################################################################
 ```
 
 
