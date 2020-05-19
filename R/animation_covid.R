@@ -38,9 +38,12 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
           plot.margin = margin(1,3, 1, 3, "cm")) +
     transition_states(date, transition_length = 4, state_length = 1) +
     ease_aes('sine-in-out')+
-    labs(title = 'Casos confirmados: {closest_state}',  
-         subtitle  =  "10 países con mayor número de casos",
+    labs(title = '{closest_state}',  
+         subtitle  =  "",
          caption  = "Unidad de Métodos y Acceso a Datos (UMAD)")
 
-animate(anima_confirmed, nframes = 300, duration=20,  width = 670, height = 600) 
+animate(anima_confirmed, nframes = 300, duration=5,  width = 670, height = 600, end_pause = 80) 
 anim_save(here::here('animations','bar_race.gif'))
+
+
+
