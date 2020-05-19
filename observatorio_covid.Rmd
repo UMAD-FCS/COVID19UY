@@ -618,8 +618,8 @@ g <-
   covid_m %>% 
   drop_na(total_tests)%>%
   group_by(country) %>%
-  mutate(max_confirmed = max(confirmed),
-         max_test = max(total_tests),
+  mutate(max_confirmed = max(confirmed, na.rm = TRUE),
+         max_test = max(total_tests, na.rm = TRUE),
          confirmedxtest = round(max_confirmed/max_test*100,1)) %>%
   ungroup() %>% 
   filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "US", 
@@ -674,8 +674,8 @@ g <-
   covid_m %>% 
   drop_na(total_tests) %>%
   group_by(country) %>%
-  mutate(max_confirmed = max(confirmed),
-         max_test = max(total_tests),
+  mutate(max_confirmed = max(confirmed, na.rm = TRUE),
+         max_test = max(total_tests, na.rm = TRUE),
          testxconfirmed = round(max_test/max_confirmed*100,1)) %>%
   ungroup() %>% 
   filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "US", 
@@ -766,26 +766,33 @@ ggplotly(g) %>%
 
 
 
-### *Casos confirmados por millón de habitantes*
+### *Casos confirmados por millón de habitantes por continentes*
 
 ```{r, out.width='100%'}
 #24b. Casos por 1 millon de habitantes (comparación continentes)
 g <- 
-  covid_m %>% 
-  group_by(continent, date) %>%
-  summarise(sum_pop=sum(population, na.rm = T), sum_conf=sum(confirmed, na.rm = T))%>%
-  mutate(confirmedx1m = round(sum_conf/sum_pop *1000000, 0)) %>%
-  rename(continente=continent, fecha=date, casos=confirmedx1m) %>%
-  ggplot(aes(x = fecha, y= casos , colour=continente)) +
-  geom_line() +
-  labs(x = "",
-        color = "",
-       y = "Cantidad de casos",
-       title =""
-       ) +
-  theme_minimal()  
+    covid_m %>% 
+    group_by(continent, date) %>%
+    summarise(sum_pop = sum(population, na.rm = T), sum_conf = sum(confirmed, na.rm = T))%>%
+    mutate(confirmedx1m = round(sum_conf/sum_pop *1000000, 0)) %>%
+    rename(continente = continent, fecha = date, casos = confirmedx1m) %>%
+    ungroup()
 
-ggplotly(g) %>% 
+sem <-  Sys.Date()
+ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
+g$casos[which(g$fecha == sem)] <- ajuste
+
+g2 <- 
+    ggplot(data = g, aes(x = fecha, y= casos , colour=continente)) +
+    geom_line() +
+    labs(x = "",
+         color = "",
+         y = "Cantidad de casos",
+         title =""
+    ) +
+    theme_minimal() 
+
+ggplotly(g2) %>% 
   config(displayModeBar = F)%>%
     layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h",
                     xanchor = "center" ))%>%
@@ -831,17 +838,26 @@ ggplotly(g) %>%
 ```
 
 
-### *Muertes por millón de habitantes*
+### *Muertes por millón de habitantes por continentes*
 ```{r, out.width='100%'}
 #25b. Muertes por 1 millon de habitantes (continentes)
 
 g <-
   covid_m %>% 
   group_by(continent, date) %>%
-  summarise(sum_pop=sum(population, na.rm = T), sum_deaths=sum(deaths, na.rm = T)) %>%
+  summarise(sum_pop = sum(population, na.rm = T), sum_deaths = sum(deaths, na.rm = T)) %>%
   mutate(deathsx1m = round(sum_deaths/sum_pop *1000000, 0)) %>%
-  rename(continente=continent, fecha=date, casos=deathsx1m) %>%
-  ggplot(aes(x = fecha, y= casos , colour=continente)) +
+  rename(continente = continent, fecha = date, casos = deathsx1m) %>%
+  ungroup()
+  
+
+sem <-  Sys.Date()
+ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
+g$casos[which(g$fecha == sem)] <- ajuste
+
+  
+g2 <- 
+  ggplot(data = g, aes(x = fecha, y= casos , colour=continente)) +
   geom_line() +
   labs(x = "",
         color = "",
@@ -850,7 +866,7 @@ g <-
        ) +
   theme_minimal()  
 
-ggplotly(g) %>% 
+ggplotly(g2) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b=150), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref="paper",
