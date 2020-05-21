@@ -64,7 +64,9 @@ source('data-raw/observatorio_social.R')
 
 ### _Evolución del porcentaje de hogares y personas en situación de pobreza en Uruguay 2006-2019_
 
+
 ```{r, out.width='100%'}
+#===============================================================================
 g1 <- 
     grafico1 %>% mutate(Anio = as.factor(Anio)) %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -92,11 +94,16 @@ ggplotly(g1) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
+
+
 
 ### _Evolución del Salario Real_
 
+
 ```{r, out.width='100%'}
+#===============================================================================
 g2 <- grafico2 %>% 
     mutate(Fecha = as.Date(Fecha)) %>% 
     pivot_longer(cols = 2:4, names_to = 'Tipo', values_to = 'Salario') %>% 
@@ -119,13 +126,14 @@ ggplotly(g2) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
-    
+#===============================================================================    
 ```
 
 ### _Porcentaje de hogares con Necesidades básicas insatisfechas (NBI)_
 
 
 ```{r, out.width='100%'}
+#===============================================================================
 g3 <-
     grafico3 %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -149,12 +157,17 @@ ggplotly(g3) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
+
+
+
 
 ### _Porcentaje de hogares con situación de hacinamiento por quintiles de ingreso (quintiles 1, 2, y 3)_
 
 
 ```{r, out.width='100%'}
+#===============================================================================
 g4 <-
     grafico4 %>% 
     ggplot(aes(x = Anio, y = Valor)) +
@@ -178,6 +191,7 @@ ggplotly(g4) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
 
 
@@ -191,6 +205,7 @@ ggplotly(g4) %>%
 
 
 ```{r, out.width='100%'}
+#===============================================================================
 g5 <-
     grafico5 %>% 
     ggplot(aes(x = Anio, y = Porcentaje)) +
@@ -214,11 +229,16 @@ ggplotly(g5) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
+
 
 ### _Cantidad de cotizantes al BPS (en puestos de trabajo)_
 
+
+
 ```{r, out.width='100%'}
+#===============================================================================
 g6 <-
     grafico6 %>% 
     ggplot(aes(x = Anio, y = Cantidad)) +
@@ -242,11 +262,15 @@ ggplotly(g6) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
 
 ### _Distribución mensual de prestaciones de  Asignaciones Familiares (AFAM) 2008 - 2018_
 
+
+
 ```{r, out.width='100%'}
+#===============================================================================
 g7 <- 
     grafico7_1 %>% 
     mutate(Anio = as.factor(Anio)) %>% 
@@ -271,6 +295,7 @@ ggplotly(g7) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
 
 # **La vulnerabilidad de la estructura social a las puertas del COVID19**
@@ -278,7 +303,10 @@ ggplotly(g7) %>%
 
 ### _Población por estratos socioeconómicos como múltiplos de la linea de pobreza Uruguay 2019_
 
+
+
 ```{r, out.width='100%'}
+#===============================================================================
 g8 <- 
     grafico8 %>% 
     ggplot(aes(x = Estrato, y = LP_ine)) +
@@ -302,11 +330,17 @@ ggplotly(g8) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
+
+
 
 ### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
 
+
+
 ```{r, out.width='100%'}
+#===============================================================================
 g9 <- 
     grafico9 %>% 
     mutate(Proporcion = round(Proporcion * 100), 
@@ -332,12 +366,16 @@ ggplotly(g9) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
 
 
 ### _Alcance del sistema de transferencias contibutivas y no contributivas en el estrato agrupado bajo (en % de cobertura por ECH)_
 
+
+
 ```{r, out.width='100%'}
+#===============================================================================
 g10 <- 
     grafico10 %>% 
     mutate(concepto = fct_reorder(concepto, Bajo, min)) %>% 
@@ -362,6 +400,7 @@ ggplotly(g10) %>%
                     y = -0.22, 
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+#===============================================================================
 ```
 
 
