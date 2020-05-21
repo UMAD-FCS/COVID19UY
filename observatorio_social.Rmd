@@ -101,6 +101,7 @@ ggplotly(g1) %>%
 
 ### _Evolución del Salario Real_
 
+El salario real un modo de cálculo del salario que descuenta la inflación con el objetivo de evidenciar, para un período de tiempo determinado, la variación en su poder adquisitivo. 
 
 ```{r, out.width='100%'}
 #===============================================================================
