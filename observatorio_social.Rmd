@@ -62,8 +62,9 @@ source('data-raw/observatorio_social.R')
 
 # **La mejora de los indicadores socioeconómicos** 
 
-### _Evolución del porcentaje de hogares y personas en situación de pobreza en Uruguay 2006-2019_
+### _Evolución del porcentaje de hogares y personas en situación de pobreza. Uruguay, 2006-2019_
 
+La pobreza indica la carencia de ingresos respecto de un umbral de ingreso absoluto, o línea de pobreza, que corresponde al costo de una canasta de consumo básico. Este indicador presenta el porcentaje de hogares cuyo ingreso per cápita es inferior a la línea de pobreza y el porcentaje de personas que residen en los mismos. Se toman las líneas de pobreza definidas por INE (2006). 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -93,15 +94,15 @@ ggplotly(g1) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en ECH, INE', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 
 
-### _Evolución del Salario Real_
+### _Evolución del Salario Real. Uruguay, 1996-2020_
 
-El salario real un modo de cálculo del salario que descuenta la inflación con el objetivo de evidenciar, para un período de tiempo determinado, la variación en su poder adquisitivo. 
+El salario real es un modo de cálculo del salario que descuenta la inflación con el objetivo de evidenciar, para un período de tiempo determinado, la variación en su poder adquisitivo. 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -126,12 +127,13 @@ ggplotly(g2) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en INE', font = list(color = "black", size = 12))
 #===============================================================================    
 ```
 
-### _Porcentaje de hogares con Necesidades básicas insatisfechas (NBI)_
+### _Porcentaje de hogares con Necesidades Básicas Insatisfechas (NBI) en vivienda. Uruguay, 2006-2018_
 
+El método de las Necesidades Básicas Insatisfechas (NBI) se orienta a identificar la falta de acceso  a bienes y servicios (o problemas críticos en cuanto a la calidad de aquellos) cuya disposición constituye una condición para el ejercicio de derechos sociales. Un hogar particular tendrá una necesidad básica insatisfecha en vivienda si presenta una carencia en al menos uno de los siguientes indicadores: materialidad, espacio habitable o espacio apropiado para cocinar. 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -157,15 +159,16 @@ ggplotly(g3) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en Observatorio Social, Mides', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 
 
 
-### _Porcentaje de hogares con situación de hacinamiento por quintiles de ingreso (quintiles 1, 2, y 3)_
+### _Porcentaje de hogares con situación de hacinamiento por quintil de ingreso del hogar (quintiles 1, 2 y 3). Uruguay, 2006-2018_
 
+El hacinamiento busca medir carencias de los hogares respecto al espacio relativo de una vivienda en función de la cantidad de miembros. En un hogar particular existe hacinamiento si hay más de dos miembros por cada habitación utilizada para dormir.
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -191,7 +194,7 @@ ggplotly(g4) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en Observatorio Social, Mides', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
@@ -202,8 +205,9 @@ ggplotly(g4) %>%
 # **La ampliación de la protección social** 
 
 
-### _Porcentaje de población ocupada no afiliada a la seguridad social_
+### _Porcentaje de población ocupada no afiliada a la seguridad social por quintil de ingreso del hogar (quintiles 1 y 2). Uruguay, 2006-2018_
 
+El acceso a la seguridad social por parte de la población ocupada es un indicador de la calidad del empleo y las garantías de protección a las que accede. Se presenta el porcentaje de personas ocupadas que no aportan a la seguridad social en su empleo principal. 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -229,14 +233,14 @@ ggplotly(g5) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en Observatorio Social, Mides', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 
-### _Cantidad de cotizantes al BPS (en puestos de trabajo)_
+### _Cantidad de cotizantes al BPS (en puestos de trabajo). Uruguay, 1995-2017_
 
-
+El acceso a la seguridad social por parte de la población ocupada es un indicador de la calidad del empleo y las garantías de protección a las que accede. Se presenta la cantidad de puestos de trabajo que se encuentran cotizando en el Banco de Previsión Social. 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -262,13 +266,13 @@ ggplotly(g6) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en BPS', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
-### _Distribución mensual de prestaciones de  Asignaciones Familiares (AFAM) 2008 - 2018_
+### _Promedio anual y variación de prestaciones de Asignaciones Familiares (AFAM). Uruguay, 2008-2018_
 
-
+El indicador presenta el promedio anual de la cantidad de prestaciones de Asignaciones Familiares otorgadas de forma mensual por el Banco de Previsión Social.
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -295,16 +299,16 @@ ggplotly(g7) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en BPS', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 # **La vulnerabilidad de la estructura social a las puertas del COVID19**
 
 
-### _Población por estratos socioeconómicos como múltiplos de la linea de pobreza Uruguay 2019_
+### _Población por estratos socioeconómicos. Uruguay, 2019_
 
-
+Se presenta la distribución de personas según residencia en hogares ubicados en estratos socioeconómicos. Los estratos se definen a partir del ingreso per-cápita de los hogares, según umbrales múltiplos de la línea de pobreza. Los umbrales son los siguientes: (1) En pobreza extrema: debajo de la línea de indigencia; (2) En pobreza no extrema: debajo de la línea de pobreza; (3) Bajos no pobres: debajo de 1,8 líneas de pobreza; (4) Medio-bajo: debajo de 3 líneas de pobreza; (5) Medios-intermedios: debajo de 6 líneas de pobreza, (6) Medios-altos: debajo de 10 líneas de pobreza; (7) Altos: superior a 10 líneas de pobreza. Se toman las líneas de pobreza e indigencia definidas por INE (2006).
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -330,15 +334,15 @@ ggplotly(g8) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en ECH, INE', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 
 
-### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos de ingreso_
+### _Proporción de ingresos altamente inestables y sin garantías de protección por estratos socioeconómicos. Uruguay, 2019_
 
-
+El nivel de estabilidad del ingreso se define en función de la dependencia del mismo respecto a su provisión por parte del Estado y el acceso que su percepción por parte del hogar supone en términos de garantías de protección. Se definen tres niveles de estabilidad: (1) Ingresos estables con garantías de protección: compuestos por los ingresos provenientes de empleos públicos y jubilaciones. Se incluye en esta categoría el valor locativo de la vivienda; (2) Ingresos moderadamente estables con garantías de protección: Ingresos por empleos con aporte a la seguridad social, rentas y cobros de intereses e indemnizaciones por despidos; (3) Ingresos altamente inestables y sin garantías de protección: Ingresos por empleos sin aporte a la seguridad social, ingresos provenientes de otros hogares y otros ingresos extraordinarios. En todos los casos, los ingresos se calculan como ingreso per-cápita del hogar sin considerar al servicio doméstico. 
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -366,14 +370,14 @@ ggplotly(g9) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en ECH, INE', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
 
-### _Alcance del sistema de transferencias contibutivas y no contributivas en el estrato agrupado bajo (en % de cobertura por ECH)_
+### _Alcance del sistema de transferencias contributivas y no contributivas en el estrato agrupado bajo. Uruguay, 2019_
 
-
+Se presenta el porcentaje de hogares del estrato bajo (con ingreso per-cápita por debajo de 1,8 líneas de pobreza) que perciben transferencias contributivas y no contributivas según transferencia. Se trata de un indicador de cobertura de las transferencias, definido a partir del porcentaje de hogares que declaran su percepción en la Encuesta Continua de Hogares.
 
 ```{r, out.width='100%'}
 #===============================================================================
@@ -400,7 +404,7 @@ ggplotly(g10) %>%
                     x = 1, 
                     y = -0.22, 
                     showarrow = FALSE,
-                    text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en ECH, INE', font = list(color = "black", size = 12))
 #===============================================================================
 ```
 
