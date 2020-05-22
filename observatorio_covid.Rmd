@@ -889,8 +889,21 @@ g <-
   filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "US", 
                         "Korea, South", "Spain", "Italy", "Canada", "New Zealand", 
                         "Australia", "Sweden", "Portugal", "Norway","China")) %>%
-  rename(`país`=country, fecha=date, casos=recovered_confirmed) %>% 
-  ggplot(aes(x = fecha, y= casos, colour=`país`)) +
+  rename(`país`=country, fecha=date, casos=recovered_confirmed) 
+  
+fix.t<- as.Date("2020-05-19")
+ajuste1 <- ifelse(g$casos[which(g$fecha == fix.t)] == 0, NA, g$casos[which(g$fecha == fix.t)])
+g$casos[which(g$fecha == fix.t)] <- ajuste1
+
+
+
+sem <-  Sys.Date()
+ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
+g$casos[which(g$fecha == sem)] <- ajuste
+
+  
+g2<-
+    ggplot(data=g, aes(x = fecha, y= casos, colour=`país`)) +
   geom_line() +
   labs(x = "",
         color = "",
@@ -899,7 +912,7 @@ g <-
        ) +
   theme_minimal() 
 
-ggplotly(g) %>% 
+ggplotly(g2) %>% 
   config(displayModeBar = F) %>%
     layout(margin = list(b=200), legend=list(x=0.5, y=-0.1,orientation = "h", xanchor = "center" ))%>%
     add_annotations(xref="paper",
