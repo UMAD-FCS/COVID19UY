@@ -8,9 +8,11 @@ jh<-download_jhu_csse_covid19_data()
 confirmed_rank<-jh %>% 
     group_by(date)%>%      
     mutate(rank = rank(-confirmed),
-           lab.confirm = paste0(" ",confirmed)) %>%
+           lab.confirm = paste0(" ", confirmed)) %>%
     group_by(country) %>%
-    filter(rank <= 10)
+    filter(rank <= 10)%>%
+      ungroup()
+
 
 
 
@@ -36,13 +38,13 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
           plot.subtitle=element_text(size=18, hjust=0.5, face="italic", color="black"),
           plot.caption =element_text(size=13, hjust=1, color="black"),
           plot.margin = margin(1,3, 1, 3, "cm")) +
-    transition_states(date, transition_length = 4, state_length = 1) +
+    transition_states(date, transition_length = 3, state_length = 1) +
     ease_aes('sine-in-out')+
     labs(title = '{closest_state}',  
          subtitle  =  "",
          caption  = "Unidad de Métodos y Acceso a Datos (UMAD)")
 
-animate(anima_confirmed, nframes = 300, duration=5,  width = 670, height = 600, end_pause = 80) 
+animate(anima_confirmed, nframes = 400, duration=20,  width = 670, height = 600, end_pause = 80) 
 anim_save(here::here('animations','bar_race.gif'))
 
 
