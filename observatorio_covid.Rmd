@@ -778,7 +778,7 @@ g <-
     rename(continente = continent, fecha = date, casos = confirmedx1m) %>%
     ungroup()
 
-sem <-  Sys.Date()
+sem <-  last(sort(unique(g$fecha)))
 ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
 g$casos[which(g$fecha == sem)] <- ajuste
 
@@ -851,7 +851,7 @@ g <-
   ungroup()
   
 
-sem <-  Sys.Date()
+sem <-  last(sort(unique(g$fecha)))
 ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
 g$casos[which(g$fecha == sem)] <- ajuste
 
@@ -897,7 +897,7 @@ g$casos[which(g$fecha == fix.t)] <- ajuste1
 
 
 
-sem <-  Sys.Date()
+sem <-  last(sort(unique(g$fecha)))
 ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
 g$casos[which(g$fecha == sem)] <- ajuste
 
