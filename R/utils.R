@@ -11,7 +11,7 @@ data_rm <- function() {
     
     n <- list.files(path = here::here('data-raw')) 
     d <- tibble::tibble(file = n, grupo = substring(n, 1, 6)) %>% split(., .$grupo)
-    f <- d[sapply(d, nrow) > 3]
+    f <- d[sapply(d, nrow) > 2]
     if(length(f) > 0){
         out <- unname(unlist(sapply(f, '[', 1, 1)))
         setwd(here::here("data-raw"))
