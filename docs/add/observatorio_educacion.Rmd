@@ -11,15 +11,85 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# **Introducción** 
+# **Observatorio COVID-19: Educación** 
 
-bla bla  bla
+Esta sección presenta un conjunto de datos y gráficos que permiten visualizar algunas dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema educativo nacional, así como el impacto de la reapertura gradual y por etapas. 
+
+El reporte procura ofrecer a investigadores, tomadores de decisión, formadores de opinión y público en general un panorama de la situación del país en materia de educación en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID19.  
+
+La información se agrupa en cinco dimensiones: matrícula, cobertura, oferta de centros educativos, gasto público y salarios docentes, y conectividad. En función de la disponibilidad de datos en el sistema estadístico nacional, las categorías están desagregadas por otras variables como: nivel del sistema educativo, región, departamento, nivel socioeconómico, sexo, edad, forma de administración (pública/privada), entre otras. El centro de atención está puesto en la educación formal obligatoria. A su vez, para cada categoría se presentan datos de series que abarcan en la mayoría de los casos los últimos diez años.  
+
+Los datos de los gráficos son tomados o elaborados a partir de datos de las siguientes fuentes: Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Monitor Educativo del INDEED; Observatorio Social MIDES; Observatorio Territorial OPP; Encuesta Continua de Hogares de INE. Los usuarios pueden descargar aquí el archivo que presenta un conjunto más amplio de información.  
+
+#### **Dimensiones**
+    a. Matrícula
+    b. Cobertura
+    c. Oferta de Centros Educativos
+    d. Gasto público en educación y salarios docentes
+    e. Conectividad
+    
+<br />
+    
+# **Matrícula**  
+
+Los datos de matrícula sirven para dimensionar el impacto en términos absolutos del número de niños, niñas y adolescentes que dejaron de concurrir a los centros educativos cdurante la suspensión total de las clases presenciales. En tanto, las diferentes desagregaciones sirven para poder dimensionar el impacto del retorno gradual.   
+
+### _Matrícula: 2005-2019_  
+
+### _Matrícula por nivel educativo: 2005-2019_  
+
+### _Matrícula por forma de administración (público/privada): 2005-2019_  
+
+### _Matrícula por región y departamento: 2005-2019_  
 
 <br />
 
+# **Cobertura**  
 
+Los datos de cobertura relacionan la matrícula educativa con la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje de niños, niñas y adolescentes del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen.  
 
-# **Segunda seccion** 
+### _% Asistentes a la educación sobre el total de población en edad teórica de asistir: 2006-2019_  
 
-### _titulo grafico 1_
+### _% Cobertura por rangos de edad: 2005-2019_  
 
+### _% Cobertura por edades absolutas: 2005-2019_  
+
+### _% Cobertura por sexo: 2005-2019_  
+
+### _% Cobertura por región: 2005-2019_  
+
+<br />
+
+# **Oferta de Centros Educativos**  
+
+Los datos de oferta de centros educativos reflejan la cantidad de establecimientos educativos existentes. En este contexto, fundamentalmente a partir de los datos desagregados sirven para visualizar el despliegue territorial y los focos de mayor circulación educativa.  
+
+### _N° Centros Públicos: 2015-2019_  
+
+### _N° Centros Privados: 2015-2019_   
+
+<br />
+
+# **Gasto público en educación y salarios docentes**  
+
+El gasto público social en educación mide el porcentaje que representa el gasto en educación con respecto al PBI del país, es por ello, que usualmente se lo utiliza como indicador de prioridad macroeconómica. Los datos de gasto público social en educación por inciso, sirven para visualizar como se compone el gasto en los principales organismos del sistema de educación nacional. En tanto los salarios reales docentes, públicos y privados, permiten visualizar la evolución temporal en los ingresos de los docentes.  
+
+### _% GPS en educación como % PBI: 2001-2018_
+
+### _% % GPS en educación por inciso: 2005-2018_
+
+### _Índice medio de salario real docentes públicos y privados: 2003-2019_  
+
+<br />
+
+# **Conectividad**  
+
+Los datos de conectividad sirven para aproximarse a las condiciones de infrestrucura disponibles para llevar a cabo actividades educativas no presenciales a través de internet.  
+
+### _% Hogares con conexión a internet: 2006-2019_  
+
+### _% Hogares con computadora o laptop: 2006-2019_
+
+### _% Hogares con computadora del Plan Ceibal: 2006-2019_  
+
+### _% Personas con celular: 2009-2019_  
