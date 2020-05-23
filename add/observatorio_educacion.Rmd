@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# **Observatorio COVID-19:Educación** 
+# **Observatorio COVID-19: Educación** 
 
 Esta sección presenta un conjunto de datos y gráficos que permiten visualizar algunas dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema educativo nacional, así como el impacto de la reapertura gradual y por etapas. 
 
@@ -21,8 +21,15 @@ La información se agrupa en cinco dimensiones: matrícula, cobertura, oferta de
 
 Los datos de los gráficos son tomados o elaborados a partir de datos de las siguientes fuentes: Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Monitor Educativo del INDEED; Observatorio Social MIDES; Observatorio Territorial OPP; Encuesta Continua de Hogares de INE. Los usuarios pueden descargar aquí el archivo que presenta un conjunto más amplio de información.  
 
+#### **Dimensiones**
+    a. Matrícula
+    b. Cobertura
+    c. Oferta de Centros Educativos
+    d. Gasto público en educación y salarios docentes
+    e. Conectividad
+    
 <br />
-
+    
 # **Matrícula**  
 
 Los datos de matrícula sirven para dimensionar el impacto en términos absolutos del número de niños, niñas y adolescentes que dejaron de concurrir a los centros educativos cdurante la suspensión total de las clases presenciales. En tanto, las diferentes desagregaciones sirven para poder dimensionar el impacto del retorno gradual.   
