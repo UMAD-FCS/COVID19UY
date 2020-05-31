@@ -83,7 +83,7 @@ animation_google <- function(data, x, y, file = 'g1', height = 800, width = 600,
         #ylim(-100, 100) +
         theme_minimal() +
         labs(x = "", y = "", title = "", 
-             caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
+             caption = 'Unidad de M\u00e9todos y Acceso a Datos (UMAD)') +
         theme(axis.text.x = element_text(size = 12),
               axis.text.y = element_text(size = 12),
               plot.caption = element_text(size = 10, color = "grey40"), 

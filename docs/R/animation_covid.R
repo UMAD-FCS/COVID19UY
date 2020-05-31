@@ -42,7 +42,7 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
     ease_aes('sine-in-out')+
     labs(title = '{closest_state}',  
          subtitle  =  "",
-         caption  = "Unidad de Métodos y Acceso a Datos (UMAD)")
+         caption  = "Unidad de M\u00e9todos y Acceso a Datos (UMAD)")
 
 animate(anima_confirmed, nframes = 400, duration=20,  width = 670, height = 600, end_pause = 80) 
 anim_save(here::here('animations','bar_race.gif'))
