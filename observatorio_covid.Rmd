@@ -25,6 +25,7 @@ library(extrafont)
 library(lubridate)
 library(colorspace)
 library(plotly)
+library(stringi)
 
 ```
 
@@ -44,6 +45,15 @@ data_uy <- list.files(path = here::here('data-raw'), pattern = "^A_guiad")
 data_pasteur <- tibble::as_tibble(
     rio::import(here::here('data-raw', data_uy[length(data_uy)]))
 )
+
+# SE CARGA DATA DE -->'Uruguay GUIAD-COVID SUBNACIONAL'
+depuy<- read.csv("https://raw.githubusercontent.com/GUIAD-COVID/datos-y-visualizaciones-GUIAD/master/datos/estadisticasUY_porDepto_detalle.csv", header=TRUE)
+
+depuy<-depuy %>% 
+  mutate(fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")), 
+         deptos=stringi::stri_sub(depuy$departamento, 1,-9)                         
+)
+
 
 ```
 
@@ -387,6 +397,106 @@ data_pasteur%>%
 
 ```
 
+# **Uruguay por departamentos**
+
+<!-- ### _Casos confirmados_ -->
+
+```{r}
+# depuy %>%
+#   ggplot(aes(x = fecha, y = cantCasosNuevos)) +
+#   geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
+#   labs(x = "",
+#        color="",
+#        y = "Cantidad de casos",
+#        title ="Casos nuevos") +
+#   theme_minimal()+
+#   theme(legend.position = "none")+
+#   facet_wrap(vars(deptos))
+```
+
+### _Acumulado de casos confirmados_
+```{r}
+
+g<-depuy %>% 
+  rename(Fecha=fecha, Confirmados= acumCasos)%>%
+  ggplot(aes(x = Fecha, y = Confirmados)) +
+  geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
+  labs(x = "",
+       color="",
+       y = "Cantidad de casos",
+       title ="") +
+  theme_minimal()+
+  theme(legend.position = "none", axis.text.x = element_text(size = 6))+
+  #geom_text(aes(label = enCurso), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
+ facet_wrap(vars(deptos))
+
+ggplotly(g) %>% config(displayModeBar = F) %>%
+    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.3, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+```
+
+
+### _Casos activos_
+```{r}
+g<-depuy %>% 
+   rename(Fecha=fecha, Activos= enCurso)%>%
+  ggplot(aes(x = Fecha, y = Activos)) +
+  geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
+  labs(x = "",
+       color="",
+       y = "Cantidad de casos",
+       title ="") +
+  theme_minimal()+
+  theme(legend.position = "none", axis.text.x = element_text(size = 6))+
+  #geom_text(aes(label = enCurso), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
+ facet_wrap(vars(deptos))
+
+ggplotly(g) %>% config(displayModeBar = F) %>%
+    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.3, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+```
+
+### _Cronograma de fallecimientos_
+
+```{r}
+g<-depuy %>% 
+   rename(Fecha=fecha, Fallecidos= cantFallecidos)%>%
+   ggplot(aes(x = Fecha, y = Fallecidos)) +
+  geom_point(color="#56B4E9", size= 0.5) + 
+  scale_y_continuous(breaks = depuy$cantFallecidos) +
+  scale_x_date(breaks = "days", date_labels =  "%b %d", guide = guide_axis(n.dodge = 2)) +
+  coord_flip() +
+  labs(x = "",
+       y = "Cantidad de personas",
+       title = "",#Personas fallecidas por día
+       caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 3))+
+  facet_wrap(vars(deptos))
+
+ggplotly(g) %>% config(displayModeBar = F) %>%
+    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.3, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+```
 
 # **Uruguay y la región** 
 
