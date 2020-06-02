@@ -11,85 +11,108 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# **Observatorio COVID-19: Educación** 
+# **Observatorio COVID-19:Educación** 
 
-Esta sección presenta un conjunto de datos y gráficos que permiten visualizar algunas dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema educativo nacional, así como el impacto de la reapertura gradual y por etapas. 
+Esta sección presenta un conjunto de datos y gráficos que permiten visualizar dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema nacional de educación y de la reapertura gradual por etapas.  
 
-El reporte procura ofrecer a investigadores, tomadores de decisión, formadores de opinión y público en general un panorama de la situación del país en materia de educación en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID19.  
+El reporte procura ofrecer a investigadores, tomadores de decisión, formadores de opinión y público en general un panorama general de la situación del país en materia de educación en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID-19.  
 
-La información se agrupa en cinco dimensiones: matrícula, cobertura, oferta de centros educativos, gasto público y salarios docentes, y conectividad. En función de la disponibilidad de datos en el sistema estadístico nacional, las categorías están desagregadas por otras variables como: nivel del sistema educativo, región, departamento, nivel socioeconómico, sexo, edad, forma de administración (pública/privada), entre otras. El centro de atención está puesto en la educación formal obligatoria. A su vez, para cada categoría se presentan datos de series que abarcan en la mayoría de los casos los últimos diez años.  
+La información se agrupa en tres partes. La primera es una estimación de la cantidad de niños, niñas y adolescentes que se reincorporan a las clases presenciales en cada una de las etapas de la reapertura. La segunda es un dimensionamiento de la cantidad de niños, niñas y adolescentes matriculados en la educación de 0 a 17 años. La tercera procura ofrecer una mirada a algunos aspectos sociales de la educación en Uruguay.  
 
-Los datos de los gráficos son tomados o elaborados a partir de datos de las siguientes fuentes: Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Monitor Educativo del INDEED; Observatorio Social MIDES; Observatorio Territorial OPP; Encuesta Continua de Hogares de INE. Los usuarios pueden descargar aquí el archivo que presenta un conjunto más amplio de información.  
+Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden descargar aquí el archivo con la información que se presenta en esta sección.
+
 
 #### **Dimensiones**
-    a. Matrícula
-    b. Cobertura
-    c. Oferta de Centros Educativos
-    d. Gasto público en educación y salarios docentes
-    e. Conectividad
-    
-<br />
-    
-# **Matrícula**  
+    a. Estimación de niños y niñas por etapa de reapertura  
+    b. Dimensionamiento de la educación de 0 a 17 años  
+    c. Una mirada social a la educación  
 
-Los datos de matrícula sirven para dimensionar el impacto en términos absolutos del número de niños, niñas y adolescentes que dejaron de concurrir a los centros educativos cdurante la suspensión total de las clases presenciales. En tanto, las diferentes desagregaciones sirven para poder dimensionar el impacto del retorno gradual.   
-
-### _Matrícula: 2005-2019_  
-
-### _Matrícula por nivel educativo: 2005-2019_  
-
-### _Matrícula por forma de administración (público/privada): 2005-2019_  
-
-### _Matrícula por región y departamento: 2005-2019_  
 
 <br />
 
-# **Cobertura**  
 
-Los datos de cobertura relacionan la matrícula educativa con la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje de niños, niñas y adolescentes del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen.  
+# **Estimación de niños y niñas por etapa de reapertura**  
 
-### _% Asistentes a la educación sobre el total de población en edad teórica de asistir: 2006-2019_  
+En esta sección se presenta una estimación de la cantidad de niños, niñas y adolescentes se reincorporan a la presencialidad en cada una de las etapas definidas por el gobierno.  
 
-### _% Cobertura por rangos de edad: 2005-2019_  
+### _Etapa 0: 22 de abril_  
 
-### _% Cobertura por edades absolutas: 2005-2019_  
+### _Etapa 1: 1° de junio_  
 
-### _% Cobertura por sexo: 2005-2019_  
+### _Etapa 2: 15 de junio_  
 
-### _% Cobertura por región: 2005-2019_  
+### _Etapa 3: 29 de junio_    
 
-<br />
-
-# **Oferta de Centros Educativos**  
-
-Los datos de oferta de centros educativos reflejan la cantidad de establecimientos educativos existentes. En este contexto, fundamentalmente a partir de los datos desagregados sirven para visualizar el despliegue territorial y los focos de mayor circulación educativa.  
-
-### _N° Centros Públicos: 2015-2019_  
-
-### _N° Centros Privados: 2015-2019_   
 
 <br />
 
-# **Gasto público en educación y salarios docentes**  
 
-El gasto público social en educación mide el porcentaje que representa el gasto en educación con respecto al PBI del país, es por ello, que usualmente se lo utiliza como indicador de prioridad macroeconómica. Los datos de gasto público social en educación por inciso, sirven para visualizar como se compone el gasto en los principales organismos del sistema de educación nacional. En tanto los salarios reales docentes, públicos y privados, permiten visualizar la evolución temporal en los ingresos de los docentes.  
+# **Dimensionamiento de la educación de 0 a 17 años**  
 
-### _% GPS en educación como % PBI: 2001-2018_
+Los datos de matrícula sirven para dimensionar en términos absolutos el número de niños, niñas y adolescentes de 0 a 17 años que concurren a centros educativos. Esta cifra absoluta brinda una dimensión del impacto en circulación de niños, niñas y adolescentes que implica la educación en su conjunto.   
 
-### _% % GPS en educación por inciso: 2005-2018_
+### _Matrícula educación inicial órbita ANEP: 2005-2019_  
 
-### _Índice medio de salario real docentes públicos y privados: 2003-2019_  
+### _Matrícula educación primaria: 2005-2019_  
+
+### _Matrícula educación media: 2005-2019_  
+
+### _Matrícula primera infancia órbita INAU: 2010-2019_  
+
 
 <br />
 
-# **Conectividad**  
 
-Los datos de conectividad sirven para aproximarse a las condiciones de infrestrucura disponibles para llevar a cabo actividades educativas no presenciales a través de internet.  
+# **Una mirada social a la educación**  
 
-### _% Hogares con conexión a internet: 2006-2019_  
+### **Cobertura**  
 
-### _% Hogares con computadora o laptop: 2006-2019_
+Los datos de cobertura relacionan la matrícula educativa con la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje de niños, niñas y adolescentes del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen. Se presentan datos para edades simples y también los datos de cobertura por edad agurpada según quintil de ingresos.
 
-### _% Hogares con computadora del Plan Ceibal: 2006-2019_  
+### _Cobertura entre 3 y 5 años por edad simple: 2005-2019_
 
-### _% Personas con celular: 2009-2019_  
+### _Cobertura entre 3 y 5 años por quintil de ingresos: 2005-2019_
+
+### _Cobertura entre 6 y 11 años por edad simple: 2005-2019_    
+
+### _Cobertura entre 6 y 11 años por quintil de ingresos: 2005-2019_
+
+### _Cobertura entre 12 y 14 años por edad simple: 2005-2019_  
+
+### _Cobertura entre 12 y 14 años por quintil de ingresos: 2005-2019_
+
+### _Cobertura entre 15 y 17 años por edad simple: 2005-2019_
+
+### _Cobertura entre 15 y 17 años por quintil de ingresos: 2005-2019_
+
+
+<br />
+
+
+### **Conectividad y acceso a internet**  
+
+Los datos de conectividad sirven para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales.
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar:  2019_  
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil de ingreso del hogar: 2019_
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de laptop del Plan Ceibal según quintil de ingreso del hogar: 2019_  
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular quintil de ingreso del hogar: 2019_  
+
+### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019 2019_  
+
+
+<br />
+
+
+### **Tensión sobre los cuidados en el hogar** 
+
+La información de la condición de actividad de los adultos que viven con niños y niñas sirve para evidenciar la tensión que la suspensión de la educación presencial ejerce sobre los cuidados de niños y niñas en los hogares. 
+
+### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
+
+### _Cantidad de hogares con niños de 0 a 11 años asistentes a centros educativos con totalidad de mayores de 18 años económicamente activos según quintil de ingreso del hogar: 2019_ 
+
+<br />
