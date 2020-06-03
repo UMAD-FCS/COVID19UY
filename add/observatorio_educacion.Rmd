@@ -83,7 +83,8 @@ ggplotly(g1) %>%
                     x = 1, 
                     y = -0.30, 
                     showarrow = FALSE,
-                    text = 'UMAD con base en...', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en...', 
+                    font = list(color = "black", size = 12))
 
 ```
  
@@ -119,7 +120,8 @@ ggplotly(g2) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', font = list(color = "black", size = 12))
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
 
 ```
 
@@ -144,7 +146,8 @@ ggplotly(g3) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', font = list(color = "black", size = 12))
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
 
 ```
 
@@ -153,7 +156,67 @@ ggplotly(g3) %>%
 
 ### _Cobertura entre 6 y 11 años por edad simple: 2005-2019_    
 
+
+```{r, echo = FALSE}
+
+g4 <- 
+  ggplot(grafico4_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(70, 100) +
+  facet_wrap(~Edad) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 ### _Cobertura entre 6 y 11 años por quintil de ingresos: 2005-2019_
+
+
+
+```{r, echo = FALSE}
+
+g5 <- 
+  ggplot(grafico5_e, aes(x = Anio, y = Cobertura)) +
+    geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(70, 100) +
+  facet_wrap(~Quintil, nrow = 2) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g5) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 
 ### _Cobertura entre 12 y 14 años por edad simple: 2005-2019_  
 
