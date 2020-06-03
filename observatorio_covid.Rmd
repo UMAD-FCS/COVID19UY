@@ -477,14 +477,14 @@ g<-depuy %>%
    ggplot(aes(x = Fecha, y = Fallecidos)) +
   geom_point(color="#56B4E9", size= 0.5) + 
   scale_y_continuous(breaks = depuy$cantFallecidos) +
-  scale_x_date(breaks = "days", date_labels =  "%b %d", guide = guide_axis(n.dodge = 2)) +
+  scale_x_date(breaks = "month", date_labels =  "%b %d",) +
   coord_flip() +
   labs(x = "",
        y = "Cantidad de personas",
        title = "",#Personas fallecidas por día
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal() +
-  theme(axis.text.y = element_text(size = 3))+
+  theme(axis.text.y = element_text(size = 6))+
   facet_wrap(vars(deptos))
 
 ggplotly(g) %>% config(displayModeBar = F) %>%
@@ -1139,6 +1139,10 @@ ggplotly(g) %>%
 
 <img src="animations/bar_race.gif" style="margin-center:30px;margin-bottom:5px;" align="center"></a>
 
+
+### *Los 10 países con mayor número de muertes*
+
+<img src="animations/bar_race2.gif" style="margin-center:30px;margin-bottom:5px;" align="center"></a>
 
 
 # **Google Mobility** 
