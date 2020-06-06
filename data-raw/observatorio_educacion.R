@@ -680,12 +680,21 @@ barra_apilada$Porcentaje <- round(barra_apilada$Porcentaje, dec)
 
 
 
+etapa1 <- 
+    tibble::tribble(
+           ~Etapa,        ~Fecha, ~Cantidad,        ~Ref,
+        "ETAPA 0", "22 DE ABRIL",    11269L, "POR ETAPA",
+        "ETAPA 1", "1° DE JUNIO",    91510L, "POR ETAPA",
+        "ETAPA 2", "15 DE JUNIO",   488165L, "POR ETAPA",
+        "ETAPA 3", "29 DE JUNIO",   256655L, "POR ETAPA",
+        "ETAPA 0", "22 DE ABRIL",    11269L, "ACUMULADO",
+        "ETAPA 1", "1° DE JUNIO",   102779L, "ACUMULADO",
+        "ETAPA 2", "15 DE JUNIO",   590944L, "ACUMULADO",
+        "ETAPA 3", "29 DE JUNIO",   847599L, "ACUMULADO"
+        )
 
 
-
-
-
-
+etapa1$Etapa2 <- paste0(etapa1$Etapa, '\n', etapa1$Fecha )
 
 
 

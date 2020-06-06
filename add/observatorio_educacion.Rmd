@@ -55,6 +55,36 @@ En esta sección se presenta una estimación de la cantidad de niños, niñas y 
 ### _Etapa 3: 29 de junio_    
 
 
+
+
+
+```{r, echo = FALSE}
+e1 <-
+  etapa1 %>% 
+  ggplot(aes(fill = Ref, y = Cantidad, x =Etapa2)) + 
+  geom_bar(position = "dodge", stat = "identity", color = 'black') +
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(e1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'UMAD con base en...', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
 <br />
 
 
