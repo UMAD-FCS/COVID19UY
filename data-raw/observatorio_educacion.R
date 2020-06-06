@@ -649,12 +649,7 @@ barra_quintiles <- #
 
 
 
-
-
-
-
-
-
+barra_quintiles$Porcentaje <- round(barra_quintiles$Porcentaje, dec)
 
 
 
