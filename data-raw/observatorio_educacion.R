@@ -655,6 +655,39 @@ barra_quintiles$Porcentaje <- round(barra_quintiles$Porcentaje, dec)
 
 
 
+barra_apilada <- 
+    tibble::tribble(
+                                           ~Categoria,   ~Porcentaje,    ~Quintil,
+        "Totalidad de adultos economicamente activos", 52.5789525046, "Quintil 1",
+        "Totalidad de adultos economicamente activos", 63.9325003977, "Quintil 2",
+        "Totalidad de adultos economicamente activos", 76.5388534551, "Quintil 3",
+        "Totalidad de adultos economicamente activos", 84.3308373761, "Quintil 4",
+        "Totalidad de adultos economicamente activos", 88.8883659639, "Quintil 5",
+           "Presencia de adultos activos e inactivos", 43.1129094007, "Quintil 1",
+           "Presencia de adultos activos e inactivos", 34.4717874668, "Quintil 2",
+           "Presencia de adultos activos e inactivos", 22.6837000415, "Quintil 3",
+           "Presencia de adultos activos e inactivos", 15.3290445054, "Quintil 4",
+           "Presencia de adultos activos e inactivos", 10.6927710843, "Quintil 5",
+                     "Totalidad de adultos inactivos",  4.3081380946, "Quintil 1",
+                     "Totalidad de adultos inactivos",  1.5957121355, "Quintil 2",
+                     "Totalidad de adultos inactivos",  0.7774465034, "Quintil 3",
+                     "Totalidad de adultos inactivos",  0.3401181185, "Quintil 4",
+                     "Totalidad de adultos inactivos",  0.4188629518, "Quintil 5"
+        )
+
+
+barra_apilada$Porcentaje <- round(barra_apilada$Porcentaje, dec)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

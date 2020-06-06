@@ -510,11 +510,30 @@ La información de la condición de actividad de los adultos que viven con niño
 ### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
 
 
+```{r, echo = FALSE}
 
+b8 <- 
+  barra_apilada %>% 
+    ggplot(aes(fill = Categoria, y = Porcentaje, x = Quintil)) + 
+    geom_bar(position = "stack", stat = "identity", color = 'black') +
+    theme_minimal() +
+    labs(x = "", y = "", color = "")
 
+ggplotly(b8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.30, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
 
 ### _Cantidad de hogares con niños de 0 a 11 años asistentes a centros educativos con totalidad de mayores de 18 años económicamente activos según quintil de ingreso del hogar: 2019_ 
-
 
 
 
