@@ -64,7 +64,7 @@ e1 <-etapa1 %>%
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
   theme_minimal() +
   labs(x = "", y = "", color = "") +
-  theme(legend.position = "none")
+  theme()
 
 ggplotly(e1) %>% 
   config(displayModeBar = F) %>%
