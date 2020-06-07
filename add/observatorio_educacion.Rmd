@@ -90,7 +90,7 @@ ggplotly(e1) %>%
 Esta sección presenta los datos de matrícula, que sirven para dimensionar en términos absolutos el número de niños, niñas y adolescentes de 0 a 17 años inscriptos a centros educativos. Esta cifra absoluta brinda una dimensión del impacto global en circulación de niños, niñas y adolescentes que implica la educación en su conjunto. La información está enfocada en la población de 0 a 17 años, por lo que no incluye matrículas de educación terciaria (universitaria y no universitaria). Se presenta la evolución de 2005 a 2019 correspondiente a datos absolutos de matrícula, por tanto, afectados por la evolución demográfica de la población (en la sección siguiente se presentan datos porcentuales de cobertura, que permiten una mirada más precisa respecto a la evolución de la asistencia en relación al total de la población).  
 
 
-### _Matrícula educación inicial, primaria y media (ANEP) y primera infancia (INAU) 2005-2019_  
+### _Matrícula educación inicial, primaria y media (ANEP) y primera infancia (INAU): 2005-2019_  
 
 ```{r, echo = FALSE}
 
@@ -130,7 +130,7 @@ Esta sección incluye información relativa a algunos aspectos sociales vinculad
 
 Los indicadores de cobertura miden la cantidad de asistentes a la educación en relación a la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen. Se presentan los datos de asistencia para edades simples y también los datos de asistencia por edad agrupada según quintil de ingresos.
 
-### _Asistencia entre 3 y 5 años por edad simple: 2005-2019_
+### _Asistencia de niños y niñas entre 3 y 5 años por edad simple: 2005-2019_
 
 
 ```{r, echo = FALSE}
@@ -157,7 +157,7 @@ ggplotly(g2) %>%
 ```
 
 
-### _Asistencia entre 3 y 5 años por quintil de ingresos: 2005-2019_
+### _Asistencia de niños y niñas entre 3 y 5 años por quintil de ingresos: 2005-2019_
 
 ```{r, echo = FALSE}
 
@@ -185,7 +185,7 @@ ggplotly(g3) %>%
 
 
 
-### _Asistencia entre 6 y 11 años por edad simple: 2005-2019_    
+### _Asistencia de niños y niñas entre 6 y 11 años por edad simple: 2005-2019_    
 
 
 ```{r, echo = FALSE}
@@ -216,7 +216,7 @@ ggplotly(g4) %>%
 
 
 
-### _Asistencia entre 6 y 11 años por quintil de ingresos: 2005-2019_
+### _Asistencia de niños y niñas entre 6 y 11 años por quintil de ingresos: 2005-2019_
 
 
 
@@ -249,7 +249,7 @@ ggplotly(g5) %>%
 
 
 
-### _Asistencia entre 12 y 14 años por edad simple: 2005-2019_  
+### _Asistencia de adolescentes entre 12 y 14 años por edad simple: 2005-2019_  
 
 
 ```{r, echo = FALSE}
@@ -280,7 +280,7 @@ ggplotly(g6) %>%
 
 
 
-### _Asistencia entre 12 y 14 años por quintil de ingresos: 2005-2019_
+### _Asistencia de adolescentes entre 12 y 14 años por quintil de ingresos: 2005-2019_
 
 
 ```{r, echo = FALSE}
@@ -311,7 +311,7 @@ ggplotly(g7) %>%
 
 
 
-### _Asistencia entre 15 y 17 años por edad simple: 2005-2019_
+### _Asistencia de adolescentes entre 15 y 17 años por edad simple: 2005-2019_
 
 ```{r, echo = FALSE}
 
@@ -370,7 +370,7 @@ ggplotly(g9) %>%
 
 ### **Conectividad y acceso a internet**  
 
-La información de conectividad sirve para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales. El acceso a internet y la dispobibilidad de dispositivos como computadoras y celulares, son una condición necesaria (aunque no suficiente), para el sostenimiento de las actividades pedagógicas y de seguimiento de estudiantes por parte de los docentes e instituciones educativas.
+La información de conectividad sirve para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales. El acceso a internet y la dispobibilidad de dispositivos, como computadoras y celulares, son una condición necesaria (aunque no suficiente), para el sostenimiento de las actividades pedagógicas y de seguimiento de estudiantes por parte de los docentes e instituciones educativas.
 
 
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar:  2019_  
@@ -466,7 +466,7 @@ ggplotly(b3) %>%
 
 
 
-### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular quintil de ingreso del hogar: 2019_  
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_  
 
 
 ```{r, echo = FALSE}
@@ -498,7 +498,7 @@ ggplotly(b5) %>%
 
 
 
-### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019 2019_  
+### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_  
 
 
 ```{r, echo = FALSE}
