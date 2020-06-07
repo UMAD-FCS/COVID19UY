@@ -56,8 +56,9 @@ Para la difinición de la etapas se tomó la planificación inicial del gobierno
 
 
 ```{r, echo = FALSE}
-e1 <-
-  etapa1 %>% 
+e1 <-etapa1 %>% 
+  mutate(ord= 1:length(rownames(etapa1)),
+        Ref= fct_reorder(Ref, ord, min)) %>%
   ggplot(aes(fill = Ref, y = Cantidad, x =Etapa2)) + 
   geom_bar(position = "dodge", stat = "identity", color = 'black') +
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
