@@ -510,6 +510,7 @@ g <-
   rename(`país` = country, fecha = date, casos = confirmed)%>%
   filter(`país` %in% c('Argentina', 'Brazil', 'Chile', 'Uruguay')) %>% 
   ggplot(aes(x = fecha, y = casos, color = `país`))+
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+
   geom_line() +
   labs(x = "",
        color = "", 

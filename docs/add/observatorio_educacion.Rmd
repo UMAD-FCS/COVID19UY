@@ -55,6 +55,36 @@ En esta sección se presenta una estimación de la cantidad de niños, niñas y 
 ### _Etapa 3: 29 de junio_    
 
 
+
+
+
+```{r, echo = FALSE}
+e1 <-
+  etapa1 %>% 
+  ggplot(aes(fill = Ref, y = Cantidad, x =Etapa2)) + 
+  geom_bar(position = "dodge", stat = "identity", color = 'black') +
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(e1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'UMAD con base en...', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
 <br />
 
 
@@ -83,7 +113,8 @@ ggplotly(g1) %>%
                     x = 1, 
                     y = -0.30, 
                     showarrow = FALSE,
-                    text = 'UMAD con base en...', font = list(color = "black", size = 12))
+                    text = 'UMAD con base en...', 
+                    font = list(color = "black", size = 12))
 
 ```
  
@@ -119,7 +150,8 @@ ggplotly(g2) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', font = list(color = "black", size = 12))
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
 
 ```
 
@@ -144,7 +176,8 @@ ggplotly(g3) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', font = list(color = "black", size = 12))
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
 
 ```
 
@@ -153,15 +186,182 @@ ggplotly(g3) %>%
 
 ### _Cobertura entre 6 y 11 años por edad simple: 2005-2019_    
 
+
+```{r, echo = FALSE}
+
+g4 <- 
+  ggplot(grafico4_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(70, 100) +
+  #facet_wrap(~Edad) +
+  theme_minimal() +
+  #theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 ### _Cobertura entre 6 y 11 años por quintil de ingresos: 2005-2019_
+
+
+
+```{r, echo = FALSE}
+
+g5 <- 
+  ggplot(grafico5_e, aes(x = Anio, y = Cobertura)) +
+    geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(70, 100) +
+  #facet_wrap(~Quintil, nrow = 2) +
+  theme_minimal() +
+  #theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g5) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 
 ### _Cobertura entre 12 y 14 años por edad simple: 2005-2019_  
 
+
+```{r, echo = FALSE}
+
+g6 <- 
+  ggplot(grafico6_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(70, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g6) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
 ### _Cobertura entre 12 y 14 años por quintil de ingresos: 2005-2019_
+
+
+```{r, echo = FALSE}
+
+g7 <- 
+  ggplot(grafico7_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(70, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g7) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
 
 ### _Cobertura entre 15 y 17 años por edad simple: 2005-2019_
 
+```{r, echo = FALSE}
+
+g8 <- 
+  ggplot(grafico8_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
 ### _Cobertura entre 15 y 17 años por quintil de ingresos: 2005-2019_
+
+```{r, echo = FALSE}
+
+g9 <- 
+  ggplot(grafico9_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g9) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
 
 
 <br />
@@ -173,13 +373,161 @@ Los datos de conectividad sirven para brindar una aproximación a las condicione
 
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar:  2019_  
 
+
+
+
+```{r, echo = FALSE}
+
+b1 <- 
+  barra_quintiles %>% filter(grafico == 'barra1') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil de ingreso del hogar: 2019_
+
+
+```{r, echo = FALSE}
+
+b2 <- 
+  barra_quintiles %>% filter(grafico == 'barra2') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b2) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de laptop del Plan Ceibal según quintil de ingreso del hogar: 2019_  
 
+```{r, echo = FALSE}
+
+b3 <- 
+  barra_quintiles %>% filter(grafico == 'barra 3') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b3) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular quintil de ingreso del hogar: 2019_  
 
+
+```{r, echo = FALSE}
+
+b5 <- data.frame(
+    Quintil = paste('Quintil', 1:5), 
+    Porcentaje = c(98.9,99.7, 100.0, 100.0,100.0)
+)
+b5 <- b5 %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b5) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
 ### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019 2019_  
+
+
+```{r, echo = FALSE}
+
+b4 <- 
+  barra_quintiles %>% filter(grafico == 'barra 4') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+
 
 
 <br />
@@ -191,6 +539,70 @@ La información de la condición de actividad de los adultos que viven con niño
 
 ### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
 
+
+```{r, echo = FALSE}
+
+b8 <- 
+  barra_apilada %>% 
+    ggplot(aes(fill = Categoria, y = Porcentaje, x = Quintil)) + 
+    geom_bar(position = "stack", stat = "identity", color = 'black') +
+    theme_minimal() +
+    labs(x = "", y = "", color = "")
+
+ggplotly(b8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.30, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
 ### _Cantidad de hogares con niños de 0 a 11 años asistentes a centros educativos con totalidad de mayores de 18 años económicamente activos según quintil de ingreso del hogar: 2019_ 
+
+
+
+
+```{r, echo = FALSE}
+
+b7 <- data.frame(
+    Quintil = paste('Quintil', 1:5), 
+    Porcentaje = c(70042,52245,40561,31985,18887)
+)
+b7 <- b7 %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b7) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+
+
+
+
+
 
 <br />

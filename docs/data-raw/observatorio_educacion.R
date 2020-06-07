@@ -1,4 +1,8 @@
 ## data educacion
+
+dec <- 2
+
+
 grafico1_e <- 
     tibble::tribble(
     ~anio, ~matricula,                        ~tipo,
@@ -61,7 +65,7 @@ grafico1_e <-
 
 
 
-grafico2_e <-
+grafico2_e <- # Cobertura entre los 3 y 5 años de edad por edad simple 2006-2019
     tibble::tribble(
     ~Anio,    ~Cobertura,    ~Edad,
     2006L, 46.2546376744, "3 A\u00F1os",
@@ -107,9 +111,10 @@ grafico2_e <-
     2018L,            99, "5 A\u00F1os",
     2019L,         99.36, "5 A\u00F1os"
     )
+grafico2_e$Cobertura <- round(grafico2_e$Cobertura, dec)
 
 
-grafico3_e <-
+grafico3_e <- # Cobertura entre los 3 y 5 años de edad por nivel socioeconómico 2006-2019
     tibble::tribble(
         ~Anio,        ~Nivel,    ~Quintil,
         2006L,          65.5, "1",
@@ -184,6 +189,514 @@ grafico3_e <-
         2019L,         96.92, "5"
         )
 
-grafico3_e$Nivel <- round(grafico3_e$Nivel, 2)
+grafico3_e$Nivel <- round(grafico3_e$Nivel, dec)
+
+
+
+grafico4_e <- # Cobertura entre los 6 y 11 años de edad por edad simple 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,           ~Edad,
+        2006L, 99.2937941379,  "6 A\u00F1os",
+        2007L, 99.3442761655,  "6 A\u00F1os",
+        2008L, 98.9584356883,  "6 A\u00F1os",
+        2009L, 98.8699819725,  "6 A\u00F1os",
+        2010L, 99.3062355466,  "6 A\u00F1os",
+        2011L, 98.0247536195,  "6 A\u00F1os",
+        2012L, 98.7522992709,  "6 A\u00F1os",
+        2013L, 98.7064950462,  "6 A\u00F1os",
+        2014L, 98.1038291605,  "6 A\u00F1os",
+        2015L, 99.0497876253,  "6 A\u00F1os",
+        2016L,       99.4514,  "6 A\u00F1os",
+        2017L,       99.5014,  "6 A\u00F1os",
+        2018L,          99.3,  "6 A\u00F1os",
+        2019L,         98.91,  "6 A\u00F1os",
+        2006L, 99.5767102449,  "7 A\u00F1os",
+        2007L, 99.5445238394,  "7 A\u00F1os",
+        2008L, 98.6987352877,  "7 A\u00F1os",
+        2009L,  98.739290629,  "7 A\u00F1os",
+        2010L, 98.7956585264,  "7 A\u00F1os",
+        2011L, 98.5737252154,  "7 A\u00F1os",
+        2012L, 99.7464492589,  "7 A\u00F1os",
+        2013L, 99.5370946984,  "7 A\u00F1os",
+        2014L, 99.6936249645,  "7 A\u00F1os",
+        2015L, 99.8706009631,  "7 A\u00F1os",
+        2016L,       99.7399,  "7 A\u00F1os",
+        2017L,       99.8843,  "7 A\u00F1os",
+        2018L,          99.8,  "7 A\u00F1os",
+        2019L,         99.65,  "7 A\u00F1os",
+        2006L, 99.7709815367,  "8 A\u00F1os",
+        2007L, 99.6592453225,  "8 A\u00F1os",
+        2008L, 99.1067821716,  "8 A\u00F1os",
+        2009L,  98.754299136,  "8 A\u00F1os",
+        2010L, 98.7600625692,  "8 A\u00F1os",
+        2011L, 98.8578827349,  "8 A\u00F1os",
+        2012L, 99.7859743169,  "8 A\u00F1os",
+        2013L, 99.8323438332,  "8 A\u00F1os",
+        2014L, 99.4436371185,  "8 A\u00F1os",
+        2015L, 99.7617932691,  "8 A\u00F1os",
+        2016L,       99.8791,  "8 A\u00F1os",
+        2017L,       99.5584,  "8 A\u00F1os",
+        2018L,          99.8,  "8 A\u00F1os",
+        2019L,         99.84,  "8 A\u00F1os",
+        2006L, 99.7872707411,  "9 A\u00F1os",
+        2007L, 99.9183575937,  "9 A\u00F1os",
+        2008L, 99.2681369419,  "9 A\u00F1os",
+        2009L, 98.8077863882,  "9 A\u00F1os",
+        2010L, 99.2237557831,  "9 A\u00F1os",
+        2011L, 98.4012188537,  "9 A\u00F1os",
+        2012L, 99.6945807166,  "9 A\u00F1os",
+        2013L, 99.6772479484,  "9 A\u00F1os",
+        2014L, 99.7116659939,  "9 A\u00F1os",
+        2015L,           100,  "9 A\u00F1os",
+        2016L,       99.8156,  "9 A\u00F1os",
+        2017L,       99.9451,  "9 A\u00F1os",
+        2018L,          99.9,  "9 A\u00F1os",
+        2019L,         99.57,  "9 A\u00F1os",
+        2006L, 99.5843584582, "10 A\u00F1os",
+        2007L,  99.802966653, "10 A\u00F1os",
+        2008L, 99.1070302979, "10 A\u00F1os",
+        2009L, 98.9476948522, "10 A\u00F1os",
+        2010L, 99.3326599812, "10 A\u00F1os",
+        2011L,  98.456073234, "10 A\u00F1os",
+        2012L, 99.5608911091, "10 A\u00F1os",
+        2013L, 99.3890174946, "10 A\u00F1os",
+        2014L, 99.5510662177, "10 A\u00F1os",
+        2015L, 99.5515082971, "10 A\u00F1os",
+        2016L,       99.2108, "10 A\u00F1os",
+        2017L,       99.1369, "10 A\u00F1os",
+        2018L,          99.4, "10 A\u00F1os",
+        2019L,         98.95, "10 A\u00F1os",
+        2006L, 99.5535630192, "11 A\u00F1os",
+        2007L, 99.8602753507, "11 A\u00F1os",
+        2008L, 98.9972344782, "11 A\u00F1os",
+        2009L, 98.9143497301, "11 A\u00F1os",
+        2010L, 98.5488055829, "11 A\u00F1os",
+        2011L, 97.5623418516, "11 A\u00F1os",
+        2012L, 98.9064771773, "11 A\u00F1os",
+        2013L,  98.645849617, "11 A\u00F1os",
+        2014L, 99.2195459526, "11 A\u00F1os",
+        2015L, 98.7525143122, "11 A\u00F1os",
+        2016L,       98.9545, "11 A\u00F1os",
+        2017L,       98.9851, "11 A\u00F1os",
+        2018L,          98.7, "11 A\u00F1os",
+        2019L,         98.86, "11 A\u00F1os"
+        )
+
+grafico4_e$Cobertura <- round(grafico4_e$Cobertura, dec)
+
+
+
+grafico5_e <- # Cobertura entre los 6 y 11 años de edad por nivel socioeconómico 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,   ~Quintil,
+        2006L, 99.3521794295, "Quintil 1",
+        2007L, 99.6045699944, "Quintil 1",
+        2008L, 98.8645758695, "Quintil 1",
+        2009L, 98.7470668969, "Quintil 1",
+        2010L, 98.8341587559, "Quintil 1",
+        2011L, 98.5206492706, "Quintil 1",
+        2012L, 99.2165743059, "Quintil 1",
+        2013L, 99.1279069767, "Quintil 1",
+        2014L,  99.243305364, "Quintil 1",
+        2015L, 99.4574810695, "Quintil 1",
+        2016L,       99.4889, "Quintil 1",
+        2017L,       99.5193, "Quintil 1",
+        2018L,          99.5, "Quintil 1",
+        2019L,          99.2, "Quintil 1",
+        2006L, 99.8186524709, "Quintil 2",
+        2007L, 99.6355023762, "Quintil 2",
+        2008L, 99.1831059355, "Quintil 2",
+        2009L,  98.579467262, "Quintil 2",
+        2010L, 98.7866982051, "Quintil 2",
+        2011L, 98.5894655195, "Quintil 2",
+        2012L,  99.647902382, "Quintil 2",
+        2013L, 99.5901979787, "Quintil 2",
+        2014L, 99.2327365729, "Quintil 2",
+        2015L, 99.5088621492, "Quintil 2",
+        2016L,       99.5303, "Quintil 2",
+        2017L,       99.5034, "Quintil 2",
+        2018L,          99.4, "Quintil 2",
+        2019L,         99.27, "Quintil 2",
+        2006L, 99.7641626533, "Quintil 3",
+        2007L, 99.8206663131, "Quintil 3",
+        2008L, 99.0747991531, "Quintil 3",
+        2009L, 98.9750376252, "Quintil 3",
+        2010L, 99.3524734562, "Quintil 3",
+        2011L, 98.1523208653, "Quintil 3",
+        2012L, 99.6410522836, "Quintil 3",
+        2013L, 99.1988123571, "Quintil 3",
+        2014L, 99.4759489411, "Quintil 3",
+        2015L, 99.5911115438, "Quintil 3",
+        2016L,       99.4331, "Quintil 3",
+        2017L,       99.4309, "Quintil 3",
+        2018L,          99.7, "Quintil 3",
+        2019L,         99.68, "Quintil 3",
+        2006L, 99.8947696625, "Quintil 4",
+        2007L,           100, "Quintil 4",
+        2008L, 99.5125547864, "Quintil 4",
+        2009L, 99.2627521425, "Quintil 4",
+        2010L, 99.3007515985, "Quintil 4",
+        2011L, 96.8839762935, "Quintil 4",
+        2012L, 99.2945745651, "Quintil 4",
+        2013L, 99.6364454106, "Quintil 4",
+        2014L, 99.3236500721, "Quintil 4",
+        2015L, 99.4537577698, "Quintil 4",
+        2016L,       99.4601, "Quintil 4",
+        2017L,       99.5509, "Quintil 4",
+        2018L,          99.1, "Quintil 4",
+        2019L,         99.13, "Quintil 4",
+        2006L, 99.9781933163, "Quintil 5",
+        2007L,           100, "Quintil 5",
+        2008L, 98.9006251347, "Quintil 5",
+        2009L, 99.5649540173, "Quintil 5",
+        2010L, 99.8375259118, "Quintil 5",
+        2011L, 98.1180496151, "Quintil 5",
+        2012L, 99.9038989566, "Quintil 5",
+        2013L, 99.2948550535, "Quintil 5",
+        2014L, 99.4918235716, "Quintil 5",
+        2015L, 99.4795682344, "Quintil 5",
+        2016L,       99.8184, "Quintil 5",
+        2017L,       99.3136, "Quintil 5",
+        2018L,           100, "Quintil 5",
+        2019L,         99.49, "Quintil 5"
+        )
+
+grafico5_e$Cobertura <- round(grafico5_e$Cobertura, dec)
+
+
+grafico6_e <- # Cobertura entre los 12 y 14 años de edad por edad simple 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,     ~Edad,
+        2006L, 98.4894809638, "12 A\u00F1os",
+        2007L, 98.7247547605, "12 A\u00F1os",
+        2008L, 97.4646286259, "12 A\u00F1os",
+        2009L, 97.7856474942, "12 A\u00F1os",
+        2010L, 98.0589355896, "12 A\u00F1os",
+        2011L, 97.5381454283, "12 A\u00F1os",
+        2012L, 97.2927794643, "12 A\u00F1os",
+        2013L, 97.5933063834, "12 A\u00F1os",
+        2014L, 98.0966239814, "12 A\u00F1os",
+        2015L, 97.8230078193, "12 A\u00F1os",
+        2016L,       98.1721, "12 A\u00F1os",
+        2017L,       98.6629, "12 A\u00F1os",
+        2018L,          98.8, "12 A\u00F1os",
+        2019L,         98.45, "12 A\u00F1os",
+        2006L, 95.0868211427, "13 A\u00F1os",
+        2007L, 94.9460865631, "13 A\u00F1os",
+        2008L, 94.3452440463, "13 A\u00F1os",
+        2009L, 94.0879892441, "13 A\u00F1os",
+        2010L, 95.1103460595, "13 A\u00F1os",
+        2011L, 95.6361764594, "13 A\u00F1os",
+        2012L, 96.2989716197, "13 A\u00F1os",
+        2013L,  95.562782913, "13 A\u00F1os",
+        2014L, 96.7720216225, "13 A\u00F1os",
+        2015L, 97.1282887255, "13 A\u00F1os",
+        2016L,       96.9819, "13 A\u00F1os",
+        2017L,       97.4469, "13 A\u00F1os",
+        2018L,          97.2, "13 A\u00F1os",
+        2019L,         98.67, "13 A\u00F1os",
+        2006L, 90.0212473911, "14 A\u00F1os",
+        2007L, 88.6292053684, "14 A\u00F1os",
+        2008L, 89.7141461031, "14 A\u00F1os",
+        2009L, 89.9092334191, "14 A\u00F1os",
+        2010L,  90.778628915, "14 A\u00F1os",
+        2011L,  91.207169402, "14 A\u00F1os",
+        2012L, 91.4052181237, "14 A\u00F1os",
+        2013L, 91.8432011588, "14 A\u00F1os",
+        2014L, 91.4751965717, "14 A\u00F1os",
+        2015L, 92.3474744333, "14 A\u00F1os",
+        2016L,       93.7671, "14 A\u00F1os",
+        2017L,        95.057, "14 A\u00F1os",
+        2018L,          95.8, "14 A\u00F1os",
+        2019L,         96.66, "14 A\u00F1os"
+        )
+
+grafico6_e$Cobertura <- round(grafico6_e$Cobertura, dec)
+
+
+
+grafico7_e <- # Cobertura entre los 12 y 14 años de edad por nivel socioeconómico 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,    ~Quintil,
+        2006L,  91.905948047, "Quintil 1",
+        2007L, 91.7716905869, "Quintil 1",
+        2008L,  90.686420594, "Quintil 1",
+        2009L, 91.3986203165, "Quintil 1",
+        2010L, 91.8247885218, "Quintil 1",
+        2011L, 92.4279824584, "Quintil 1",
+        2012L, 92.5071491421, "Quintil 1",
+        2013L,  92.560098941, "Quintil 1",
+        2014L, 93.1837096298, "Quintil 1",
+        2015L, 93.6668510762, "Quintil 1",
+        2016L,       94.4715, "Quintil 1",
+        2017L,       95.5862, "Quintil 1",
+        2018L,          95.7, "Quintil 1",
+        2019L,         96.68, "Quintil 1",
+        2006L, 95.3004707837, "Quintil 2",
+        2007L, 95.3059270649, "Quintil 2",
+        2008L,  95.395822308, "Quintil 2",
+        2009L, 95.0645492974, "Quintil 2",
+        2010L, 95.8444818033, "Quintil 2",
+        2011L, 95.5276895754, "Quintil 2",
+        2012L, 96.0483913572, "Quintil 2",
+        2013L, 96.5235283115, "Quintil 2",
+        2014L,  96.676695465, "Quintil 2",
+        2015L, 96.6661969846, "Quintil 2",
+        2016L,       97.3345, "Quintil 2",
+        2017L,       98.0709, "Quintil 2",
+        2018L,          98.4, "Quintil 2",
+        2019L,         98.93, "Quintil 2",
+        2006L, 97.2631035373, "Quintil 3",
+        2007L,  95.678107466, "Quintil 3",
+        2008L,  97.137603737, "Quintil 3",
+        2009L, 96.4475201845, "Quintil 3",
+        2010L, 96.9316278362, "Quintil 3",
+        2011L, 97.1513379408, "Quintil 3",
+        2012L, 97.7474756192, "Quintil 3",
+        2013L, 97.0262919311, "Quintil 3",
+        2014L,   98.00746022, "Quintil 3",
+        2015L, 98.0138934216, "Quintil 3",
+        2016L,        97.666, "Quintil 3",
+        2017L,       98.4378, "Quintil 3",
+        2018L,          98.4, "Quintil 3",
+        2019L,         98.71, "Quintil 3",
+        2006L, 98.2106371123, "Quintil 4",
+        2007L, 98.8273829021, "Quintil 4",
+        2008L, 98.0935057936, "Quintil 4",
+        2009L, 96.9371519491, "Quintil 4",
+        2010L, 98.6570002377, "Quintil 4",
+        2011L, 97.8375076359, "Quintil 4",
+        2012L, 98.2238584254, "Quintil 4",
+        2013L, 98.4281842818, "Quintil 4",
+        2014L, 97.9951939581, "Quintil 4",
+        2015L, 99.4294381049, "Quintil 4",
+        2016L,       99.6069, "Quintil 4",
+        2017L,       97.8478, "Quintil 4",
+        2018L,          98.5, "Quintil 4",
+        2019L,         99.51, "Quintil 4",
+        2006L, 98.5480486781, "Quintil 5",
+        2007L, 98.4761328086, "Quintil 5",
+        2008L,  97.895319856, "Quintil 5",
+        2009L, 98.2217680123, "Quintil 5",
+        2010L, 99.4077912464, "Quintil 5",
+        2011L, 98.8652797864, "Quintil 5",
+        2012L, 98.6523616381, "Quintil 5",
+        2013L, 98.3128834356, "Quintil 5",
+        2014L, 98.7235868283, "Quintil 5",
+        2015L, 99.1473812424, "Quintil 5",
+        2016L,       98.3897, "Quintil 5",
+        2017L,       99.1869, "Quintil 5",
+        2018L,           100, "Quintil 5",
+        2019L,         98.76, "Quintil 5"
+        )
+
+
+grafico7_e$Cobertura <- round(grafico7_e$Cobertura, dec)
+
+
+
+grafico8_e <- # Cobertura entre los 15 y 17 años de edad por edad simple 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,     ~Edad,
+        2006L,  80.074681449, "15 A\u00F1os",
+        2007L, 78.8434881556, "15 A\u00F1os",
+        2008L, 77.5888619344, "15 A\u00F1os",
+        2009L,  80.248563677, "15 A\u00F1os",
+        2010L, 79.3821017952, "15 A\u00F1os",
+        2011L, 81.6396213075, "15 A\u00F1os",
+        2012L,       83.6442, "15 A\u00F1os",
+        2013L,        83.422, "15 A\u00F1os",
+        2014L, 85.0362619929, "15 A\u00F1os",
+        2015L, 86.4266547406, "15 A\u00F1os",
+        2016L,       87.3534, "15 A\u00F1os",
+        2017L,         89.53, "15 A\u00F1os",
+        2018L,          91.1, "15 A\u00F1os",
+        2019L,         93.08, "15 A\u00F1os",
+        2006L, 73.0923003348, "16 A\u00F1os",
+        2007L, 70.8931155675, "16 A\u00F1os",
+        2008L, 66.4734383111, "16 A\u00F1os",
+        2009L, 71.9207749252, "16 A\u00F1os",
+        2010L, 73.8344527855, "16 A\u00F1os",
+        2011L, 72.3408849621, "16 A\u00F1os",
+        2012L,       74.8137, "16 A\u00F1os",
+        2013L,       75.0807, "16 A\u00F1os",
+        2014L, 76.3409744288, "16 A\u00F1os",
+        2015L, 77.9987090759, "16 A\u00F1os",
+        2016L,       80.4633, "16 A\u00F1os",
+        2017L,       84.6322, "16 A\u00F1os",
+        2018L,          85.4, "16 A\u00F1os",
+        2019L,         88.33, "16 A\u00F1os",
+        2006L, 62.7295607377, "17 A\u00F1os",
+        2007L, 61.8448679238, "17 A\u00F1os",
+        2008L, 59.9040197244, "17 A\u00F1os",
+        2009L, 65.5714059907, "17 A\u00F1os",
+        2010L, 62.7687589586, "17 A\u00F1os",
+        2011L, 63.4455761354, "17 A\u00F1os",
+        2012L,       64.1098, "17 A\u00F1os",
+        2013L,       66.3522, "17 A\u00F1os",
+        2014L, 66.1392578518, "17 A\u00F1os",
+        2015L,  71.844915826, "17 A\u00F1os",
+        2016L,       72.8462, "17 A\u00F1os",
+        2017L,       77.4243, "17 A\u00F1os",
+        2018L,          76.9, "17 A\u00F1os",
+        2019L,         81.13, "17 A\u00F1os"
+        )
+
+grafico8_e$Cobertura <- round(grafico8_e$Cobertura, dec)
+
+
+grafico9_e <- # Cobertura entre los 15 y 17 años de edad por nivel socioeconómico 2006-2019
+    tibble::tribble(
+        ~Anio,    ~Cobertura,    ~Quintil,
+        2006L,   57.22644439, "Quintil 1",
+        2007L, 54.9227671794, "Quintil 1",
+        2008L, 53.5607668548, "Quintil 1",
+        2009L,  60.264826795, "Quintil 1",
+        2010L, 59.2300124615, "Quintil 1",
+        2011L, 61.1732921652, "Quintil 1",
+        2012L,       63.4537, "Quintil 1",
+        2013L,       62.6945, "Quintil 1",
+        2014L, 64.1019509656, "Quintil 1",
+        2015L, 67.9347896294, "Quintil 1",
+        2016L,       70.4458, "Quintil 1",
+        2017L,       75.2137, "Quintil 1",
+        2018L,          75.1, "Quintil 1",
+        2019L,         81.64, "Quintil 1",
+        2006L, 73.9146746704, "Quintil 2",
+        2007L, 72.9795895129, "Quintil 2",
+        2008L, 69.3281214956, "Quintil 2",
+        2009L, 73.0722525804, "Quintil 2",
+        2010L, 75.1476075764, "Quintil 2",
+        2011L, 74.7552363854, "Quintil 2",
+        2012L,         76.26, "Quintil 2",
+        2013L,       78.0875, "Quintil 2",
+        2014L, 80.0479578805, "Quintil 2",
+        2015L, 80.8477089266, "Quintil 2",
+        2016L,       81.9901, "Quintil 2",
+        2017L,       85.8622, "Quintil 2",
+        2018L,          87.9, "Quintil 2",
+        2019L,         88.34, "Quintil 2",
+        2006L, 81.9787433573, "Quintil 3",
+        2007L, 81.8023799973, "Quintil 3",
+        2008L, 79.0969505585, "Quintil 3",
+        2009L, 82.7625716104, "Quintil 3",
+        2010L, 79.3616211917, "Quintil 3",
+        2011L, 82.1552723059, "Quintil 3",
+        2012L,        82.227, "Quintil 3",
+        2013L,       83.4518, "Quintil 3",
+        2014L, 84.4660570366, "Quintil 3",
+        2015L, 89.9679217903, "Quintil 3",
+        2016L,       89.7538, "Quintil 3",
+        2017L,       92.4575, "Quintil 3",
+        2018L,          92.8, "Quintil 3",
+        2019L,         92.32, "Quintil 3",
+        2006L, 87.4957888827, "Quintil 4",
+        2007L, 88.8263473054, "Quintil 4",
+        2008L, 85.2952075099, "Quintil 4",
+        2009L, 87.1959322817, "Quintil 4",
+        2010L,  88.409976223, "Quintil 4",
+        2011L, 88.2839193211, "Quintil 4",
+        2012L,       91.4549, "Quintil 4",
+        2013L,       93.4031, "Quintil 4",
+        2014L, 91.7782399584, "Quintil 4",
+        2015L, 92.1478698127, "Quintil 4",
+        2016L,        92.432, "Quintil 4",
+        2017L,       94.1039, "Quintil 4",
+        2018L,            95, "Quintil 4",
+        2019L,         95.18, "Quintil 4",
+        2006L,  95.229065534, "Quintil 5",
+        2007L, 94.6844414445, "Quintil 5",
+        2008L, 91.6986871598, "Quintil 5",
+        2009L, 94.7206033596, "Quintil 5",
+        2010L, 95.1052185308, "Quintil 5",
+        2011L, 92.9871881322, "Quintil 5",
+        2012L,       95.6898, "Quintil 5",
+        2013L,       95.7351, "Quintil 5",
+        2014L, 94.7974542883, "Quintil 5",
+        2015L, 97.4933282501, "Quintil 5",
+        2016L,       96.9887, "Quintil 5",
+        2017L,        96.559, "Quintil 5",
+        2018L,          96.7, "Quintil 5",
+        2019L,         97.79, "Quintil 5"
+        )
+
+
+
+barra_quintiles <- #
+    tibble::tribble(
+                   ~Edad,    ~Quintil,   ~Porcentaje,                                                                                                                                                                               ~titulo,  ~grafico,
+        "De 3 a 17 años", "Quintil 1", 48.7127375185, "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar. Total país, 2019",  "barra1",
+        "De 3 a 17 años", "Quintil 2", 75.7763550419, "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar. Total país, 2020",  "barra1",
+        "De 3 a 17 años", "Quintil 3", 88.1991467376, "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar. Total país, 2021",  "barra1",
+        "De 3 a 17 años", "Quintil 4", 95.7584777294, "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar. Total país, 2022",  "barra1",
+        "De 3 a 17 años", "Quintil 5", 99.0796780433, "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar. Total país, 2023",  "barra1",
+        "De 3 a 17 años", "Quintil 1", 77.8835661126,                           "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil",  "barra2",
+        "De 3 a 17 años", "Quintil 2", 81.8401730077,                           "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil",  "barra2",
+        "De 3 a 17 años", "Quintil 3", 86.0594674286,                           "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil",  "barra2",
+        "De 3 a 17 años", "Quintil 4", 92.5923957337,                           "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil",  "barra2",
+        "De 3 a 17 años", "Quintil 5", 97.3482248705,                           "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil",  "barra2",
+        "De 3 a 17 años", "Quintil 1", 70.8886412582,                              "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular", "barra 3",
+        "De 3 a 17 años", "Quintil 2", 62.7204267068,                              "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular", "barra 3",
+        "De 3 a 17 años", "Quintil 3", 53.1501559096,                              "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular", "barra 3",
+        "De 3 a 17 años", "Quintil 4", 35.5568548244,                              "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular", "barra 3",
+        "De 3 a 17 años", "Quintil 5", 18.3315654832,                              "Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos con por lo menos una persona con tenencia de celular", "barra 3",
+        "De 3 a 17 años", "Quintil 1",          1872,      "Cantidad* de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos sin  tenencia de celular según quintil de ingreso del hogar. Total país, 2019", "barra 4",
+        "De 3 a 17 años", "Quintil 2",           370,      "Cantidad* de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos sin  tenencia de celular según quintil de ingreso del hogar. Total país, 2020", "barra 4",
+        "De 3 a 17 años", "Quintil 3",            24,      "Cantidad* de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos sin  tenencia de celular según quintil de ingreso del hogar. Total país, 2021", "barra 4",
+        "De 3 a 17 años", "Quintil 4",             0,      "Cantidad* de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos sin  tenencia de celular según quintil de ingreso del hogar. Total país, 2022", "barra 4",
+        "De 3 a 17 años", "Quintil 5",             0,      "Cantidad* de hogares con niños, niñas y/o adolescentes de 3 a 17 asistentes a centros educativos sin  tenencia de celular según quintil de ingreso del hogar. Total país, 2023", "barra 4"
+        )
+
+
+
+barra_quintiles$Porcentaje <- round(barra_quintiles$Porcentaje, dec)
+
+
+
+
+
+barra_apilada <- 
+    tibble::tribble(
+                                           ~Categoria,   ~Porcentaje,    ~Quintil,
+        "Totalidad de adultos economicamente activos", 52.5789525046, "Quintil 1",
+        "Totalidad de adultos economicamente activos", 63.9325003977, "Quintil 2",
+        "Totalidad de adultos economicamente activos", 76.5388534551, "Quintil 3",
+        "Totalidad de adultos economicamente activos", 84.3308373761, "Quintil 4",
+        "Totalidad de adultos economicamente activos", 88.8883659639, "Quintil 5",
+           "Presencia de adultos activos e inactivos", 43.1129094007, "Quintil 1",
+           "Presencia de adultos activos e inactivos", 34.4717874668, "Quintil 2",
+           "Presencia de adultos activos e inactivos", 22.6837000415, "Quintil 3",
+           "Presencia de adultos activos e inactivos", 15.3290445054, "Quintil 4",
+           "Presencia de adultos activos e inactivos", 10.6927710843, "Quintil 5",
+                     "Totalidad de adultos inactivos",  4.3081380946, "Quintil 1",
+                     "Totalidad de adultos inactivos",  1.5957121355, "Quintil 2",
+                     "Totalidad de adultos inactivos",  0.7774465034, "Quintil 3",
+                     "Totalidad de adultos inactivos",  0.3401181185, "Quintil 4",
+                     "Totalidad de adultos inactivos",  0.4188629518, "Quintil 5"
+        )
+
+
+barra_apilada$Porcentaje <- round(barra_apilada$Porcentaje, dec)
+
+
+
+etapa1 <- 
+    tibble::tribble(
+           ~Etapa,        ~Fecha, ~Cantidad,        ~Ref,
+        "ETAPA 0", "22 DE ABRIL",    11269L, "POR ETAPA",
+        "ETAPA 1", "1° DE JUNIO",    91510L, "POR ETAPA",
+        "ETAPA 2", "15 DE JUNIO",   488165L, "POR ETAPA",
+        "ETAPA 3", "29 DE JUNIO",   256655L, "POR ETAPA",
+        "ETAPA 0", "22 DE ABRIL",    11269L, "ACUMULADO",
+        "ETAPA 1", "1° DE JUNIO",   102779L, "ACUMULADO",
+        "ETAPA 2", "15 DE JUNIO",   590944L, "ACUMULADO",
+        "ETAPA 3", "29 DE JUNIO",   847599L, "ACUMULADO"
+        )
+
+
+etapa1$Etapa2 <- paste0(etapa1$Etapa, '\n', etapa1$Fecha )
+
+
+
 
 
