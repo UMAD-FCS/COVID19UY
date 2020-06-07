@@ -13,18 +13,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # **Observatorio COVID-19:Educación** 
 
-Esta sección presenta un conjunto de datos y gráficos que permiten visualizar dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema nacional de educación y de la reapertura gradual por etapas.  
+Esta sección presenta un conjunto de datos que permiten visualizar dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema nacional de educación y de la reapertura gradual por etapas.  
 
 El reporte procura ofrecer a investigadores, tomadores de decisión, formadores de opinión y público en general un panorama general de la situación del país en materia de educación en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID-19.  
 
-La información se agrupa en tres partes. La primera es una estimación de la cantidad de niños, niñas y adolescentes que se reincorporan a las clases presenciales en cada una de las etapas de la reapertura. La segunda es un dimensionamiento de la cantidad de niños, niñas y adolescentes matriculados en la educación de 0 a 17 años. La tercera procura ofrecer una mirada a algunos aspectos sociales de la educación en Uruguay.  
+La información se agrupa en tres partes. La primera es una estimación de la cantidad de estudiantes que se reincorporan a las clases presenciales en cada una de las etapas de la reapertura. La segunda es un dimensionamiento de la cantidad de niños, niñas y adolescentes matriculados en la educación de 0 a 17 años. La tercera procura ofrecer una mirada a algunos aspectos sociales de la educación en Uruguay.  
 
-Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden descargar aquí el archivo con la información que se presenta en esta sección.
+Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden descargar aquí el archivo con la información que se presenta en esta sección PONER LINK.
 
 
 #### **Dimensiones**
 
-    a. Estimación de niños y niñas por etapa de reapertura  
+    a. Estimación de estudiantes por etapa de reapertura  
     b. Dimensionamiento de la educación de 0 a 17 años  
     c. Una mirada social a la educación  
 
@@ -39,20 +39,20 @@ source(here::here('data-raw/observatorio_educacion.R'))
 ```
 
 
-# **Estimación de niños y niñas por etapa de reapertura**  
+# **Estimación de estudiantes por etapa de reapertura**  
 
-En esta sección se presenta una estimación de la cantidad de niños, niñas y adolescentes se reincorporan a la presencialidad en cada una de las etapas definidas por el gobierno.  
+En esta sección se presenta una estimación de la cantidad de estudiantes que se reincorporan a la presencialidad en cada una de las etapas definidas por el gobierno.  
 
-### _Etapa 0: 22 de abril_  
+Luego del cierre de los centros educativos en el marco de la pandemia del COVID-19, el gobierno programó el reintegro a las clases presenciales voluntario y en tres etapas. Retomar el ingreso a clases supone un importante retorno de la circulación de personas en el territorio nacional, tanto de estudiantes, como docentes, administrativos, servicios de transporte, alimentación, entre otras diversas actividades. Nos proponemos aquí  aproximar la cantidad de estudiantes que asistirán a los centros educativos en cada etapa prevista en el cronograma de gobierno.  
 
-### _Etapa 1: 1° de junio_  
+Estimar la cantidad de estudiantes que asisten a los centros educativos incluidos en cada etapa no es tarea sencilla. Para su construcción nos basamos en información sobre estudiantes inscriptos y encuestas que relevan datos sobre la asistencia efectiva de las personas a los centros antes del COVID-19. Una  dificultad adicional supone estimar la cantidad de estudiantes que efectivamente asistirán a clase en esta nueva coyuntura de asistencia voluntaria. Para ello, realizamos una proyección de asistencia del 30%, 50%, 75% y 100%.						
 
-### _Etapa 2: 15 de junio_  
+La estimación se realiza a partir de la asistencia a centros declarada en la Encuesta Continua de Hogares (ECH) en 2019. En aquellos casos en que no es posible identificar con esta fuente de información los tipos de centros que abrirán en alguna etapa, la cantidad de estudiantes se ajusta en función de la matrícula de inscriptos. La nota metodológica de la estimación se encuentra aquí PONER LINK
 
-### _Etapa 3: 29 de junio_    
+Para la difinición de la etapas se tomó la planificación inicial del gobierno PONER LINK, realizando dos ajustes de acuerdo a lo definido posteriormente: se excluye en su totalidad el departamento de Rivera (ya que las clases han sido suspendidas por tiempo indefinido) y se modifica la reapertura de las escuelas especiales (incialmente previstas para la etapa 1 y luego incluidas en la etapa 2). Asimismo, se incorporó a la información una "fase 0", correspondiente al retorno de las escuelas rurales que se realizó a partir del 22 de abril.	 
 
 
-
+### _Estimación de cantidad de estudiantes por etapa de reapertura_     
 
 
 ```{r, echo = FALSE}
@@ -79,7 +79,7 @@ ggplotly(e1) %>%
 ```
 
 
-
+### _Proyección de cantidad de estudiantes por etapa de reapetura con porcentajes de asistencia voluntaria del 30%, 50%, 75% y 100%_  
 
 
 <br />
@@ -87,9 +87,10 @@ ggplotly(e1) %>%
 
 # **Dimensionamiento de la educación de 0 a 17 años**  
 
-Los datos de matrícula sirven para dimensionar en términos absolutos el número de niños, niñas y adolescentes de 0 a 17 años que concurren a centros educativos. Esta cifra absoluta brinda una dimensión del impacto en circulación de niños, niñas y adolescentes que implica la educación en su conjunto.   
+Esta sección presenta los datos de matrícula, que sirven para dimensionar en términos absolutos el número de niños, niñas y adolescentes de 0 a 17 años inscriptos a centros educativos. Esta cifra absoluta brinda una dimensión del impacto global en circulación de niños, niñas y adolescentes que implica la educación en su conjunto. La información está enfocada en la población de 0 a 17 años, por lo que no incluye matrículas de educación terciaria (universitaria y no universitaria). Se presenta la evolución de 2005 a 2019 correspondiente a datos absolutos de matrícula, por tanto, afectados por la evolución demográfica de la población (en la sección siguiente se presentan datos porcentuales de cobertura, que permiten una mirada más precisa respecto a la evolución de la asistencia en relación al total de la población).  
 
-### _Matrícula educación inicial, primaria, media y primera infancia 2005-2019_  
+
+### _Matrícula educación inicial, primaria y media (ANEP) y primera infancia (INAU) 2005-2019_  
 
 ```{r, echo = FALSE}
 
@@ -122,11 +123,14 @@ ggplotly(g1) %>%
 
 # **Una mirada social a la educación**  
 
+Esta sección incluye información relativa a algunos aspectos sociales vinculados a la educación. Se presentan datos sobre la cobertura educativa por edad y quintil de ingresos, conectividad y acceso a internet, y tensión de cuidados sobre los hogares a partir de la información de la condición de actividad de los adultos que conviven con niños y niñas asistentes a centros educativos.  
+
+
 ### **Cobertura**  
 
-Los datos de cobertura relacionan la matrícula educativa con la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje de niños, niñas y adolescentes del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen. Se presentan datos para edades simples y también los datos de cobertura por edad agurpada según quintil de ingresos.
+Los indicadores de cobertura miden la cantidad de asistentes a la educación en relación a la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen. Se presentan los datos de asistencia para edades simples y también los datos de asistencia por edad agrupada según quintil de ingresos.
 
-### _Cobertura entre 3 y 5 años por edad simple: 2005-2019_
+### _Asistencia entre 3 y 5 años por edad simple: 2005-2019_
 
 
 ```{r, echo = FALSE}
@@ -153,7 +157,7 @@ ggplotly(g2) %>%
 ```
 
 
-### _Cobertura entre 3 y 5 años por quintil de ingresos: 2005-2019_
+### _Asistencia entre 3 y 5 años por quintil de ingresos: 2005-2019_
 
 ```{r, echo = FALSE}
 
@@ -181,7 +185,7 @@ ggplotly(g3) %>%
 
 
 
-### _Cobertura entre 6 y 11 años por edad simple: 2005-2019_    
+### _Asistencia entre 6 y 11 años por edad simple: 2005-2019_    
 
 
 ```{r, echo = FALSE}
@@ -212,7 +216,7 @@ ggplotly(g4) %>%
 
 
 
-### _Cobertura entre 6 y 11 años por quintil de ingresos: 2005-2019_
+### _Asistencia entre 6 y 11 años por quintil de ingresos: 2005-2019_
 
 
 
@@ -245,7 +249,7 @@ ggplotly(g5) %>%
 
 
 
-### _Cobertura entre 12 y 14 años por edad simple: 2005-2019_  
+### _Asistencia entre 12 y 14 años por edad simple: 2005-2019_  
 
 
 ```{r, echo = FALSE}
@@ -276,7 +280,7 @@ ggplotly(g6) %>%
 
 
 
-### _Cobertura entre 12 y 14 años por quintil de ingresos: 2005-2019_
+### _Asistencia entre 12 y 14 años por quintil de ingresos: 2005-2019_
 
 
 ```{r, echo = FALSE}
@@ -307,7 +311,7 @@ ggplotly(g7) %>%
 
 
 
-### _Cobertura entre 15 y 17 años por edad simple: 2005-2019_
+### _Asistencia entre 15 y 17 años por edad simple: 2005-2019_
 
 ```{r, echo = FALSE}
 
@@ -334,7 +338,7 @@ ggplotly(g8) %>%
 ```
 
 
-### _Cobertura entre 15 y 17 años por quintil de ingresos: 2005-2019_
+### _Asistencia entre 15 y 17 años por quintil de ingresos: 2005-2019_
 
 ```{r, echo = FALSE}
 
@@ -366,7 +370,8 @@ ggplotly(g9) %>%
 
 ### **Conectividad y acceso a internet**  
 
-Los datos de conectividad sirven para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales.
+La información de conectividad sirve para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales. El acceso a internet y la dispobibilidad de dispositivos como computadoras y celulares, son una condición necesaria (aunque no suficiente), para el sostenimiento de las actividades pedagógicas y de seguimiento de estudiantes por parte de los docentes e instituciones educativas.
+
 
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar:  2019_  
 
@@ -532,7 +537,9 @@ ggplotly(b4) %>%
 
 ### **Tensión sobre los cuidados en el hogar** 
 
-La información de la condición de actividad de los adultos que viven con niños y niñas sirve para evidenciar la tensión que la suspensión de la educación presencial ejerce sobre los cuidados de niños y niñas en los hogares. 
+La información de la condición de actividad de los adultos que viven con niños y niñas sirve para evidenciar la tensión que la suspensión de la educación presencial ejerce sobre los cuidados de niños y niñas en los hogares.  Se asume que en los hogares en los cuales la totalidad de adultos son población económicamente activa, la tensión de cuidados es mayor. El argumento es que si los adultos mantienen la actividad económica, deben resolver los cuidados de niños y niñas en el tiempo en que usualmente se encuentran en los centros educativos. Esta tensión no sólo opera en el marco de la suspensión total, sino también en el marco de la reaprtura, ya que no implica, en una primera instancia la asistencia a centros educativos durante todos los días de la semana.
+
+Se presenta información de los hogares con niños y niñas de 0 a 11 años (quines por su edad demandan mayores cuidados) de acuerdo a la situación de los adultos que componen el hogar organizada en tres categorías: todos los adultos económicamente activos; presencia de adultos activos e inactivos; todos los adultos económicamente inactivos.  Los datos que se incorporan son: la distribución porcentual por categoría según quintil de ingreso y la cantidad de hogares por quintil de ingreso cuyos adultos son en su totalidad población económicamente activa. Este último dato permite un dimensionamiento de la cantidad de hogares que mayor tensión de cuidados sufre con la suspensión total o parcial de la presencialidad.
 
 ### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
 
