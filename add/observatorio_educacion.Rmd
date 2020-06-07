@@ -34,12 +34,9 @@ Los datos de los gráficos fueron elaborados a partir de datos de las siguientes
 ```{r, echo = FALSE}
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(plotly))
-source("C:/Users/usuario/Desktop/R_packages/UMAD/covid19uy/umad_covid19uy/COVID19UY/data-raw/observatorio_educacion.R")
+source(here::here('data-raw/observatorio_educacion.R'))
+
 ```
-
-
-
-
 
 
 # **Estimación de niños y niñas por etapa de reapertura**  
@@ -107,7 +104,7 @@ g1 <-
 
 ggplotly(g1) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    layout(margin = list(b = 110), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref = "paper",
                     yref = "paper",
                     x = 1, 
@@ -551,12 +548,12 @@ b8 <-
 
 ggplotly(b8) %>% 
   config(displayModeBar = F) %>%
-    layout(margin = list(b = 100), 
+    layout(margin = list(b = 150), 
            legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
     add_annotations(xref = "paper",
                     yref = "paper",
                     x = 1, 
-                    y = -0.30, 
+                    y = -0.5, 
                     showarrow = FALSE,
                     text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
                     font = list(color = "black", size = 12))
