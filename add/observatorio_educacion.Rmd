@@ -19,7 +19,7 @@ El reporte procura ofrecer a investigadores, tomadores de decisión, formadores 
 
 La información se agrupa en tres partes. La primera es una estimación de la cantidad de estudiantes que se reincorporan a las clases presenciales en cada una de las etapas de la reapertura. La segunda es un dimensionamiento de la cantidad de niños, niñas y adolescentes matriculados en la educación de 0 a 17 años. La tercera procura ofrecer una mirada a algunos aspectos sociales de la educación en Uruguay.  
 
-Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden descargar aquí el archivo con la información que se presenta en esta sección PONER LINK.
+Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden [descargar aquí](https://drive.google.com/open?id=15FNNcbid5OysDlFbVhKclfdxculCvTOu) el archivo con la información que se presenta en esta sección.
 
 
 #### **Dimensiones**
@@ -47,9 +47,9 @@ Luego del cierre de los centros educativos en el marco de la pandemia del COVID-
 
 Estimar la cantidad de estudiantes que asisten a los centros educativos incluidos en cada etapa no es tarea sencilla. Para su construcción nos basamos en información sobre estudiantes inscriptos y encuestas que relevan datos sobre la asistencia efectiva de las personas a los centros antes del COVID-19. Una  dificultad adicional supone estimar la cantidad de estudiantes que efectivamente asistirán a clase en esta nueva coyuntura de asistencia voluntaria. Para ello, realizamos una proyección de asistencia del 30%, 50%, 75% y 100%.						
 
-La estimación se realiza a partir de la asistencia a centros declarada en la Encuesta Continua de Hogares (ECH) en 2019. En aquellos casos en que no es posible identificar con esta fuente de información los tipos de centros que abrirán en alguna etapa, la cantidad de estudiantes se ajusta en función de la matrícula de inscriptos. La nota metodológica de la estimación se encuentra aquí PONER LINK
+La estimación se realiza a partir de la asistencia a centros declarada en la Encuesta Continua de Hogares (ECH) en 2019. En aquellos casos en que no es posible identificar con esta fuente de información los tipos de centros que abrirán en alguna etapa, la cantidad de estudiantes se ajusta en función de la matrícula de inscriptos. La nota metodológica de la estimación se encuentra [aquí](https://drive.google.com/open?id=1uq9XBebzbY05TWEudZulf-zE41_bG3_v).
 
-Para la difinición de la etapas se tomó la planificación inicial del gobierno PONER LINK, realizando dos ajustes de acuerdo a lo definido posteriormente: se excluye en su totalidad el departamento de Rivera (ya que las clases han sido suspendidas por tiempo indefinido) y se modifica la reapertura de las escuelas especiales (incialmente previstas para la etapa 1 y luego incluidas en la etapa 2). Asimismo, se incorporó a la información una "fase 0", correspondiente al retorno de las escuelas rurales que se realizó a partir del 22 de abril.	 
+Para la definición de la etapas se tomó la planificación inicial del gobierno ([disponible aquí](https://drive.google.com/open?id=1TlMqHcyK0ZNBZBoUaglRHv0CS4yzfZpu)), realizando dos ajustes de acuerdo a lo definido posteriormente: se excluye en su totalidad el departamento de Rivera (ya que las clases han sido suspendidas por tiempo indefinido) y se modifica la reapertura de las escuelas especiales (inicialmente previstas para la etapa 1 y luego incluidas en la etapa 2). Asimismo, se incorporó a la información una "fase 0", correspondiente al retorno de las escuelas rurales que se realizó a partir del 22 de abril.	 
 
 
 ### _Estimación de cantidad de estudiantes por etapa de reapertura_     
