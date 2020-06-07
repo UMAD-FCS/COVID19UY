@@ -73,7 +73,7 @@ ggplotly(e1) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'UMAD con base en...', 
+                    text = 'UMAD con base en ECH-INE y Anuario Estadístico MEC', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -111,7 +111,7 @@ ggplotly(g1) %>%
                     x = 1, 
                     y = -0.30, 
                     showarrow = FALSE,
-                    text = 'UMAD con base en...', 
+                    text = 'UMAD con base en Observatorio de la Educación ANEP y Estudios de Población y Proyectos INAU.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -397,7 +397,7 @@ ggplotly(b1) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -428,7 +428,7 @@ ggplotly(b2) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -458,7 +458,7 @@ ggplotly(b3) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -491,7 +491,7 @@ ggplotly(b5) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -520,7 +520,7 @@ ggplotly(b4) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -562,7 +562,7 @@ ggplotly(b8) %>%
                     x = 1, 
                     y = -0.5, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
@@ -594,7 +594,7 @@ ggplotly(b7) %>%
                     x = 1, 
                     y = -0.25, 
                     showarrow = FALSE,
-                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
                     font = list(color = "black", size = 12))
 
 ```
