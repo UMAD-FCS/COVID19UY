@@ -64,7 +64,7 @@ e1 <-
   geom_bar(position = "dodge", stat = "identity", color = 'black') +
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
   theme_minimal() +
-  labs(x = "", y = "", color = "") +
+  labs(x = "", y = "", color = "", fill = "") +
   theme()
 
 ggplotly(e1) %>% 
