@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "Observatorio COVID Uruguay"
 output:
   html_document:
     toc: false
