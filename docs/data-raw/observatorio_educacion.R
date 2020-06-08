@@ -677,24 +677,65 @@ barra_apilada <-
 
 
 barra_apilada$Porcentaje <- round(barra_apilada$Porcentaje, dec)
-
+barra_apilada$Categoria  <- factor(barra_apilada$Categoria)
+barra_apilada$Categoria  <- factor(barra_apilada$Categoria, levels = levels(barra_apilada$Categoria)[c(3, 2, 1)])
 
 
 etapa1 <- 
     tibble::tribble(
            ~Etapa,        ~Fecha, ~Cantidad,        ~Ref,
         "ETAPA 0", "22 DE ABRIL",    11269L, "POR ETAPA",
-        "ETAPA 1", "1° DE JUNIO",    91510L, "POR ETAPA",
+        "ETAPA 1", "1 DE JUNIO",     91510L, "POR ETAPA",
         "ETAPA 2", "15 DE JUNIO",   488165L, "POR ETAPA",
         "ETAPA 3", "29 DE JUNIO",   256655L, "POR ETAPA",
         "ETAPA 0", "22 DE ABRIL",    11269L, "ACUMULADO",
-        "ETAPA 1", "1° DE JUNIO",   102779L, "ACUMULADO",
+        "ETAPA 1", "1 DE JUNIO",    102779L, "ACUMULADO",
         "ETAPA 2", "15 DE JUNIO",   590944L, "ACUMULADO",
         "ETAPA 3", "29 DE JUNIO",   847599L, "ACUMULADO"
         )
 
 
-etapa1$Etapa2 <- paste0(etapa1$Etapa, '\n', etapa1$Fecha )
+etapa1$Etapa <- paste0(etapa1$Etapa, '\n', etapa1$Fecha )
+
+
+etapa2 <- 
+    tibble::tribble(
+           ~Etapa,        ~Fecha,       ~Porcentaje, ~Cantidad,
+        "ETAPA 0", "22 DE ABRIL",  "30%",     3380L,
+        "ETAPA 1", "1° DE JUNIO",  "30%",    30833L,
+        "ETAPA 2", "15 DE JUNIO",  "30%",   177283L,
+        "ETAPA 3", "29 DE JUNIO",  "30%",   254279L,
+        "ETAPA 0", "22 DE ABRIL",  "50%",     5634L,
+        "ETAPA 1", "1° DE JUNIO",  "50%",    51389L,
+        "ETAPA 2", "15 DE JUNIO",  "50%",   295472L,
+        "ETAPA 3", "29 DE JUNIO",  "50%",   423799L,
+        "ETAPA 0", "22 DE ABRIL",  "75%",     8451L,
+        "ETAPA 1", "1° DE JUNIO",  "75%",    77084L,
+        "ETAPA 2", "15 DE JUNIO",  "75%",   443208L,
+        "ETAPA 3", "29 DE JUNIO",  "75%",   635699L,
+        "ETAPA 0", "22 DE ABRIL", "100%",    11269L,
+        "ETAPA 1", "1° DE JUNIO", "100%",   102779L,
+        "ETAPA 2", "15 DE JUNIO", "100%",   590944L,
+        "ETAPA 3", "29 DE JUNIO", "100%",   847599L
+        )
+
+etapa2$Etapa <- paste0(etapa2$Etapa, '\n', etapa1$Fecha )
+etapa2$Porcentaje <- factor(etapa2$Porcentaje)
+etapa2$Porcentaje <-factor(etapa2$Porcentaje, levels = levels(etapa2$Porcentaje)[c(2,3,4,1)])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

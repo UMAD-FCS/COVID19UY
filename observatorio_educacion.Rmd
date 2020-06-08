@@ -1,0 +1,651 @@
+---
+title: "Observatorio COVID19: Dimensión educativa"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# **Introducción** 
+
+Esta sección presenta un conjunto de datos que permiten visualizar dimensiones relevantes para analizar el impacto de la suspensión de las actividades presenciales en el sistema nacional de educación y de la reapertura gradual por etapas.  
+
+El reporte procura ofrecer a investigadores, tomadores de decisión, formadores de opinión y público en general un panorama general de la situación del país en materia de educación en el contexto de la emergencia sanitaria y social generada por la pandemia del COVID-19.  
+
+La información se agrupa en tres partes. La primera es una estimación de la cantidad de estudiantes que se reincorporan a las clases presenciales en cada una de las etapas de la reapertura. La segunda es un dimensionamiento de la cantidad de niños, niñas y adolescentes matriculados en la educación de 0 a 17 años. La tercera procura ofrecer una mirada a algunos aspectos sociales de la educación en Uruguay.  
+
+Los datos de los gráficos fueron elaborados a partir de datos de las siguientes fuentes: Encuesta Continua de Hogares de INE; Anuario Estadístico del Ministerio de Educación y Cultura; Observatorio de la Educación de ANEP; Mirador Educativo del INEED; Estudios de Población y Proyectos de INAU. Los usuarios pueden [descargar aquí](https://drive.google.com/open?id=15FNNcbid5OysDlFbVhKclfdxculCvTOu) el archivo con la información que se presenta en esta sección.
+
+
+#### **Dimensiones**
+
+a. Estimación de estudiantes por etapa de reapertura  
+b. Dimensionamiento de la educación de 0 a 17 años  
+c. Una mirada social a la educación  
+
+
+<br />
+
+```{r, echo = FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(plotly))
+source('data-raw/observatorio_educacion.R')
+
+```
+
+
+# **Estimación de estudiantes por etapa de reapertura**  
+
+En esta sección se presenta una estimación de la cantidad de estudiantes que se reincorporan a la presencialidad en cada una de las etapas definidas por el gobierno.  
+
+Luego del cierre de los centros educativos en el marco de la pandemia del COVID-19, el gobierno programó el reintegro a las clases presenciales voluntario y en tres etapas. Retomar el ingreso a clases supone un importante retorno de la circulación de personas en el territorio nacional, tanto de estudiantes, como docentes, administrativos, servicios de transporte, alimentación, entre otras diversas actividades. Nos proponemos aquí  aproximar la cantidad de estudiantes que asistirán a los centros educativos en cada etapa prevista en el cronograma de gobierno.  
+
+Estimar la cantidad de estudiantes que asisten a los centros educativos incluidos en cada etapa no es tarea sencilla. Para su construcción nos basamos en información sobre estudiantes inscriptos y encuestas que relevan datos sobre la asistencia efectiva de las personas a los centros antes del COVID-19. Una  dificultad adicional supone estimar la cantidad de estudiantes que efectivamente asistirán a clase en esta nueva coyuntura de asistencia voluntaria. Para ello, realizamos una proyección de asistencia del 30%, 50%, 75% y 100%.						
+
+La estimación se realiza a partir de la asistencia a centros declarada en la Encuesta Continua de Hogares (ECH) en 2019. En aquellos casos en que no es posible identificar con esta fuente de información los tipos de centros que abrirán en alguna etapa, la cantidad de estudiantes se ajusta en función de la matrícula de inscriptos. La nota metodológica de la estimación se encuentra [aquí](https://drive.google.com/open?id=1uq9XBebzbY05TWEudZulf-zE41_bG3_v).
+
+Para la definición de la etapas se tomó la planificación inicial del gobierno ([disponible aquí](https://drive.google.com/open?id=1TlMqHcyK0ZNBZBoUaglRHv0CS4yzfZpu)), realizando dos ajustes de acuerdo a lo definido posteriormente: se excluye en su totalidad el departamento de Rivera (ya que las clases han sido suspendidas por tiempo indefinido) y se modifica la reapertura de las escuelas especiales (inicialmente previstas para la etapa 1 y luego incluidas en la etapa 2). Asimismo, se incorporó a la información una "fase 0", correspondiente al retorno de las escuelas rurales que se realizó a partir del 22 de abril.	 
+
+
+### _Estimación de cantidad de estudiantes por etapa de reapertura_     
+
+
+```{r, echo = FALSE}
+e1 <-
+  etapa1 %>% 
+  mutate(ord= 1:length(rownames(etapa1)),
+         Categoria = fct_reorder(Ref, ord, min)) %>%
+  ggplot(aes(fill = Categoria, y = Cantidad, x = Etapa)) + 
+  geom_bar(position = "dodge", stat = "identity", color = 'black') +
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme()
+
+ggplotly(e1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'UMAD con base en ECH-INE y Anuario Estadístico MEC', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+### _Proyección de cantidad de estudiantes por etapa de reapetura con porcentajes de asistencia voluntaria del 30%, 50%, 75% y 100%_  
+
+
+
+```{r, echo = FALSE}
+e2 <- 
+  etapa2 %>%
+  ggplot(aes(x = Etapa, y = Cantidad, )) + 
+  geom_line(aes(group = Porcentaje, color = Porcentaje), size = 1.2) +
+  geom_point(aes(color = Porcentaje), size = 2) +
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE)) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme() 
+
+ggplotly(e2) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'UMAD con base en ECH-INE y Anuario Estadístico MEC', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
+
+
+# **Dimensionamiento de la educación de 0 a 17 años**  
+
+Esta sección presenta los datos de matrícula, que sirven para dimensionar en términos absolutos el número de niños, niñas y adolescentes de 0 a 17 años inscriptos a centros educativos. Esta cifra absoluta brinda una dimensión del impacto global en circulación de niños, niñas y adolescentes que implica la educación en su conjunto. La información está enfocada en la población de 0 a 17 años, por lo que no incluye matrículas de educación terciaria (universitaria y no universitaria). Se presenta la evolución de 2005 a 2019 correspondiente a datos absolutos de matrícula, por tanto, afectados por la evolución demográfica de la población (en la sección siguiente se presentan datos porcentuales de cobertura, que permiten una mirada más precisa respecto a la evolución de la asistencia en relación al total de la población).  
+
+
+### _Matrícula educación inicial, primaria y media (ANEP) y primera infancia (INAU): 2005-2019_  
+
+```{r, echo = FALSE}
+
+g1 <- 
+  ggplot(grafico1_e, aes(x = anio, y = matricula)) +
+  geom_line(aes(group = tipo, color = tipo), size = 1.2) +
+  geom_point(aes(color = tipo), size = 2) +
+  scale_y_continuous(breaks = seq(40000, 400000, by = 60000), 
+                     labels = function(x) format(x, scientific = FALSE)) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 110), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.30, 
+                    showarrow = FALSE,
+                    text = 'UMAD con base en Observatorio de la Educación ANEP y Estudios de Población y Proyectos INAU.', 
+                    font = list(color = "black", size = 12))
+
+```
+ 
+
+
+<br />
+
+
+# **Una mirada social a la educación**  
+
+Esta sección incluye información relativa a algunos aspectos sociales vinculados a la educación. Se presentan datos sobre la cobertura educativa por edad y quintil de ingresos, conectividad y acceso a internet, y tensión de cuidados sobre los hogares a partir de la información de la condición de actividad de los adultos que conviven con niños y niñas asistentes a centros educativos.  
+
+
+### **Cobertura**  
+
+Los indicadores de cobertura miden la cantidad de asistentes a la educación en relación a la población total de niños, niñas y adolescente del país. Sirven para dimensionar qué porcentaje del total en edad teórica de asistir al sistema educativo, efectivamente lo hacen. Se presentan los datos de asistencia para edades simples y también los datos de asistencia por edad agrupada según quintil de ingresos.
+
+### _Asistencia de niños y niñas entre 3 y 5 años por edad simple: 2005-2019_
+
+
+```{r, echo = FALSE}
+
+g2 <- 
+  ggplot(grafico2_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(group = Edad, color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(30, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g2) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+### _Asistencia de niños y niñas entre 3 y 5 años por quintil de ingresos: 2005-2019_
+
+```{r, echo = FALSE}
+
+g3 <- 
+  ggplot(grafico3_e, aes(x = Anio, y = Nivel)) +
+  geom_line(aes(group = Quintil, color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(30, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g3) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+### _Asistencia de niños y niñas entre 6 y 11 años por edad simple: 2005-2019_    
+
+
+```{r, echo = FALSE}
+
+g4 <- 
+  ggplot(grafico4_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(90, 100) +
+  #facet_wrap(~Edad) +
+  theme_minimal() +
+  #theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+### _Asistencia de niños y niñas entre 6 y 11 años por quintil de ingresos: 2005-2019_
+
+
+
+```{r, echo = FALSE}
+
+g5 <- 
+  ggplot(grafico5_e, aes(x = Anio, y = Cobertura)) +
+    geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(90, 100) +
+  #facet_wrap(~Quintil, nrow = 2) +
+  theme_minimal() +
+  #theme(legend.position = "none") +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g5) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+### _Asistencia de adolescentes entre 12 y 14 años por edad simple: 2005-2019_  
+
+
+```{r, echo = FALSE}
+
+g6 <- 
+  ggplot(grafico6_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(70, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g6) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+### _Asistencia de adolescentes entre 12 y 14 años por quintil de ingresos: 2005-2019_
+
+
+```{r, echo = FALSE}
+
+g7 <- 
+  ggplot(grafico7_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(70, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g7) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+### _Asistencia de adolescentes entre 15 y 17 años por edad simple: 2005-2019_
+
+```{r, echo = FALSE}
+
+g8 <- 
+  ggplot(grafico8_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Edad), size = 1.2) +
+  geom_point(aes(color = Edad), size = 2) +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+### _Asistencia entre 15 y 17 años por quintil de ingresos: 2005-2019_
+
+```{r, echo = FALSE}
+
+g9 <- 
+  ggplot(grafico9_e, aes(x = Anio, y = Cobertura)) +
+  geom_line(aes(color = Quintil), size = 1.2) +
+  geom_point(aes(color = Quintil), size = 2) +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "")
+
+ggplotly(g9) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en Mirador Educativo del INEED, a partir de la (ECH-INE).', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+<br />
+
+
+### **Conectividad y acceso a internet**  
+
+La información de conectividad sirve para brindar una aproximación a las condiciones de infraestructura disponibles para llevar a cabo actividades educativas no presenciales a través de entornos virtuales. El acceso a internet y la dispobibilidad de dispositivos, como computadoras y celulares, son una condición necesaria (aunque no suficiente), para el sostenimiento de las actividades pedagógicas y de seguimiento de estudiantes por parte de los docentes e instituciones educativas.
+
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con conexión a internet según quintil de ingreso del hogar:  2019_  
+
+
+
+
+```{r, echo = FALSE}
+
+b1 <- 
+  barra_quintiles %>% filter(grafico == 'barra1') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b1) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil de ingreso del hogar: 2019_
+
+
+```{r, echo = FALSE}
+
+b2 <- 
+  barra_quintiles %>% filter(grafico == 'barra2') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b2) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de laptop del Plan Ceibal según quintil de ingreso del hogar: 2019_  
+
+```{r, echo = FALSE}
+
+b3 <- 
+  barra_quintiles %>% filter(grafico == 'barra 3') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  ylim(0, 100) +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b3) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+ 
+
+
+```{r, echo = FALSE}
+### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_ 
+#b5 <- data.frame(
+#    Quintil = paste('Quintil', 1:5), 
+#    Porcentaje = c(98.9,99.7, 100.0, 100.0,100.0)
+#)
+#b5 <- b5 %>% 
+#  ggplot(aes(x = Quintil, y = Porcentaje)) +
+#  geom_col(aes(fill = Quintil), color = 'black') +
+#  theme_minimal() +
+#  labs(x = "", y = "", color = "") +
+#  theme(legend.position = "none")
+
+#ggplotly(b5) %>% 
+#  config(displayModeBar = F) %>%
+#    layout(margin = list(b = 100), 
+#           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+#    add_annotations(xref = "paper",
+#                   yref = "paper",
+#                    x = 1, 
+#                    y = -0.25, 
+#                    showarrow = FALSE,
+#                    text = 'Elaboración UMAD con base en ECH-INE.', 
+#                    font = list(color = "black", size = 12))
+
+```
+
+
+
+### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_  
+
+
+```{r, echo = FALSE}
+
+b4 <- 
+  barra_quintiles %>% filter(grafico == 'barra 4') %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b4) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+
+
+
+<br />
+
+
+### **Tensión sobre los cuidados en el hogar** 
+
+La información de la condición de actividad de los adultos que viven con niños y niñas sirve para evidenciar la tensión que la suspensión de la educación presencial ejerce sobre los cuidados de niños y niñas en los hogares.  Se asume que en los hogares en los cuales la totalidad de adultos son población económicamente activa, la tensión de cuidados es mayor. El argumento es que si los adultos mantienen la actividad económica, deben resolver los cuidados de niños y niñas en el tiempo en que usualmente se encuentran en los centros educativos. Esta tensión no sólo opera en el marco de la suspensión total, sino también en el marco de la reaprtura, ya que no implica, en una primera instancia la asistencia a centros educativos durante todos los días de la semana.
+
+Se presenta información de los hogares con niños y niñas de 0 a 11 años (quines por su edad demandan mayores cuidados) de acuerdo a la situación de los adultos que componen el hogar organizada en tres categorías: todos los adultos económicamente activos; presencia de adultos activos e inactivos; todos los adultos económicamente inactivos.  Los datos que se incorporan son: la distribución porcentual por categoría según quintil de ingreso y la cantidad de hogares por quintil de ingreso cuyos adultos son en su totalidad población económicamente activa. Este último dato permite un dimensionamiento de la cantidad de hogares que mayor tensión de cuidados sufre con la suspensión total o parcial de la presencialidad.
+
+### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
+
+
+```{r, echo = FALSE}
+
+b8 <- 
+  barra_apilada %>% 
+    ggplot(aes(fill = Categoria, y = Porcentaje, x = Quintil)) + 
+    geom_bar(position = "stack", stat = "identity", color = 'black') +
+    theme_minimal() +
+    labs(x = "", y = "", color = "")
+
+ggplotly(b8) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 150), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.5, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+### _Cantidad de hogares con niños de 0 a 11 años asistentes a centros educativos con totalidad de mayores de 18 años económicamente activos según quintil de ingreso del hogar: 2019_ 
+
+
+
+
+```{r, echo = FALSE}
+
+b7 <- data.frame(
+    Quintil = paste('Quintil', 1:5), 
+    Porcentaje = c(70042,52245,40561,31985,18887)
+)
+b7 <- b7 %>% 
+  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  geom_col(aes(fill = Quintil), color = 'black') +
+  theme_minimal() +
+  labs(x = "", y = "", color = "") +
+  theme(legend.position = "none")
+
+ggplotly(b7) %>% 
+  config(displayModeBar = F) %>%
+    layout(margin = list(b = 100), 
+           legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.25, 
+                    showarrow = FALSE,
+                    text = 'Elaboración UMAD con base en ECH-INE.', 
+                    font = list(color = "black", size = 12))
+
+```
+
+
+
+
+
+
+
+
+
+
+
+<br />

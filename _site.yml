@@ -8,8 +8,10 @@ navbar:
       href: about.html
     - text: "Observatorio COVID19"
       href: observatorio_covid.html
-    - text: "Observatorio social"
+    - text: "Dimensión social"
       href: observatorio_social.html
+    - text: "Dimensión educativa"
+      href: observatorio_educacion.html  
     - text: "Documentos"
       href: documentos.html
     - text: "Links"
