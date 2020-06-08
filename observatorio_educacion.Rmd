@@ -55,7 +55,7 @@ Para la definición de la etapas se tomó la planificación inicial del gobierno
 ### _Estimación de cantidad de estudiantes por etapa de reapertura_     
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 e1 <-
   etapa1 %>% 
   mutate(ord= 1:length(rownames(etapa1)),
@@ -85,7 +85,7 @@ ggplotly(e1) %>%
 
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 e2 <- 
   etapa2 %>%
   ggplot(aes(x = Etapa, y = Cantidad, )) + 
@@ -131,7 +131,7 @@ Esta sección presenta los datos de matrícula, que sirven para dimensionar en t
 
 ### _Matrícula educación inicial, primaria y media (ANEP) y primera infancia (INAU): 2005-2019_  
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g1 <- 
   ggplot(grafico1_e, aes(x = anio, y = matricula)) +
@@ -172,7 +172,7 @@ Los indicadores de cobertura miden la cantidad de asistentes a la educación en 
 ### _Asistencia de niños y niñas entre 3 y 5 años por edad simple: 2005-2019_
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g2 <- 
   ggplot(grafico2_e, aes(x = Anio, y = Cobertura)) +
@@ -198,7 +198,7 @@ ggplotly(g2) %>%
 
 ### _Asistencia de niños y niñas entre 3 y 5 años por quintil de ingresos: 2005-2019_
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g3 <- 
   ggplot(grafico3_e, aes(x = Anio, y = Nivel)) +
@@ -227,7 +227,7 @@ ggplotly(g3) %>%
 ### _Asistencia de niños y niñas entre 6 y 11 años por edad simple: 2005-2019_    
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g4 <- 
   ggplot(grafico4_e, aes(x = Anio, y = Cobertura)) +
@@ -259,7 +259,7 @@ ggplotly(g4) %>%
 
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g5 <- 
   ggplot(grafico5_e, aes(x = Anio, y = Cobertura)) +
@@ -291,7 +291,7 @@ ggplotly(g5) %>%
 ### _Asistencia de adolescentes entre 12 y 14 años por edad simple: 2005-2019_  
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g6 <- 
   ggplot(grafico6_e, aes(x = Anio, y = Cobertura)) +
@@ -322,7 +322,7 @@ ggplotly(g6) %>%
 ### _Asistencia de adolescentes entre 12 y 14 años por quintil de ingresos: 2005-2019_
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g7 <- 
   ggplot(grafico7_e, aes(x = Anio, y = Cobertura)) +
@@ -352,7 +352,7 @@ ggplotly(g7) %>%
 
 ### _Asistencia de adolescentes entre 15 y 17 años por edad simple: 2005-2019_
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g8 <- 
   ggplot(grafico8_e, aes(x = Anio, y = Cobertura)) +
@@ -379,7 +379,7 @@ ggplotly(g8) %>%
 
 ### _Asistencia entre 15 y 17 años por quintil de ingresos: 2005-2019_
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 g9 <- 
   ggplot(grafico9_e, aes(x = Anio, y = Cobertura)) +
@@ -417,7 +417,7 @@ La información de conectividad sirve para brindar una aproximación a las condi
 
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b1 <- 
   barra_quintiles %>% filter(grafico == 'barra1') %>% 
@@ -448,7 +448,7 @@ ggplotly(b1) %>%
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de computadora o laptop según quintil de ingreso del hogar: 2019_
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b2 <- 
   barra_quintiles %>% filter(grafico == 'barra2') %>% 
@@ -477,7 +477,7 @@ ggplotly(b2) %>%
 
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con tenencia de laptop del Plan Ceibal según quintil de ingreso del hogar: 2019_  
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b3 <- 
   barra_quintiles %>% filter(grafico == 'barra 3') %>% 
@@ -508,7 +508,7 @@ ggplotly(b3) %>%
  
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 ### _Porcentaje de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos con por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_ 
 #b5 <- data.frame(
 #    Quintil = paste('Quintil', 1:5), 
@@ -540,7 +540,7 @@ ggplotly(b3) %>%
 ### _Cantidad de hogares con niños, niñas y/o adolescentes de 3 a 17 años asistentes a centros educativos sin por lo menos una persona con tenencia de celular según quintil de ingreso del hogar: 2019_  
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b4 <- 
   barra_quintiles %>% filter(grafico == 'barra 4') %>% 
@@ -583,7 +583,7 @@ Se presenta información de los hogares con niños y niñas de 0 a 11 años (qui
 ### _Porcentaje de hogares con niños de 0 a 11 años asistentes a centros educativos según actividad de mayores de 18 años según quintil de ingreso del hogar: 2019_    
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b8 <- 
   barra_apilada %>% 
@@ -611,7 +611,7 @@ ggplotly(b8) %>%
 
 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width='100%'}
 
 b7 <- data.frame(
     Quintil = paste('Quintil', 1:5), 
