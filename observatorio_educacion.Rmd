@@ -544,7 +544,8 @@ ggplotly(b3) %>%
 
 b4 <- 
   barra_quintiles %>% filter(grafico == 'barra 4') %>% 
-  ggplot(aes(x = Quintil, y = Porcentaje)) +
+  rename(Hogares=Porcentaje)%>%
+  ggplot(aes(x = Quintil, y = Hogares)) +
   geom_col(aes(fill = Quintil), color = 'black') +
   theme_minimal() +
   labs(x = "", y = "", color = "") +
@@ -615,10 +616,10 @@ ggplotly(b8) %>%
 
 b7 <- data.frame(
     Quintil = paste('Quintil', 1:5), 
-    Porcentaje = c(70042,52245,40561,31985,18887)
+    Hogares = c(70042,52245,40561,31985,18887)
 )
 b7 <- b7 %>% 
-  ggplot(aes(x = Quintil, y = Porcentaje)) +
+    ggplot(aes(x = Quintil, y = Hogares)) +
   geom_col(aes(fill = Quintil), color = 'black') +
   theme_minimal() +
   labs(x = "", y = "", color = "") +
