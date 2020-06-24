@@ -31,3 +31,6 @@ output:
     theme: cerulean 
     highlight: textmate
 output_dir: "docs"
+
+plugins:
+  - jekyll-sitemap
