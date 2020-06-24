@@ -33,4 +33,5 @@ output:
 output_dir: "docs"
 
 plugins:
+
   - jekyll-sitemap
