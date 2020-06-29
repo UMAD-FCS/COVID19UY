@@ -49,10 +49,16 @@ data_pasteur <- tibble::as_tibble(
 # SE CARGA DATA DE -->'Uruguay GUIAD-COVID SUBNACIONAL'
 depuy<- read.csv("https://raw.githubusercontent.com/GUIAD-COVID/datos-y-visualizaciones-GUIAD/master/datos/estadisticasUY_porDepto_detalle.csv", header=TRUE)
 
-depuy<-depuy %>% 
-  mutate(fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")), 
-         deptos=stringi::stri_sub(depuy$departamento, 1,-9)                         
-)
+depuy <- depuy %>% 
+    mutate(fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")), 
+           deptos = stringi::stri_sub(depuy$departamento, 1,-9), 
+           deptos = stringr::str_squish(
+               ifelse(grepl(pattern = "^Paysa", x = deptos), "Paysand\u00fa", 
+                                 ifelse(grepl(pattern = "Negro", x = deptos), "R\u00edo Negro",
+                                        ifelse(grepl(pattern = "^San", x = deptos), "San Jos\u00e9", 
+                                               ifelse(grepl(pattern = "^Tacuarem", x = deptos), "Tacuaremb\u00f3", deptos))))
+               ))
+
 
 
 ```
