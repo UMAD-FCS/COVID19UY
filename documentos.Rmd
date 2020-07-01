@@ -1,11 +1,8 @@
-
-
 ---
 title: "Documentos"
-html_document:
-    toc: true
-    toc_float: true
- 
+output:
+  html_document:
+    toc: false
 
 ---
 

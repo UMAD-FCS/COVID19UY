@@ -32,6 +32,4 @@ output:
     highlight: textmate
 output_dir: "docs"
 
-plugins:
 
-  - jekyll-sitemap

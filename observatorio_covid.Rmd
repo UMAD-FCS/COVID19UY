@@ -3,10 +3,10 @@ title: "Uruguay, la región y el mundo"
 author: ""
 date: ""
 output: 
-  
   html_document: 
-    toc: yes
-    toc_float: yes
+    toc: true
+    toc_float: true
+
 ---
 
 ```{r setup, include=FALSE}
