@@ -4,7 +4,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 
 
 <url>
@@ -12,26 +12,31 @@
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>1.00</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/index.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/about.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/observatorio_covid.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/observatorio_social.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/observatorio_educacion.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
@@ -42,11 +47,13 @@
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/linkoteca.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 <url>
   <loc>https://observatoriocoviduy.org/datos.html</loc>
   <lastmod>2020-07-12T18:36:59+00:00</lastmod>
