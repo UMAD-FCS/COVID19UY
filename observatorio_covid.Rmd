@@ -846,6 +846,10 @@ g <-
        ) +
   theme_minimal() 
 
+sem <-  last(sort(unique(g$fecha)))
+ajuste <- ifelse(g$casos[which(g$fecha == sem)] == 0, NA, g$casos[which(g$fecha == sem)])
+g$casos[which(g$fecha == sem)] <- ajuste
+
 ggplotly(g) %>% 
   config(displayModeBar = F)%>%
     layout(margin = list(b = 200), legend = list(x = 0.5, y = -0.1,orientation = "h", xanchor = "center" )) %>%

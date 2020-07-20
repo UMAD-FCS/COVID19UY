@@ -20,7 +20,7 @@ Los datos con los que se elaboraron los distintos módulos de este sito proviene
     * Para el caso de Uruguay en la base de tidycovid19 encontramos algunas inconsistencias. Para las principales variables (cantidad de casos, muertes y recuperados) los cargamos desde la base de datos del [Grupo Uruguayo Interdisciplinario de Análisis de Datos de COVID‑19](https://guiad-covid.github.io/).
 <br />
 
-Puede descargar la base en este [__link__](https://github.com/UMAD-FCS/COVID19UY/tree/master/download-data). Esta base de datos y los gráficos del módulo __Observatorio COVID19__ se actualizan a medianoche diariamente.
+Puede descargar la base en este [__link__](https://github.com/UMAD-FCS/COVID19UY/tree/master/docs/download-data/merge_umad.xlsx). Esta base de datos y los gráficos del módulo __Observatorio COVID19__ se actualizan a medianoche diariamente.
 
 <br />    
 

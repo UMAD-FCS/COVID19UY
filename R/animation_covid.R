@@ -44,7 +44,7 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
          subtitle  =  "",
          caption  = "Unidad de M\u00e9todos y Acceso a Datos (UMAD)")
 
-animate(anima_confirmed, nframes = 400, duration=20,  width = 670, height = 600, end_pause = 80) 
+animate(anima_confirmed, nframes = 600, duration=20,  width = 670, height = 600, end_pause = 80) 
 anim_save(here::here('animations','bar_race.gif'))
 
 ##############################################################################
@@ -87,7 +87,7 @@ anima_deaths<-ggplot(deaths_rank, aes(rank, group = country,
        subtitle  =  "",
        caption  = "Unidad de M\u00e9todos y Acceso a Datos (UMAD)")
 
-animate(anima_deaths, nframes = 400, duration=20,  width = 670, height = 600, end_pause = 80) 
+animate(anima_deaths, nframes = 600, duration=20,  width = 670, height = 600, end_pause = 80) 
 
 anim_save(here::here('animations','bar_race2.gif'))
 
