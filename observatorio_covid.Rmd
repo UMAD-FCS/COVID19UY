@@ -26,6 +26,7 @@ library(lubridate)
 library(colorspace)
 library(plotly)
 library(stringi)
+library(zoo)
 
 ```
 
@@ -174,9 +175,9 @@ En rigor este gráfico mide el número de personas que recibieron un resultado p
 
 ```{r, warning=F, message=F, comment=FALSE}
 #5. Casos nuevos por dia línea de tiempo
-data_pasteur%>% 
+data_pasteur%>% mutate(day7mov = zoo::rollmean(Cant.casos.nuevos, k = 7, fill = NA))%>%
   ggplot(aes(x=fecha, y=Cant.casos.nuevos)) + 
-  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
+  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + geom_line(aes(y=day7mov))+
   geom_text(aes(label=Cant.casos.nuevos), 
             position = position_dodge(0.9), 
             size = 2, 
@@ -280,9 +281,10 @@ En rigor son tests procesados y con resultados por día ya que entre el hisopado
 
 ```{r, warning=F, message=F, comment=FALSE}
 #10. Tests por día línea de tiempo
-data_pasteur%>% 
+data_pasteur%>% mutate(day5mov = zoo::rollmean(cantTest, k = 5, fill = NA))%>%
   ggplot(aes(x=fecha, y=cantTest)) + 
   geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_line(aes(y=day5mov))+
   geom_text(aes(label=cantTest), 
             vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
@@ -452,7 +454,7 @@ ggplotly(g) %>% config(displayModeBar = F) %>%
 ```{r}
 g<-depuy %>% 
    rename(Fecha=fecha, Activos= enCurso)%>%
-  ggplot(aes(x = Fecha, y = Activos)) +
+  ggplot(aes(x = Fecha, y = Activos)) + 
   geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
   labs(x = "",
        color="",
@@ -589,17 +591,14 @@ Muestra la evolución de los fallecidos parametrizados por la población de los 
 ```{r, out.width='100%'}
 #17. Muertes por 1 millon de habitantes ((Argentina, Chile, Uruguay, Brasil, promedio América del Sur)
 g<-covid_m%>%
-  
   filter(country %in% c('Argentina', 'Brazil', 'Chile', 'Uruguay')) %>%
-  
-  mutate(deathsx1m = round(deaths/population*1000000, 1),
-         mean_deathsx1m = round(mean(deathsx1m), 1) ) %>%
-  select(date, country, deathsx1m, mean_deathsx1m) %>%
-  gather(key = "variables", value = "valores", -date, -country, -mean_deathsx1m) %>%
-  rename(`país` = country, fecha = date, muertes = valores, promedio = mean_deathsx1m) %>%
+  mutate(deathsx1m = round(deaths/population*1000000, 1)) %>%
+  select(date, country, deathsx1m) %>%
+  gather(key = "variables", value = "valores", -date, -country) %>%
+  rename(`país` = country, fecha = date, muertes = valores) %>%
   ggplot(aes(x = fecha, y= muertes, colour = `país`)) +
   geom_line() +
-  geom_line(aes(y = promedio), linetype = "twodash", colour = "grey") +
+  #geom_line(aes(y = promedio), linetype = "twodash", colour = "grey") +
   labs(x = "",
        color = "", 
        y = "Cantidad de muertes",
@@ -618,7 +617,7 @@ p <-
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black",size = 12))
 
-p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", "fecha:", g$data$fecha, "<br>")
+#p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", "fecha:", g$data$fecha, "<br>")
                                          
 p
 
@@ -642,14 +641,13 @@ Si bien presentamos estas curvas las diferencias en como los países y con que p
 g <- 
   covid_m%>%
   filter(country %in% c('Argentina', 'Brazil', 'Chile', 'Uruguay')) %>%
-  mutate(recoveredx1m = round(recovered/population*1000000, 1),
-         mean_recoveredx1m = round(mean(recoveredx1m, na.rm = TRUE), 1) ) %>%
-  select(date, country, recoveredx1m, mean_recoveredx1m) %>%
-  gather(key = "variables", value = "valores", -date, -country, -mean_recoveredx1m) %>%
-  rename(`país` = country, fecha = date, recuperados = valores, promedio = mean_recoveredx1m)%>%
+  mutate(recoveredx1m = round(recovered/population*1000000, 1) ) %>%
+  select(date, country, recoveredx1m) %>%
+  gather(key = "variables", value = "valores", -date, -country) %>%
+  rename(`país` = country, fecha = date, recuperados = valores)%>%
   ggplot(aes(x = fecha, y= recuperados, colour = `país`)) +
   geom_line() +
-  geom_line(aes(y = promedio), linetype = "twodash", colour = "grey") +
+  
   labs(x = "",
        color = "", 
        y = "Cantidad de recuperados", 
@@ -668,8 +666,8 @@ p <-
                     showarrow = FALSE,
                     text = 'Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 
-p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", 
-"fecha:", g$data$fecha, "<br>")
+#p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", 
+#"fecha:", g$data$fecha, "<br>")
                                          
 p
 
@@ -686,14 +684,12 @@ En rigor este indicador mediría la tasa de fatalidad de casos (CFR) aunque sin 
 g<-covid_m%>%
   filter(country %in% c('Argentina', 'Brazil', 'Chile', 'Uruguay')) %>%
   
- mutate(deathsxconfirmed = round(deaths/confirmed *100,1),
-        mean_deathsxconfirmed = round(mean(deathsxconfirmed, na.rm=TRUE),1)) %>%
-  select(date, country, deathsxconfirmed, mean_deathsxconfirmed) %>%
-  gather(key="variables", value="valores", -date, -country, -mean_deathsxconfirmed) %>%
-  rename(`país`=country, fecha=date, muertes=valores, promedio=mean_deathsxconfirmed)%>%
+ mutate(deathsxconfirmed = round(deaths/confirmed *100,1)) %>%
+  select(date, country, deathsxconfirmed) %>%
+  gather(key="variables", value="valores", -date, -country) %>%
+  rename(`país`=country, fecha=date, muertes=valores)%>%
   ggplot(aes(x= fecha, y= muertes, colour=`país`)) +
   geom_line() +
-  geom_line(aes(y=promedio), linetype="twodash", colour="grey")+
   labs(x = "",
         color = "",
        y = "Muertes/casos totales",
@@ -712,8 +708,8 @@ p<-ggplotly(g)%>% config(displayModeBar = F)%>%
                     text='Unidad de Métodos y Acceso a Datos (UMAD)', font =              list(color = "black",
           size = 12))
 
-p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", 
-"fecha:", g$data$fecha, "<br>")
+#p[["x"]][["data"]][[5]][["text"]] <- paste("promedio:", g$data$promedio, "<br>", 
+#"fecha:", g$data$fecha, "<br>")
                                          
 p
 
