@@ -1,3 +1,3 @@
-# COVID19UY
+# Sitio web Observatorio COVID19
 
-umad.
+observatoriocoviduy.org
