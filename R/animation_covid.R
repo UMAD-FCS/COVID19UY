@@ -2,6 +2,7 @@ library(gganimate)
 library(ggplot2)
 library(tidycovid19)
 library(tidyverse)
+library(gifski)
 
 jh<-download_jhu_csse_covid19_data()
 
@@ -44,8 +45,8 @@ anima_confirmed<-ggplot(confirmed_rank, aes(rank, group = country,
          subtitle  =  "",
          caption  = "Unidad de M\u00e9todos y Acceso a Datos (UMAD)")
 
-animate(anima_confirmed, nframes = 900, duration=20,  width = 670, height = 600, end_pause = 80) 
-anim_save(here::here('animations','bar_race.gif'))
+animate(anima_confirmed, nframes = 900, duration=20,  width = 670, height = 600, end_pause = 80, renderer = gifski_renderer()) 
+gganimate::anim_save(here::here('animations','bar_race.gif'))
 
 ##############################################################################
 ##############################################################################
@@ -87,8 +88,8 @@ anima_deaths<-ggplot(deaths_rank, aes(rank, group = country,
        subtitle  =  "",
        caption  = "Unidad de M\u00e9todos y Acceso a Datos (UMAD)")
 
-animate(anima_deaths, nframes = 900, duration=20,  width = 670, height = 600, end_pause = 80) 
+animate(anima_deaths, nframes = 900, duration=20,  width = 670, height = 600, end_pause = 80, renderer = gifski_renderer()) 
 
-anim_save(here::here('animations','bar_race2.gif'))
+gganimate::anim_save(here::here('animations','bar_race2.gif'))
 
 
