@@ -7,11 +7,11 @@ library(ggrepel)
 library(ggtext) # only github
 
 
-data_rm <- function() {
+data_rm <- function(archivo = 1) {
     
     n <- list.files(path = here::here('data-raw')) 
     d <- tibble::tibble(file = n, grupo = substring(n, 1, 6)) %>% split(., .$grupo)
-    f <- d[sapply(d, nrow) > 2]
+    f <- d[sapply(d, nrow) > archivo]
     if(length(f) > 0){
         out <- unname(unlist(sapply(f, '[', 1, 1)))
         setwd(here::here("data-raw"))
@@ -115,7 +115,7 @@ prev <-
         poblacion    = sum(population, na.rm = TRUE), 
         total_tests  = sum(new_tests,  na.rm = TRUE), 
         total_cases  = sum(new_cases,  na.rm = TRUE),
-        total_deaths = sum(new_deaths, na.rm = TRUE)
+        total_deaths = sum(new_deaths, na.rm = TRUE), .groups = "drop"
     ) %>% 
     ungroup() %>% 
     group_by(continent) %>% 
@@ -127,7 +127,7 @@ prev <-
     ungroup() %>% 
     select(continent, date, poblacion, starts_with('t_')) %>% 
     mutate(
-        'Tests'              = round((t_tests/poblacion)  * umbral), 
+        'Tests'             = round((t_tests/poblacion)  * umbral), 
         'Casos positivos'   = round((t_cases/poblacion)  * umbral),
         'Muertes'           = round((t_deaths/poblacion) * umbral)
     ) %>% 
