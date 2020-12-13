@@ -52,14 +52,13 @@ depuy<- read.csv("https://raw.githubusercontent.com/GUIAD-COVID/datos-y-visualiz
 
 depuy <- depuy %>% 
     mutate(fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")), 
-           deptos = stringi::stri_sub(depuy$departamento, 1,-9), 
+           deptos = stringi::stri_sub(depuy$departamento, 1,-8), 
            deptos = stringr::str_squish(
                ifelse(grepl(pattern = "^Paysa", x = deptos), "Paysand\u00fa", 
-                                 ifelse(grepl(pattern = "Negro", x = deptos), "R\u00edo Negro",
-                                        ifelse(grepl(pattern = "^San", x = deptos), "San Jos\u00e9", 
-                                               ifelse(grepl(pattern = "^Tacuarem", x = deptos), "Tacuaremb\u00f3", deptos))))
-               ))
-
+                      ifelse(grepl(pattern = "Negro", x = deptos), "R\u00edo Negro",
+                             ifelse(grepl(pattern = "^San", x = deptos), "San Jos\u00e9", 
+                                    ifelse(grepl(pattern = "^Tacuarem", x = deptos), "Tacuaremb\u00f3", deptos))))
+           ))
 
 
 ```
@@ -96,9 +95,13 @@ Presenta el acumulado de todos los casos confirmados a nivel nacional desde la s
 
 ```{r, warning=F, message=F, comment=FALSE}
 #1. Casos de Uruguay acumulativo línea de tiempo
-data_pasteur%>% 
+
+g112<- 
+  data_pasteur %>% 
   ggplot(aes(x = fecha, y = acumCasos)) + 
-  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") +
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") +
   #geom_text(aes(label = acumCasos), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
   labs(x = "",
@@ -106,6 +109,18 @@ data_pasteur%>%
        title = "",#Acumulado de casos confirmados
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+
+ggplotly(g112) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
 
 ```
 
@@ -115,9 +130,13 @@ Los datos reflejan las muertes confirmadas como derivadas del COVID19. Los crite
 
 ```{r, warning=F, message=F, comment=FALSE}
 #2. Muertes en Uruguay acumulativo linea de tiempo
-data_pasteur %>% 
+
+g212 <- 
+  data_pasteur %>% 
   ggplot(aes(x = fecha, y = acumFallecidos)) + 
-  geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() + 
+  #geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   #geom_text(aes(label= ifelse(acumFallecidos > 0, acumFallecidos, "")), 
   #          position = position_dodge(0.9), 
   #          size = 2, 
@@ -128,6 +147,19 @@ data_pasteur %>%
        title = "",#Acumulado de personas fallecidas
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)')+
   theme_minimal()
+
+ggplotly(g212) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
 ```
 
 ### _Acumulado de personas con infecciones activas_
@@ -136,17 +168,36 @@ Este dato surge de restar el acumulado de nuevos casos menos el acumulado de pac
 
 ```{r, warning=F, message=F, comment=FALSE}
 #3. Casos Activos en Uruguay acumulativo línea de tiempo
-data_pasteur%>% 
+
+g312 <- 
+  data_pasteur%>% 
   ggplot(aes(x=fecha, y=cantPersonasConInfeccionEnCurso)) + 
-  geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   #geom_text(aes(label=cantPersonasConInfeccionEnCurso), 
    #         vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
   scale_y_continuous()+
   labs(x = "",
-       y = "Cantidad de con infecciones activas",
+       y = "Cantidad de personas con infecciones activas",
        title = "",#Acumulado de personas con infecciones activas
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)')+
   theme_minimal()
+
+ggplotly(g312) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
 ```
 
 ### _Acumulado de casos recuperados_
@@ -155,9 +206,13 @@ Este dato surge de considerar todos los casos confirmados que han cursado la enf
 
 ```{r, warning=F, message=F, comment=FALSE}
 #4. Recuperados en Uruguay cumulativo línea de tiempo
-data_pasteur%>% 
+
+g412 <- 
+  data_pasteur%>% 
   ggplot(aes(x=fecha, y=acumRecuperados)) + 
-  geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   #geom_text(aes(label=acumRecuperados), 
   #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
   scale_y_continuous()+
@@ -167,6 +222,22 @@ data_pasteur%>%
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)')+
    theme_minimal()
 
+
+ggplotly(g412) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
 ```
 
 ### _Personas infectadas por día_
@@ -175,19 +246,40 @@ En rigor este gráfico mide el número de personas que recibieron un resultado p
 
 ```{r, warning=F, message=F, comment=FALSE}
 #5. Casos nuevos por dia línea de tiempo
-data_pasteur%>% mutate(day7mov = zoo::rollmean(Cant.casos.nuevos, k = 7, fill = NA))%>%
-  ggplot(aes(x=fecha, y=Cant.casos.nuevos)) + 
-  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + geom_line(aes(y=day7mov))+
-  geom_text(aes(label=Cant.casos.nuevos), 
-            position = position_dodge(0.9), 
-            size = 2, 
-            vjust = 2) +
+
+g512 <- 
+  data_pasteur %>% 
+  mutate(day7mov = zoo::rollmean(Cant.casos.nuevos, k = 7, fill = NA)) %>%
+  ggplot(aes(x = fecha, y = Cant.casos.nuevos)) + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + geom_line(aes(y=day7mov))+
+  #geom_text(aes(label=Cant.casos.nuevos), 
+  #          position = position_dodge(0.9), 
+  #          size = 2, 
+  #          vjust = 2) +
   scale_y_continuous() +
   labs(x = "",
        y = "Cantidad de personas infectadas",
        title = "",#Personas infectadas por día
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+
+ggplotly(g512) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
   
 ```
 
@@ -198,9 +290,10 @@ La presente ilustración identifica para cada día la existencia o no de falleci
 ```{r, warning=F, message=F, comment=FALSE, fig.height=7}
 #6. Muertes nuevas por día línea de tiempo (horrible)
 
-data_pasteur %>% 
-ggplot(aes(x = fecha, y = cantFallecidos)) +
-  geom_point(color="#56B4E9") + 
+g612 <- 
+  data_pasteur %>% 
+  ggplot(aes(x = fecha, y = cantFallecidos)) +
+  geom_point(color = "#56B4E9") + 
   scale_y_continuous(breaks = data_pasteur$cantFallecidos) +
   scale_x_date(breaks = "1 month", date_labels = "%B") +
   coord_flip() +
@@ -211,6 +304,22 @@ ggplot(aes(x = fecha, y = cantFallecidos)) +
   theme_minimal() +
   theme(axis.text.y = element_text(size = 5))
 
+
+ggplotly(g612) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.1, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
 ```
 
 ### _Personas en Cuidados Intensivos por COVID19_
@@ -220,19 +329,35 @@ El siguiente gráfico muestra para cada día la cantidad de personas que se encu
 
 ```{r, warning=F, message=F, comment=FALSE}
 #7. Casos críticos (CTI) acumulativo línea de tiempo
-data_pasteur%>% 
+
+g712 <- 
+  data_pasteur %>% 
   ggplot(aes(x=fecha, y=cantCTI)) + 
-  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
-  geom_text(aes(label=cantCTI), 
-            position = position_dodge(0.9), 
-            size = 2, 
-            vjust = 2) +
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
+  #geom_text(aes(label=cantCTI), 
+  #          position = position_dodge(0.9), 
+  #          size = 2, 
+  #          vjust = 2) +
   scale_y_continuous()+
   labs(x = "",
        y = "Cantidad de personas en CTI",
        title = "",#Personas en CTI
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') + 
   theme_minimal()
+
+ggplotly(g712) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
 
 ```
 
@@ -243,7 +368,9 @@ Combina la evolución acumulada de personas recuperadas con el registro diario d
 
 ```{r, warning=F, message=F, comment=FALSE}
 #8. Recuperados, vs activos acumulativos línea de tiempo
-data_pasteur %>%
+
+g812 <- 
+  data_pasteur %>%
   ggplot(aes(x = fecha))+
   geom_line(aes(y=cantPersonasConInfeccionEnCurso, color="Casos Activos"), size = 1.5) +
   geom_line(aes(y=acumRecuperados, color="Personas recuperadas"), size = 1.5) +
@@ -254,6 +381,22 @@ data_pasteur %>%
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
   
+ggplotly(g812) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
+
 ```
 
 ### _Personas recuperadas y muertes_
@@ -262,7 +405,9 @@ Marca la evolución combinada de ambas situaciones. La tasa de fatalidad de caso
 
 ```{r, warning=F, message=F, comment=FALSE}
 #9. Muertes vs Recuperados acumulativos línea de tiempo
-data_pasteur%>%
+
+g912 <- 
+  data_pasteur %>%
   ggplot(aes(x = fecha)) +
   geom_line(aes(y = acumFallecidos, color="Personas fallecidas"), size = 1.5) +
   geom_line(aes(y = acumRecuperados, color="Personas recuperadas"), size = 1.5) +
@@ -273,6 +418,23 @@ data_pasteur%>%
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') + 
   theme_minimal()
 
+
+ggplotly(g912) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
+
 ```
 
 ### _Tests realizados por día_
@@ -281,18 +443,34 @@ En rigor son tests procesados y con resultados por día ya que entre el hisopado
 
 ```{r, warning=F, message=F, comment=FALSE}
 #10. Tests por día línea de tiempo
-data_pasteur%>% mutate(day5mov = zoo::rollmean(cantTest, k = 5, fill = NA))%>%
+
+g1012 <- 
+  data_pasteur%>% mutate(day5mov = zoo::rollmean(cantTest, k = 5, fill = NA))%>%
   ggplot(aes(x=fecha, y=cantTest)) + 
   geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   geom_line(aes(y=day5mov))+
-  geom_text(aes(label=cantTest), 
-            vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
+  #geom_text(aes(label=cantTest), 
+  #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
   labs(x = "",
        y = "Cantidad de Test",
        title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+
+
+ggplotly(g1012) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
 
 ```
 
@@ -304,17 +482,37 @@ La curva refleja simplemente el total de tests que se han realizado en el país.
 
 ```{r,warning=F, message=F, comment=FALSE}
 #11. Tests acumulativos línea de tiempo
-data_pasteur %>% 
+
+g1112 <- 
+  data_pasteur %>% 
   ggplot(aes(x = fecha, y = acumTest)) + 
-  geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() +
+  #geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   #geom_text(aes(label = acumTest), 
   #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
-  scale_y_continuous(breaks = seq(0, 800000, by=10000)  ) +
+  scale_y_continuous(breaks = seq(0, 800000, by=40000)  ) +
   labs(x = "",
        y = "Cantidad de Test",
        title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+
+ggplotly(g1112) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
 
 ```
 
@@ -324,10 +522,12 @@ Surge de considerar la variación día a día de los casos totales. Un valor del
 
 ```{r, warning=F, message=F, comment=FALSE}
 #12. Tasa de crecimiento de casos totales
-data_pasteur%>% 
+
+g1212 <- 
+  data_pasteur%>% 
   mutate(crec_casos = acumCasos - lag(acumCasos), 
-  crec_porc = (crec_casos/lag(acumCasos)*100)) %>%
-  ggplot(aes(x=fecha, y=crec_porc)) + 
+         crec_porc  = (crec_casos/lag(acumCasos)*100)) %>%
+  ggplot(aes(x = fecha, y = crec_porc)) + 
   geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
   #geom_text(aes(label=round(crec_porc, 1)), 
   #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
@@ -337,6 +537,22 @@ data_pasteur%>%
        title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+ggplotly(g1212) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
+
+
+
 
 ```
 
@@ -363,14 +579,18 @@ data_pasteur%>%
 
 ### _Tasa de variación de casos recuperados acumulados y casos acumulados_
 
-Esta tasa surge de restar los casos acumulados a los casos recuperados acumulados y dividirlo por el total diaría de casos acumulados. Por ello el valor es negativo y lo será siempre. El comportamiento deseable de esta tasa es su aproximación al valor cero. En su forma extrema ello ocurriría cuando los casos recuperados acumulados igualaran a los casos acumulados. Para ello se requeriría que los casos acumulados dejen de crecer y que no existan fallecimientos. Como ello no es posible (ya que existen ya casos de fallecimiento) el valor que surgiría de una tendencia hacia cero crecimiento de casos acumulados y progresión de casos recuperados arrojaría finalmente algo aproximado a la tasa de fatalidad de casos identificados. 
+Esta tasa surge de restar los casos acumulados a los casos recuperados acumulados y dividirlo por el total diario de casos acumulados. Por ello el valor es negativo y lo será siempre. El comportamiento deseable de esta tasa es su aproximación al valor cero. En su forma extrema ello ocurriría cuando los casos recuperados acumulados igualaran a los casos acumulados. Para ello se requeriría que los casos acumulados dejen de crecer y que no existan fallecimientos. Como ello no es posible (ya que existen ya casos de fallecimiento) el valor que surgiría de una tendencia hacia cero crecimiento de casos acumulados y progresión de casos recuperados arrojaría finalmente algo aproximado a la tasa de fatalidad de casos identificados. 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #14. Tasa de VARIACION de recuperados cada dia sobre casos cada día
-data_pasteur%>% 
- mutate(crec_prop_rec = (acumRecuperados-acumCasos)/ acumCasos*100) %>%
+
+g1312 <- 
+  data_pasteur %>% 
+  mutate(crec_prop_rec = (acumRecuperados-acumCasos)/ acumCasos*100) %>%
   ggplot(aes(x=fecha, y=crec_prop_rec)) + 
-  geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
+  geom_area(fill = "#56B4E9") +
+  geom_line() + 
+  #geom_col(position = position_dodge(width = 0.8), fill = "#56B4E9") + 
   #geom_text(aes(label = round(crec_prop_rec, 1)), 
   #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
@@ -379,6 +599,20 @@ data_pasteur%>%
        title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)') +
   theme_minimal()
+
+
+ggplotly(g1312) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
+
 ```
 
 ### _Tasa de variación de tests realizados_
@@ -387,21 +621,37 @@ Muestra la variación día a día de los tests acumulados realizados. Es normal 
 
 ```{r, warning=F, message=F, comment=FALSE}
 #15. Tasa de VARIACIÓN de tests totales
-data_pasteur%>% 
+
+g1412 <- 
+  data_pasteur %>% 
   mutate(crec_casos = acumTest - lag(acumTest), 
-  crec_porc = (crec_casos/lag(acumTest)*100),
-  test_rate=case_when(test_rate = crec_porc <100 ~ crec_porc, 
-                        TRUE~NaN)) %>%
+         crec_porc = (crec_casos/lag(acumTest)*100),
+         test_rate=case_when(test_rate = crec_porc <100 ~ crec_porc, TRUE~NaN)) %>%
   ggplot(aes(x=fecha, y=test_rate)) + 
-  geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
-  geom_text(aes(label= ifelse(test_rate>0, round(test_rate, 1), "")), 
-            vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
+  geom_area(fill="#56B4E9") +
+  geom_line() + 
+  #geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
+  #geom_text(aes(label= ifelse(test_rate>0, round(test_rate, 1), "")), 
+  #          vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
   labs(x = "",
        y = "Variación %",
        title = "",
        caption = 'Unidad de Métodos y Acceso a Datos (UMAD)')+
   theme_minimal()
+
+
+ggplotly(g1412) %>% 
+  config(displayModeBar = FALSE) %>% 
+  layout(margin = list(b = 100), legend = list(x = 0.5, y = 1.5, orientation = "h", xanchor = "center" )) %>%
+    add_annotations(xref = "paper",
+                    yref = "paper",
+                    x = 1, 
+                    y = -0.2, 
+                    showarrow = FALSE,
+                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+
 
 ```
 
@@ -425,54 +675,66 @@ data_pasteur%>%
 ### _Acumulado de casos confirmados_
 ```{r}
 
-g<-depuy %>% 
-  rename(Fecha=fecha, Confirmados= acumCasos)%>%
-  ggplot(aes(x = Fecha, y = Confirmados)) +
-  geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
-  labs(x = "",
-       color="",
-       y = "Cantidad de casos",
-       title ="") +
-  theme_minimal()+
-  theme(legend.position = "none", axis.text.x = element_text(size = 6))+
-  #geom_text(aes(label = enCurso), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
- facet_wrap(vars(deptos))
+g <-
+    depuy %>% 
+    rename(Fecha = fecha, 
+           Confirmados = acumCasos) %>%
+    ggplot(aes(x = Fecha, y = Confirmados)) +
+    geom_area(fill= "#56B4E9") +
+    geom_line() +
+    #geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
+    labs(x = "",
+         color="",
+         y = "",
+         title ="", 
+         caption = "Escala del eje 'y' libre") +
+    theme_minimal()+
+    theme(legend.position = "none", axis.text.x = element_text(size = 6))+
+    #geom_text(aes(label = enCurso), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
+    facet_wrap(vars(deptos), scales = "free_y")
 
-ggplotly(g) %>% config(displayModeBar = F) %>%
-    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
-    add_annotations(xref = "paper",
-                    yref = "paper",
-                    x = 1, 
-                    y = -0.3, 
-                    showarrow = FALSE,
-                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+g
+#ggplotly(g) %>% config(displayModeBar = F) %>%
+#    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+#    add_annotations(xref = "paper",
+#                    yref = "paper",
+#                    x = -3, 
+#                    y = -0.2, 
+#                    showarrow = FALSE,
+#                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 
 ```
 
 
 ### _Casos activos_
 ```{r}
-g<-depuy %>% 
-   rename(Fecha=fecha, Activos= enCurso)%>%
+g2 <-
+  depuy %>% 
+  rename(Fecha=fecha, Activos= enCurso)%>%
   ggplot(aes(x = Fecha, y = Activos)) + 
-  geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
+  geom_area(fill= "#56B4E9") +
+  geom_line() +
+  #geom_bar(stat = "identity", position = "identity", fill= "#56B4E9") +
   labs(x = "",
        color="",
-       y = "Cantidad de casos",
-       title ="") +
+       y = "",
+       title ="", 
+       caption = "Escala del eje 'y' libre") +
   theme_minimal()+
   theme(legend.position = "none", axis.text.x = element_text(size = 6))+
   #geom_text(aes(label = enCurso), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90)+
- facet_wrap(vars(deptos))
+  facet_wrap(vars(deptos), scales = "free_y")
 
-ggplotly(g) %>% config(displayModeBar = F) %>%
-    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
-    add_annotations(xref = "paper",
-                    yref = "paper",
-                    x = 1, 
-                    y = -0.3, 
-                    showarrow = FALSE,
-                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+
+g2
+#ggplotly(g) %>% config(displayModeBar = F) %>%
+#    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+#    add_annotations(xref = "paper",
+#                    yref = "paper",
+#                    x = 1, 
+#                    y = -0.3, 
+#                    showarrow = FALSE,
+#                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 
 
 ```
@@ -480,9 +742,10 @@ ggplotly(g) %>% config(displayModeBar = F) %>%
 ### _Cronograma de fallecimientos_
 
 ```{r}
-g<-depuy %>% 
-   rename(Fecha=fecha, Fallecidos= cantFallecidos)%>%
-   ggplot(aes(x = Fecha, y = Fallecidos)) +
+g3 <-
+  depuy %>% 
+  rename(Fecha=fecha, Fallecidos= cantFallecidos)%>%
+  ggplot(aes(x = Fecha, y = Fallecidos)) +
   geom_point(color="#56B4E9", size= 0.5) + 
   scale_y_continuous(breaks = depuy$cantFallecidos) +
   scale_x_date(breaks = "month", date_labels =  "%b %d",) +
@@ -494,15 +757,15 @@ g<-depuy %>%
   theme_minimal() +
   theme(axis.text.y = element_text(size = 6))+
   facet_wrap(vars(deptos))
-
-ggplotly(g) %>% config(displayModeBar = F) %>%
-    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
-    add_annotations(xref = "paper",
-                    yref = "paper",
-                    x = 1, 
-                    y = -0.3, 
-                    showarrow = FALSE,
-                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
+g3
+#ggplotly(g) %>% config(displayModeBar = F) %>%
+#    layout(margin = list(b = 140), legend = list(x = 0.5, y = -0.1, orientation = "h", xanchor = "center" ))%>%
+#    add_annotations(xref = "paper",
+#                    yref = "paper",
+#                    x = 1, 
+#                    y = -0.3, 
+#                    showarrow = FALSE,
+#                    text='Unidad de Métodos y Acceso a Datos (UMAD)', font = list(color = "black", size = 12))
 
 ```
 
