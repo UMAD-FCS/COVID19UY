@@ -58,14 +58,28 @@ if(sum(vars_merge %in% names(now_merge)) == length(vars_merge)) {
     }
 }
 if(sum(base_merge) == 2){
+    
+    
+    
     now_merge %>% 
     dplyr::filter(country != "Uruguay") %>% 
     bind_rows(., uy_a_merge(data_uy)) %>%
     rename(total_test_tidycovid19 = total_tests) %>% 
     rio::export(here::here('data-raw', paste0("data_merge_", Sys.Date(), ".xlsx")))
+    
+ 
 } else {
     status$error2 <- 'ERROR_02 --> La base de {tidycovid19} cambio los nombres de las variables o la dimension es mas chica'
 }
+
+
+
+
+
+
+
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # BLOCK 3 --> OWN
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,6 +120,7 @@ if(is.data.frame(data_test)){
             mutate(date = lubridate::parse_date_time(date, order = "ymd")) %>% 
             rename(iso3c = iso_code) %>% 
             right_join(., merge, by = c('iso3c', 'date'))
+        
         countrycode::codelist_panel[c('iso3c', 'continent')] %>% 
             distinct() %>% 
             right_join(., new_merge, by = 'iso3c') %>% 
@@ -169,7 +184,7 @@ source('R/animation_covid.R')
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # BLOCK 6 --> GIT
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if(length(status) == 0) # gmailr drop else system('git push -u origin master')
+#if(length(status) == 0) # gmailr drop else system('git push -u origin master')
 
 
 
