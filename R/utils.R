@@ -164,7 +164,7 @@ g <-
 
 g2 <- 
     prev %>% 
-    filter(Indicador == 'Tests', continent == "Americas") %>% 
+    filter(Indicador == 'Tests') %>% 
     ggplot(aes(x = Fecha, y = Cantidad, color = Indicador)) +
     geom_line(size = 1) +
     facet_wrap(~continent, nrow = 1) +
