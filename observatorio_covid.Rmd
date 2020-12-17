@@ -675,8 +675,10 @@ ggplotly(g1412) %>%
 ### _Acumulado de casos confirmados_
 ```{r}
 
+depuy2 <- depuy %>% filter(deptos != "Casos ret")
+
 g <-
-    depuy %>% 
+    depuy2 %>% 
     rename(Fecha = fecha, 
            Confirmados = acumCasos) %>%
     ggplot(aes(x = Fecha, y = Confirmados)) +
@@ -709,7 +711,7 @@ g
 ### _Casos activos_
 ```{r}
 g2 <-
-  depuy %>% 
+  depuy2 %>% 
   rename(Fecha=fecha, Activos= enCurso)%>%
   ggplot(aes(x = Fecha, y = Activos)) + 
   geom_area(fill= "#56B4E9") +
@@ -743,7 +745,7 @@ g2
 
 ```{r}
 g3 <-
-  depuy %>% 
+  depuy2 %>% 
   rename(Fecha=fecha, Fallecidos= cantFallecidos)%>%
   ggplot(aes(x = Fecha, y = Fallecidos)) +
   geom_point(color="#56B4E9", size= 0.5) + 
