@@ -18,7 +18,7 @@ if(is.data.frame(data_uy)){
     data_uy$acumTestPositivos <- 0####################################################
     if(sum(vars_data_uy %in% names(data_uy)) == length(vars_data_uy)) {
         base_guiad <- TRUE
-            if(nrow(data_uy) > nrow(pre_data_uy)) {
+            if(nrow(data_uy) >= nrow(pre_data_uy)) {
                 base_guiad <- c(TRUE, base_guiad)
             }
     }

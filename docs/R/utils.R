@@ -31,7 +31,7 @@ uy_a_merge <- function(x) {
             country   = "Uruguay", 
             iso3c     = "URY",
             date      = as.Date(lubridate::parse_date_time(x$fecha, order = "dmy")), 
-            confirmed = as.double(x$acumTestPositivos), 
+            confirmed = as.double(x$acumCasos), #####
             deaths    = as.double(x$acumFallecidos), 
             recovered = as.double(x$acumRecuperados),
             timestamp = Sys.time()
