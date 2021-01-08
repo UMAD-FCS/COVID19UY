@@ -70,7 +70,7 @@ data_pasteur<-data_pasteur %>%
   mutate(Cant.casos.nuevos = as.double(cantCasosNuevos),
          fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")),
          cantPersonasConInfeccionEnCurso=as.double(cantPersonasConInfeccionEnCurso),
-         acumCasos = as.double(acumCasos),
+         acumcasos = as.double(acumCasos),
          cantCTI = as.double(cantCTI),
          cantCI = as.double(cantCI),
          cantRecuperados = as.double(cantRecuperados),
@@ -98,11 +98,11 @@ Presenta el acumulado de todos los casos confirmados a nivel nacional desde la s
 
 g112<- 
   data_pasteur %>% 
-  ggplot(aes(x = fecha, y = acumCasos)) + 
+  ggplot(aes(x = fecha, y = acumcasos)) + 
   geom_area(fill = "#56B4E9") +
   geom_line() +
   #geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") +
-  #geom_text(aes(label = acumCasos), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
+  #geom_text(aes(label = acumcasos), vjust = 0.4, hjust = 1.2, size = 2, vjust = 2, angle = 90) +
   scale_y_continuous() +
   labs(x = "",
        y = "Cantidad de casos",
@@ -525,8 +525,8 @@ Surge de considerar la variación día a día de los casos totales. Un valor del
 
 g1212 <- 
   data_pasteur%>% 
-  mutate(crec_casos = acumCasos - lag(acumCasos), 
-         crec_porc  = (crec_casos/lag(acumCasos)*100)) %>%
+  mutate(crec_casos = acumcasos - lag(acumcasos), 
+         crec_porc  = (crec_casos/lag(acumcasos)*100)) %>%
   ggplot(aes(x = fecha, y = crec_porc)) + 
   geom_col(position = position_dodge(width = 0.8), fill="#56B4E9") + 
   #geom_text(aes(label=round(crec_porc, 1)), 
@@ -586,7 +586,7 @@ Esta tasa surge de restar los casos acumulados a los casos recuperados acumulado
 
 g1312 <- 
   data_pasteur %>% 
-  mutate(crec_prop_rec = (acumRecuperados-acumCasos)/ acumCasos*100) %>%
+  mutate(crec_prop_rec = (acumRecuperados-acumcasos)/ acumcasos*100) %>%
   ggplot(aes(x=fecha, y=crec_prop_rec)) + 
   geom_area(fill = "#56B4E9") +
   geom_line() + 
@@ -680,7 +680,7 @@ depuy2 <- depuy %>% filter(deptos != "Casos ret")
 g <-
     depuy2 %>% 
     rename(Fecha = fecha, 
-           Confirmados = acumCasos) %>%
+           Confirmados = acumcasos) %>%
     ggplot(aes(x = Fecha, y = Confirmados)) +
     geom_area(fill= "#56B4E9") +
     geom_line() +
