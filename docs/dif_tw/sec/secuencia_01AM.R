@@ -15,6 +15,7 @@ data_uy     <- read.csv(url, stringsAsFactors = FALSE)
 
 if(is.data.frame(data_uy)){
     vars_data_uy <- c('fecha', 'acumTestPositivos',  'acumFallecidos', 'acumRecuperados')
+    data_uy$acumTestPositivos <- 0####################################################
     if(sum(vars_data_uy %in% names(data_uy)) == length(vars_data_uy)) {
         base_guiad <- TRUE
             if(nrow(data_uy) > nrow(pre_data_uy)) {
