@@ -67,7 +67,7 @@ depuy <- depuy %>%
 ```{r, warning=F, message=F, error=F, comment=FALSE}
 ###cambio formato data_uy
 data_pasteur<-data_pasteur %>% 
-  mutate(Cant.casos.nuevos = as.double(cantCasosNuevos),
+  mutate(Cant.casos.nuevos = as.double(cantCasosNuevosAjustado),
          fecha = as.Date(lubridate::parse_date_time(fecha, order = "dmy")),
          cantPersonasConInfeccionEnCurso=as.double(cantPersonasConInfeccionEnCurso),
          acumcasos = as.double(acumCasos),
