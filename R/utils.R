@@ -5,6 +5,8 @@ suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(plotly))
 library(ggrepel)
 library(ggtext) # only github
+remotes::install_github("joachim-gassen/tidycovid19") #only github
+library(tidycovid19)
 
 
 data_rm <- function(archivo = 1) {

@@ -55,7 +55,7 @@ Este reporte procura ofrecer a los investigadores, tomadores de decisión, forma
 ```{r, echo = F}
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(plotly))
-source('data-raw/observatorio_social.R')
+source('data/observatorio_social.R')
 ```
 
 
